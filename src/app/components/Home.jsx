@@ -15,9 +15,7 @@ const Home = () => {
             I would be happy to help you. Be it with your inner exploration,
             relationships or practical problem.
           </p>
-        </div>
-      <div className="row-span-1 col-span-1">
-        <p>
+          <p>
           “I can always choose, but I ought to know that if I do not choose, I
           am still choosing.” Jean-Paul Sartre
         </p>
@@ -25,8 +23,8 @@ const Home = () => {
           “The only way to deal with an unfree world is to become so absolutely
           free that your very existence is an act of rebellion.” ― Albert Camus
         </p>
-      </div>
-      <div className="row-span-1 col-span-1">
+        </div>
+      <div className="row-span-1 col-span-2">
         <h1>Book a free intro coaching session with me</h1>
         <p>Calendly</p>
         <script
