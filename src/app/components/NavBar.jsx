@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="z-20 w-full text-3xl	 flex  items-center  top-0 shadow-md fixed bg-zinc-200 py-4 font-normal ">
+    <div className="z-20 w-full text-2xl	antialiased flex  items-center  top-0 shadow-md fixed bg-zinc-200 py-4 font-normal ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <h1 className="">Terezie Kosíková</h1>
       </div>
