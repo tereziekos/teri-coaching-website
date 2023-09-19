@@ -7,17 +7,20 @@ const GetToKnowMe = () => {
     <div className="grid grid-cols-2 p-11">
       <div className="pr-15">
         <h1 className="text-left text-2xl mb-12">My Approach</h1>
-        <p className="text-left text-base antialiased mb-9">
+        <p className="text-left text-base antialiased mb-9 pr-36 ">
           I would be honored to guide you through your exploration or change. I
           think everybody is different (mind, history, ways of coping) so we
-          would try a bunch of things and see what works. We would want to
-          really see what works for you as I have a result-oriented approach. I
-          will not tell you what you should do as you have the most information
-          about your life, but I will provide you with information on tools and
-          new perspectives that I think would help you.
+          would try a bunch of things and see what works. We would want to really see what works for you as I have a
+          result-oriented approach.
+        </p>
+        <p className="text-left text-base antialiased mb-9 pr-36" >
+          I will not tell you what you should do as
+          you have the most information about your life, but I will provide you
+          with information on tools and new perspectives that I think would help
+          you.
         </p>
         <h2 className="text-left text-xl mb-9">The theories I derive from:</h2>
-        <ul className="text-left text-base antialiased mb-11">
+        <ul className="text-left text-base antialiased mb-11 list-disc">
           <li>Internal Family System</li>
           <li>Motivational Interviewing</li>
           <li>Behavioral change</li>
@@ -30,7 +33,7 @@ const GetToKnowMe = () => {
         <h2 className="text-left text-xl mb-9">
           Practices I immerse myself in:
         </h2>
-        <ul className="text-left text-base antialiased mb-11">
+        <ul className="text-left text-base antialiased mb-11 list-disc">
           <li>Meditation</li>
           <li>Embodiment (I practice Contact Improvisation)</li>
           <li>Holistic Rituals</li>
@@ -40,14 +43,14 @@ const GetToKnowMe = () => {
         <h2 className="text-left text-xl mb-9">
           Things I often help my clients:
         </h2>
-        <ul className="text-left text-base antialiased mb-11">
+        <ul className="text-left text-base antialiased mb-11 list-disc">
           <li>Setting intentions and working with motivation</li>
           <li>Relationships and dating, attachment issues</li>
           <li>Emotions, needs, and boundaries</li>
           <li>Self-acceptance and self-worth</li>
         </ul>
         <h2 className="text-left text-xl mb-9">Coaching related education:</h2>
-        <ul className="text-left text-base antialiased mb-11">
+        <ul className="text-left text-base antialiased mb-11 list-disc">
           <li>Mindfulness teacher (Coach Lv 2) of Unified Mindfulness</li>
           <li>Course in Motivational Interviewing from Tucker Peck</li>
           <li>1 year long self-experienced group therapy</li>
@@ -56,8 +59,13 @@ const GetToKnowMe = () => {
         </ul>
       </div>
       <div className="row-span-full flex items-center">
-      <Image src={ActionImage} alt="Sysifof's work" width={700} height={1000}  class=" rounded-lg" />
-
+        <Image
+          src={ActionImage}
+          alt="Sysifof's work"
+          width={700}
+          height={1000}
+          class=" rounded-lg"
+        />
       </div>
     </div>
   );
