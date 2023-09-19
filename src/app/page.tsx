@@ -2,6 +2,7 @@ import NavBar from "./components/NavBar";
 import React from "react";
 import Home from "./components/Home";
 import GetToKnowMe from "./components/GetToKnowMe";
+import SocialFollow from "./components/SocialFollow";
 
 
 export default function MainPage() {
@@ -10,6 +11,7 @@ export default function MainPage() {
       <NavBar />
       <Home/>
       <GetToKnowMe/>
+      <SocialFollow/>
     </main>
   );
 }

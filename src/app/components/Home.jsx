@@ -29,15 +29,18 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className="row-span-1 col-span-1 flex flex-col justify-right pr-12 mt-48">
+      <div className="row-span-1 col-span-1 flex flex-col justify-right pr-12 mt-36">
         <h1 className="text-2xl text-right mb-4">
           Book a free intro coaching session with me
         </h1>
+        <p className="text-right text-base mb-2">
+          Best way to find out if we are a good fit is to meet. 
+        </p>
         <p className="text-right text-base mb-11">
-          Best way to find out if we are a good fit is to meet.
+          You can also contact me at my email kosikova.terezie@gmail.com
         </p>
       </div>
-      <div className="row-span-1 col-span-1 flex justify-left mt-48">
+      <div className="row-span-1 col-span-1 flex justify-left mt-36">
         <CalendlyWidget />
       </div>
     </div>
