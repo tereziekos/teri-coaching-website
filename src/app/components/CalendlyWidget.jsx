@@ -4,8 +4,8 @@ const Calendly = () => {
   return (
     <div
       style={{
-        width: "640px",
-        height: "750px", 
+        width: "500px",
+        height: "600px", 
         overflow: "hidden",
         position: "relative",
         borderRadius: "10px",
@@ -15,7 +15,7 @@ const Calendly = () => {
         src="https://calendly.com/kosikova-terezie/intro_coaching_session"
         style={{
           position: "absolute",
-          top: "0",
+          top: "",
           left: "0",
           width: "100%",
           height: "100%", 

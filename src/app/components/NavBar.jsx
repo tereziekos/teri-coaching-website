@@ -11,10 +11,10 @@ const Navbar = () => {
           Home
         </li>
         <li className="list-none mx-5 hover:border-b-4  border-zinc-400 cursor-pointer p-2 transition-all">
-          Get to know me
+          My Approach
         </li>
         <li className="list-none mx-5 hover:border-b-4  border-zinc-400 cursor-pointer p-2 transition-all">
-          Coaching style
+          Get to know me
         </li>
         <li className="list-none mx-5 hover:border-b-4  border-zinc-400 cursor-pointer p-2 transition-all">
           Contact me

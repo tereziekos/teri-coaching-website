@@ -4,7 +4,7 @@ import ActionImage from "/Users/terezka/work/website-Teri/teri_app/src/app/image
 
 const GetToKnowMe = () => {
   return (
-    <div className="grid grid-cols-2 p-11">
+    <div className="grid grid-cols-2 p-11 mt-36">
       <div className="pr-15">
         <h1 className="text-left text-2xl mb-12">My Approach</h1>
         <p className="text-left text-base antialiased mb-9 pr-36 ">
@@ -38,6 +38,7 @@ const GetToKnowMe = () => {
           <li>Embodiment (I practice Contact Improvisation)</li>
           <li>Holistic Rituals</li>
           <li>Breath Work</li>
+          <li>Journaling</li>
           <li>Weight lifting</li>
         </ul>
         <h2 className="text-left text-xl mb-9">
@@ -58,7 +59,7 @@ const GetToKnowMe = () => {
           <li>CBT Cognitive Behavior Therapy Life Coaching Certification</li>
         </ul>
       </div>
-      <div className="row-span-full flex items-center">
+      <div className="row-span-full flex items-start">
         <Image
           src={ActionImage}
           alt="Sysifof's work"
