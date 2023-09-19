@@ -1,13 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import ProfileImage from "/Users/terezka/work/website-Teri/teri_app/src/app/images/IMG_3722.jpg";
+import ProfileImage from "/Users/terezka/work/website-Teri/teri_app/src/app/images/IMG_7658.jpg";
 import CalendlyWidget from "./CalendlyWidget";
+
+
 
 const Home = () => {
   return (
-    <div className="z-10  grid grid-rows-2 grid-cols-2 gap-4 mt-32 antialiased">
-      <div className="row-span-1 col-span-1">
-        <Image src={ProfileImage} alt="ProfileImage" />
+    <div className="z-10  grid grid-rows-1 grid-cols-2 gap-4 mt-32 antialiased">
+      <div className="row-span-1 col-span-1 border-round">
+        <Image src={ProfileImage} alt="ProfileImage" class=" rounded-lg" />
       </div>
       <div className="row-span-1 col-span-1 space-y-12">
         <div>
@@ -29,10 +31,13 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className="row-span-1 col-span-2">
-        <h1>Book a free intro coaching session with me</h1>
-        <p>Calendly</p>
-      <CalendlyWidget />
+      <div className="row-span-1 col-span-2 flex flex-col items-center">
+        <h1 className="text-2xl text-center mb-4">
+          Book a free intro coaching session with me
+        </h1>
+        <div className="App">
+      </div>
+        <CalendlyWidget />
       </div>
     </div>
   );

@@ -1,22 +1,31 @@
-import React from 'react';
+import React from "react";
 
 const Calendly = () => {
   return (
-    <div style={{ width: "640px", height: "1000px", overflow: "hidden", position: "relative" }}>
+    <div
+      style={{
+        width: "640px",
+        height: "750px", 
+        overflow: "hidden",
+        position: "relative",
+        borderRadius: "10px",
+      }}
+    >
       <iframe
         src="https://calendly.com/kosikova-terezie/intro_coaching_session"
         style={{
           position: "absolute",
-          top: "-250px",
+          top: "0",
           left: "0",
-          width: "670px",
-          height: "1000px",
+          width: "100%",
+          height: "100%", 
           border: "none",
+          borderRadius: "10px"
         }}
-        frameBorder="0"
       ></iframe>
     </div>
   );
 };
+
 
 export default Calendly;
