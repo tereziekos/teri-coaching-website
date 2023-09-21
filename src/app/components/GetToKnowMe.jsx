@@ -4,9 +4,10 @@ import ActionImage from "/Users/terezka/work/website-Teri/teri_app/src/app/image
 
 const GetToKnowMe = () => {
   return (
+    <section id="get-to-know-me">
     <div className="grid grid-cols-2 p-11 mt-36">
     <div className=" col-start-1 pr-15 w-4/5">
-      <h1 className="text-left text-2xl mb-12">Get to Know Me</h1>
+      <h1 className="text-left text-3xl mb-12">Get to Know Me</h1>
       <p className="text-left text-base antialiased mb-9 pr-36 ">
       I have been fascinated by interpersonal relationships since I was a child. Over the years, I have done inner work that has allowed me to form authentic connections with both myself and others. 
 
@@ -41,6 +42,7 @@ const GetToKnowMe = () => {
       />
     </div>
   </div>
+  </section>
   );
 };
 
