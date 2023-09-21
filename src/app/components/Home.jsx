@@ -33,12 +33,17 @@ const Home = () => {
         <h1 className="text-2xl text-right mb-4">
           Book a free intro coaching session with me
         </h1>
-        <p className="text-right text-base mb-2">
+        <p className="text-right text-base mb-16 antialiased">
           Best way to find out if we are a good fit is to meet. 
         </p>
-        <p className="text-right text-base mb-11">
-          You can also contact me at my email kosikova.terezie@gmail.com
+        <div className="ps-51">
+        <p className="text-right text-base mb-2 antialiased  ">
+        The pricing for the regular full sessions is 100 USD for 50 minutes.
         </p>
+        <p className="text-right text-base mb-11 antialiased  ">
+       You can also contact me at my email kosikova.terezie@gmail.com. 
+        </p>
+        </div>
       </div>
       <div className="row-span-1 col-span-1 flex justify-left mt-36">
         <CalendlyWidget />
