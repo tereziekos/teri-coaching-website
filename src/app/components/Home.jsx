@@ -51,7 +51,7 @@ const Home = () => {
           <CalendlyWidget />
         </div>
       </div>
-    </section>
+    </section> 
   );
 };
 
