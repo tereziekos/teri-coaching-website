@@ -6,9 +6,9 @@ import CalendlyWidget from "./CalendlyWidget";
 const Home = () => {
   return (
     <section id="home">
-      <div className="z-10  grid grid-rows-1 grid-cols-2 gap-4 mt-44 antialiased">
+     <div className="z-10 grid md:grid-rows-1 md:grid-cols-2 gap-4 mt-44 antialiased grid-rows-4 grid-cols-1">
         <div className="row-span-1 col-span-1 border-round">
-          <Image src={ProfileImage} alt="ProfileImage" className=" rounded-lg" />
+          <Image src={ProfileImage} alt="ProfileImage" className="rounded-lg" />
         </div>
         <div className="row-span-1 col-span-1 space-y-12">
           <div>
@@ -30,7 +30,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className="row-span-1 col-span-1 flex flex-col justify-right pr-12 mt-36">
+        <div className="row-span-1 col-span-1 flex flex-col justify-right pr-12 mt-36 md:mt-0">
           <h1 className="text-3xl text-right mb-4">
             Book a free intro 20 min coaching session
           </h1>
@@ -47,7 +47,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className="row-span-1 col-span-1 flex justify-left mt-36">
+        <div className="row-span-1 col-span-1 flex justify-left mt-36 md:mt-0">
           <CalendlyWidget />
         </div>
       </div>

@@ -4,16 +4,16 @@ import ActionImage from "/Users/terezka/work/website-Teri/teri_app/src/app/image
 
 const MyApproach = () => {
   return (
-    <div className="grid md:grid-cols-2 grid-cols-1 p-11 mt-36">
-      <div className="md:pr-15 pr-0 w-full md:w-6/7">
+    <div className="grid md:grid-cols-2 grid-cols-1 p-4 md:p-11 mt-12 md:mt-36">
+    <div className="md:pr-4 pr-0 w-full">
       <h1 className="text-left text-3xl mb-12">My Approach</h1>
-        <p className="text-left text-base antialiased mb-9 pr-36 ">
+      <p className="text-left text-base antialiased mb-9 md:pr-36 pr-4">
           I would be honored to guide you through your exploration or change. I
           think everybody is different (mind, history, ways of coping) so we
           would try a bunch of things and see what works. We would want to
           really see what works for you as I have a result-oriented approach.
         </p>
-        <p className="text-left text-base antialiased mb-9 pr-36">
+        <p className="text-left text-base antialiased mb-9 md:pr-36 pr-4">
           I will not tell you what you should do as you have the most
           information about your life, but I will provide you with information
           on tools and new perspectives that I think would help you.

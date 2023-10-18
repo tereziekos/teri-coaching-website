@@ -57,17 +57,16 @@ const Testimonials = () => (
     className={`sm:py-16 py-3 flex justify-center items-center flex-col relative `}
   >
     <div className="absolute z-[0] w-[60%] h-[60%] -right-[50%] rounded-full blue__gradient bottom-40" />
-
     <div className="w-full flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1]">
       <div className="w-full md:mt-0 mt-6">
         <h1
-          className={` text-3xl antialiased leading-[49.32px] text-left max-w-[450px]`}
+          className={` text-3xl antialiased leading-[49.32px] text-left max-w-[450px] md:text-left text-center`}
         >
           What Others Say
         </h1>
       </div>
     </div>
-    <Carousel autoplay autoplayInterval={5000} wrapAround={true} cellAlign='center' >
+    <Carousel autoplay autoplayInterval={5000} wrapAround={true} cellAlign='center' className="w-full md:w-auto">
       {feedback.map((card) => (
         <FeedbackCard key={card.id} {...card} />
       ))}

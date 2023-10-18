@@ -8,7 +8,7 @@ import Testimonials from "./components/Testimonials";
 
 export default function MainPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-5  bg-zinc-200 font-mono text-zinc-900	">
+    <main className="flex flex-col items-center p-5 bg-zinc-200 font-mono text-zinc-900 min-h-screen w-full">
       <NavBar />
       <Home />
       <section id="my-approach" className="">
