@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import ActionImage from "../images/IMG_7692.JPG";
 
 const GetToKnowMe = () => {
   return (
@@ -34,7 +33,7 @@ const GetToKnowMe = () => {
     </div>
     <div className="col-start-2 row-span-full flex items-start">
       <Image
-        src={ActionImage}
+        src="/images/IMG_7692.jpg"
         alt="ProfileImage"
         width={500}
         height={714}

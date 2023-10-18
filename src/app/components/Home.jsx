@@ -1,14 +1,20 @@
 import React from "react";
 import Image from "next/image";
-import ProfileImage from "../images/IMG_7658.jpg";
 import CalendlyWidget from "./CalendlyWidget";
 
 const Home = () => {
   return (
     <section id="home">
-     <div className="z-10 grid md:grid-rows-1 md:grid-cols-2 gap-4 mt-44 antialiased grid-rows-4 grid-cols-1">
+      <div className="z-10 grid md:grid-rows-1 md:grid-cols-2 gap-4 mt-44 antialiased grid-rows-4 grid-cols-1">
         <div className="row-span-1 col-span-1 border-round">
-          <Image src={ProfileImage} alt="ProfileImage" className="rounded-lg" />
+          <Image
+            src="/images/IMG_7658.jpg"
+            alt="ProfileImage"
+            className="rounded-lg"
+            width={800}
+            height={1000}
+
+          />
         </div>
         <div className="row-span-1 col-span-1 space-y-12">
           <div>
@@ -51,7 +57,7 @@ const Home = () => {
           <CalendlyWidget />
         </div>
       </div>
-    </section> 
+    </section>
   );
 };
 

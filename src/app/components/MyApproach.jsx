@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import ActionImage from "../images/DSC02540 copy.jpeg";
 
 const MyApproach = () => {
   return (
@@ -60,7 +59,7 @@ const MyApproach = () => {
       </div>
       <div className="row-span-full flex items-start justify-center md:justify-start">
         <Image
-          src={ActionImage}
+          src="/images/DSC02540 copy.jpeg"
           alt="Sysifof's work"
           width={550}
           height={750}
