@@ -8,7 +8,7 @@ const Home = () => {
     <section id="home">
       <div className="z-10  grid grid-rows-1 grid-cols-2 gap-4 mt-44 antialiased">
         <div className="row-span-1 col-span-1 border-round">
-          <Image src={ProfileImage} alt="ProfileImage" class=" rounded-lg" />
+          <Image src={ProfileImage} alt="ProfileImage" className=" rounded-lg" />
         </div>
         <div className="row-span-1 col-span-1 space-y-12">
           <div>
