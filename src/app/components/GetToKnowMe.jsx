@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ActionImage from "/Users/terezka/work/website-Teri/teri_app/src/app/images/IMG_7692.JPG";
+import ActionImage from "../images/IMG_7692.JPG";
 
 const GetToKnowMe = () => {
   return (

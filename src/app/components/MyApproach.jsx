@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ActionImage from "/Users/terezka/work/website-Teri/teri_app/src/app/images/DSC02540 copy.jpeg";
+import ActionImage from "../images/DSC02540 copy.jpeg";
 
 const MyApproach = () => {
   return (

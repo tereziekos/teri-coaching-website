@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ProfileImage from "/Users/terezka/work/website-Teri/teri_app/src/app/images/IMG_7658.jpg";
+import ProfileImage from "../images/IMG_7658.jpg";
 import CalendlyWidget from "./CalendlyWidget";
 
 const Home = () => {
