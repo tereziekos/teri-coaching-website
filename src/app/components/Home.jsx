@@ -8,7 +8,7 @@ const Home = () => {
       <div className="z-10 grid md:grid-rows-1 md:grid-cols-2 gap-4 mt-44 antialiased grid-rows-4 grid-cols-1">
         <div className="row-span-1 col-span-1 border-round">
           <Image
-            src="/images/IMG_7658.jpg"
+            src="/images/IMG_7658.JPG"
             alt="ProfileImage"
             className="rounded-lg"
             width={900}
