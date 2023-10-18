@@ -11,7 +11,7 @@ const Home = () => {
             src="/images/IMG_7658.jpg"
             alt="ProfileImage"
             className="rounded-lg"
-            width={800}
+            width={900}
             height={1000}
 
           />
