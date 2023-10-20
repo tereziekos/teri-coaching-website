@@ -49,6 +49,12 @@ const feedback = [
     name: "Maxime Riche",
     title: "Research Engineer",
   },
+  {
+    id: "feedback-8",
+    content: `Over the past ~16 months, Terezie has been coaching me in various areas of my life. From the very beginning I have been very happy with the coaching I’ve received. I really enjoy our coaching relationship and have always felt comfortable, relaxed, and supported. She is highly attentive to my needs and goals, and is proactive in helping me make progress. Her coaching style strikes a balance between analytical and intuitive that suits me very well. She offers a very flexible coaching commitment and is always accommodating of my busy lifestyle. I’m hugely grateful to Terezie for the great commitment and joy with which she continues to coach me.`,
+    name: "Taylor Jones",
+    title: "Freelance Graphic Designer",
+  },
 ];
 
 const Testimonials = () => (
