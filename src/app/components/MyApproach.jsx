@@ -3,16 +3,16 @@ import Image from "next/image";
 
 const MyApproach = () => {
   return (
-    <div className="grid md:grid-cols-2 grid-cols-1 p-4 md:p-11 mt-12 md:mt-36">
-    <div className="md:pr-4 pr-0 w-full">
-      <h1 className="text-left text-3xl mb-12">My Approach</h1>
-      <p className="text-left text-base antialiased mb-9 md:pr-36 pr-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4 md:p-11 mt-12 md:mt-36">
+      <div className="w-full">
+        <h1 className="text-left text-3xl mb-12">My Approach</h1>
+        <p className="text-left text-base antialiased mb-9">
           I would be honored to guide you through your exploration or change. I
           think everybody is different (mind, history, ways of coping) so we
           would try a bunch of things and see what works. We would want to
           really see what works for you as I have a result-oriented approach.
         </p>
-        <p className="text-left text-base antialiased mb-9 md:pr-36 pr-4">
+        <p className="text-left text-base antialiased mb-9">
           I will not tell you what you should do as you have the most
           information about your life, but I will provide you with information
           on tools and new perspectives that I think would help you.
@@ -57,13 +57,13 @@ const MyApproach = () => {
           <li>CBT Cognitive Behavior Therapy Life Coaching Certification</li>
         </ul>
       </div>
-      <div className="row-span-full flex items-start justify-center md:justify-start">
+      <div className="flex items-start justify-center md:justify-start mt-6 md:mt-0">
         <Image
           src="/images/DSC02540 copy.jpeg"
           alt="Sysifof's work"
           width={550}
           height={750}
-          className="rounded-lg md:w-auto w-3/4"
+          className="rounded-lg w-full md:w-auto max-w-full"
         />
       </div>
     </div>
