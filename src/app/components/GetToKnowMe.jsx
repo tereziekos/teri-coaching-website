@@ -6,7 +6,7 @@ const GetToKnowMe = () => {
     <section id="get-to-know-me" className="px-4 md:px-11 mt-10 md:mt-36">
       <div className="grid md:grid-cols-2 gap-4">
         <div>
-          <h1 className="text-left text-3xl mb-12">Get to Know Me</h1>
+          <h1 className="text-left text-3xl mb-12">About Me</h1>
           <p className="text-left text-base antialiased mb-9">
             I have been fascinated by interpersonal relationships since I was a child. Over the years, I have done inner work that has allowed me to form authentic connections with both myself and others.
           </p>

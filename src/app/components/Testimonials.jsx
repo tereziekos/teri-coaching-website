@@ -66,7 +66,7 @@ const Testimonials = () => (
     <div className="w-full flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1]">
       <div className="w-full md:mt-0 mt-6">
         <h1
-          className={` text-3xl antialiased leading-[49.32px] text-left max-w-[450px] md:text-left text-center`}
+          className={`sm:text-3xl text-2xl antialiased leading-[49.32px] text-left max-w-[450px] md:text-left text-center`}
         >
           What Others Say
         </h1>

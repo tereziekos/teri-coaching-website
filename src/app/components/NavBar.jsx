@@ -31,7 +31,7 @@ const Navbar = () => {
           </a>
           <a href="#get-to-know-me" {...{ onClick: closeMenu }}>
             <li className="list-none hover:border-b-4 border-zinc-400 cursor-pointer p-2 transition-all">
-              Get to<br />know me
+            About Me
             </li>
           </a>
         </ul>
