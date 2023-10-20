@@ -29,7 +29,7 @@ const GetToKnowMe = () => {
         </div>
         <div className="flex items-start justify-center md:justify-end mt-6 md:mt-0">
           <Image
-            src="/images/IMG_7692.jpg"
+            src="/images/PhotoWholePerson.jpeg"
             alt="ProfileImage"
             width={500}
             height={714}

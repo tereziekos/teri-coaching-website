@@ -59,7 +59,7 @@ const MyApproach = () => {
       </div>
       <div className="flex items-start justify-center md:justify-start mt-6 md:mt-0">
         <Image
-          src="/images/DSC02540 copy.jpeg"
+          src="/images/action_photo.jpeg"
           alt="Sysifof's work"
           width={550}
           height={750}
