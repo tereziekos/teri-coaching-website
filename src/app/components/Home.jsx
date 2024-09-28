@@ -44,8 +44,7 @@ const Home = () => {
           </p>
           <div className="ps-51">
             <p className="text-right text-base mb-4 antialiased">
-              The pricing for the regular full sessions is 100 USD for 50
-              minutes.
+              The pricing is 100 USD for a 50-minute individual coaching session and 220 USD for a 70-minute couple session.
             </p>
             <p className="text-right text-base mb-8 antialiased">
               You can also contact me at my email kosikova.terezie@gmail.com.
