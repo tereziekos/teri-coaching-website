@@ -37,7 +37,7 @@ const Home = () => {
         </div>
         <div className="row-span-1 col-span-1 flex flex-col justify-right pr-12 mt-20 md:mt-0">
           <h1 className="text-3xl text-right mb-6">
-            Book a free intro 20 min coaching session
+            Book a free intro 40-minute coaching session
           </h1>
           <p className="text-right text-base mb-10 antialiased">
             Best way to find out if we are a good fit is to meet.
