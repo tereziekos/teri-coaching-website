@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>terezie · sanctum mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --sage: #D8DDD3;
+  --paper: #EEEFEA;
+  --moss: #2B3A2A;
+  --clay: #A89A7B;
+  --clay-soft: rgba(168, 154, 123, 0.3);
+  --clay-ghost: rgba(168, 154, 123, 0.2);
+  --moss-soft: rgba(43, 58, 42, 0.4);
+  --off-black: #6E6A5C;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--sage);
+  color: var(--moss);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 56px; }
+
+nav.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 56px;
+  border-bottom: 0.5px solid var(--clay-ghost);
+  position: sticky;
+  top: 0;
+  background: var(--sage);
+  z-index: 10;
+}
+.brand {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--moss);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--clay); }
+.nav-right { display: flex; align-items: center; gap: 28px; }
+.lang-toggle { font-size: 13px; color: var(--moss); letter-spacing: 0.06em; user-select: none; }
+.lang-toggle .active { font-weight: 500; }
+.lang-toggle .dim { color: var(--moss-soft); }
+.lang-toggle .sep { color: var(--clay); margin: 0 7px; }
+.book-link {
+  font-size: 13px;
+  color: var(--moss);
+  text-decoration: none;
+  border-bottom: 0.5px dashed var(--clay);
+  padding-bottom: 2px;
+  transition: color 200ms, border-color 200ms;
+}
+.book-link:hover { color: var(--clay); border-color: var(--moss); }
+
+.hero {
+  padding: 14vh 56px 10vh;
+  min-height: 86vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(36px, 5.5vw, 68px);
+  line-height: 1.05;
+  color: var(--moss);
+  max-width: 18ch;
+  margin: 0 0 2rem;
+  letter-spacing: -0.3px;
+}
+.hero .lede { font-size: 17px; color: var(--off-black); max-width: 44ch; margin: 0 0 2.2rem; }
+.btn-whisper {
+  align-self: flex-start;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  padding: 12px 26px;
+  border: 0.5px dashed var(--clay);
+  border-radius: 0;
+  color: var(--moss);
+  background: transparent;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 300ms, color 300ms;
+}
+.btn-whisper:hover { border-color: var(--moss); }
+.scroll-hint { margin-top: 3.5rem; display: flex; align-items: center; gap: 12px; color: var(--clay); font-size: 12px; letter-spacing: 0.15em; }
+.scroll-line { width: 24px; height: 0.5px; background: var(--clay); }
+
+section.block { padding: 6rem 56px; max-width: 1100px; margin: 0 auto; }
+.label { font-size: 12px; letter-spacing: 0.2em; color: var(--clay); margin-bottom: 1rem; }
+.hairline { height: 0.5px; background: var(--clay-soft); margin-bottom: 2.5rem; border: 0; }
+
+.videos-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; }
+.video-player { background: var(--moss); aspect-ratio: 16 / 9; border-radius: 3px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.play-triangle { width: 0; height: 0; border-left: 18px solid rgba(232, 226, 213, 0.75); border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 4px; }
+.chapters { margin-top: 1.2rem; font-size: 13px; list-style: none; padding: 0; }
+.chapter-row { padding: 7px 0; border-bottom: 0.5px dotted var(--clay-soft); display: flex; gap: 16px; color: var(--moss); cursor: pointer; border-radius: 0; }
+.chapter-row:last-child { border-bottom: 0; }
+.chapter-row:hover { color: var(--clay); }
+.chapter-time { color: var(--clay); font-family: 'SF Mono', Menlo, monospace; font-size: 12px; min-width: 48px; }
+.video-list { display: flex; flex-direction: column; gap: 1rem; list-style: none; padding: 0; margin: 0; }
+.video-item { padding-bottom: 14px; border-bottom: 0.5px solid var(--clay-ghost); cursor: pointer; border-radius: 0; }
+.video-item:last-child { border-bottom: 0; }
+.video-title { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--moss); line-height: 1.3; margin: 0 0 6px; }
+.video-meta { font-size: 12px; color: var(--clay); display: flex; gap: 10px; align-items: center; }
+.lang-tag { padding: 2px 7px; border: 0.5px solid var(--clay); font-size: 11px; letter-spacing: 0.06em; border-radius: 0; }
+.lang-tag.active { background: var(--moss); color: var(--paper); border-color: var(--moss); }
+
+.first-conv-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: start; }
+.first-conv-copy .intro { font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--moss); line-height: 1.45; margin: 0 0 1rem; font-weight: 500; max-width: 22ch; }
+.first-conv-copy .meta { font-size: 13px; color: var(--clay); letter-spacing: 0.12em; margin-bottom: 1.2rem; }
+.first-conv-copy .fallback { font-size: 13px; color: var(--off-black); margin-top: 1rem; }
+.first-conv-copy .fallback a { color: var(--moss); border-bottom: 0.5px dotted var(--clay); text-decoration: none; }
+
+.cal-box { background: var(--paper); border: 0.5px solid var(--clay-soft); padding: 24px; border-radius: 4px; }
+.cal-hdr { font-size: 12px; color: var(--clay); letter-spacing: 0.12em; margin-bottom: 6px; }
+.cal-day { font-family: var(--font-serif); font-size: 16px; color: var(--moss); font-style: italic; margin-bottom: 14px; }
+.cal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.cal-slot { padding: 11px; border: 0.5px solid var(--clay); font-size: 12px; color: var(--moss); text-align: center; background: var(--sage); border-radius: 0; cursor: pointer; transition: background 200ms, color 200ms; }
+.cal-slot:hover { background: var(--clay); color: var(--paper); border-color: var(--clay); }
+.cal-slot.taken { opacity: 0.3; text-decoration: line-through; cursor: not-allowed; }
+.cal-slot.selected { background: var(--moss); color: var(--paper); border-color: var(--moss); }
+
+.testimonial-stage { max-width: 62ch; min-height: 280px; }
+.qmark { font-family: var(--font-serif); font-size: 72px; color: var(--clay); line-height: 0.8; display: block; margin-bottom: -4px; }
+.testimonial-quote { font-family: var(--font-serif); font-style: italic; font-size: 22px; line-height: 1.55; color: var(--moss); font-weight: 400; margin: 0 0 1.4rem; transition: opacity 250ms ease; }
+.testimonial-attr { display: flex; align-items: center; gap: 12px; font-family: var(--font-serif); font-style: italic; font-size: 14px; color: var(--clay); letter-spacing: 0.02em; margin-bottom: 2rem; transition: opacity 250ms ease; }
+.testimonial-attr::before { content: ''; display: inline-block; width: 24px; height: 0.5px; background: var(--clay); }
+.carousel-nav { display: flex; align-items: center; gap: 16px; margin-top: 1rem; }
+.t-arrow { background: transparent; border: 0; color: var(--clay); font-size: 20px; cursor: pointer; padding: 6px 12px; font-family: inherit; transition: color 200ms; }
+.t-arrow:hover { color: var(--moss); }
+.t-dots { display: flex; gap: 8px; }
+.t-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--clay-soft); cursor: pointer; display: inline-block; transition: background 200ms; }
+.t-dots span.active { background: var(--moss); }
+.t-idx { font-size: 12px; color: var(--clay); font-family: 'SF Mono', Menlo, monospace; margin-left: 8px; }
+
+.about-grid { display: grid; grid-template-columns: 1.4fr 0.9fr; gap: 3rem; align-items: start; }
+.prose p { font-size: 17px; line-height: 1.75; margin: 0 0 1rem; max-width: 56ch; color: var(--moss); }
+.prose .caption-intro { font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--clay); margin: 1.5rem 0 0.5rem; }
+.bullet-list { list-style: none; padding: 0; margin: 0 0 1rem; }
+.bullet-list li { font-size: 15px; line-height: 1.75; color: var(--moss); margin: 0 0 0.4rem; max-width: 56ch; }
+.bullet-list li::before { content: '·'; color: var(--clay); margin-right: 12px; font-weight: 500; display: inline-block; }
+.portrait { aspect-ratio: 4 / 5; background: linear-gradient(145deg, #C4B194 0%, #A89178 100%); border-radius: 2px; margin-top: 2rem; }
+.caption { font-size: 12px; color: var(--clay); font-style: italic; margin-top: 8px; }
+
+blockquote.epigraph { font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--off-black); line-height: 1.55; max-width: 48ch; border-left: 0.5px solid var(--clay); border-radius: 0; padding-left: 22px; margin: 0 0 2.5rem; }
+.epigraph-attr { font-size: 12px; color: var(--clay); letter-spacing: 0.04em; margin-top: 10px; display: block; font-style: normal; }
+.approach-body { font-size: 17px; line-height: 1.75; max-width: 60ch; margin: 0 0 1.2rem; }
+.sublabel { font-size: 12px; color: var(--clay); letter-spacing: 0.15em; margin: 2.5rem 0 0.8rem; }
+.work-head { font-family: var(--font-serif); font-style: italic; font-size: 19px; color: var(--moss); font-weight: 500; margin: 1.8rem 0 0.4rem; max-width: 58ch; line-height: 1.35; }
+.work-para { font-size: 16px; line-height: 1.75; color: var(--moss); max-width: 60ch; margin: 0 0 0.4rem; }
+.methods { font-family: var(--font-serif); font-style: italic; font-size: 17px; color: var(--moss); line-height: 1.75; max-width: 60ch; margin: 0 0 1rem; }
+.methods-main { font-weight: 500; }
+.rest-list { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+.rest-list li { font-size: 16px; color: var(--moss); line-height: 2; }
+.rest-list li::before { content: '·'; color: var(--clay); margin-right: 12px; font-weight: 500; display: inline-block; }
+
+.ai-open { font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--moss); line-height: 1.5; max-width: 50ch; margin: 0 0 1.8rem; font-weight: 500; }
+.ai-body { font-size: 17px; line-height: 1.75; color: var(--moss); max-width: 60ch; margin: 0 0 1.2rem; }
+.ai-body.final { padding-top: 1rem; border-top: 0.5px solid var(--clay-soft); margin-top: 2rem; }
+
+.continuing-wrap { max-width: 54ch; }
+.continuing-intro { font-family: var(--font-serif); font-style: italic; font-size: 19px; color: var(--moss); margin: 0 0 1.8rem; font-weight: 500; }
+.price-group { margin-bottom: 1.6rem; }
+.price-group-title { font-size: 12px; color: var(--clay); letter-spacing: 0.15em; margin: 0 0 0.5rem; }
+.price-rows { border-top: 0.5px solid var(--clay-soft); }
+.price-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 0.5px dotted var(--clay-soft); color: var(--moss); font-size: 15px; border-radius: 0; }
+.price { color: var(--clay); font-family: 'SF Mono', Menlo, monospace; font-size: 13px; }
+.price-note { font-family: var(--font-serif); font-style: italic; font-size: 13px; color: var(--clay); margin: 0.6rem 0 0; }
+.secondary-link { font-size: 14px; color: var(--moss); border-bottom: 0.5px dashed var(--clay); padding-bottom: 2px; text-decoration: none; cursor: pointer; display: inline-block; transition: color 200ms; margin-top: 1rem; }
+.secondary-link:hover { color: var(--clay); }
+
+.photos-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.photo { aspect-ratio: 4 / 5; border-radius: 2px; }
+.photo-1 { background: linear-gradient(145deg, #C4B194 0%, #A89178 100%); }
+.photo-2 { background: linear-gradient(160deg, #A8B0A4 0%, #868E82 100%); }
+.photo-3 { background: linear-gradient(135deg, #D4C3A0 0%, #B5A281 100%); }
+
+footer { padding: 3rem 56px 2.5rem; border-top: 0.5px solid var(--clay-soft); max-width: 1100px; margin: 0 auto; }
+.sig { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--clay); text-align: center; margin-bottom: 2rem; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--off-black); gap: 16px; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 22px; }
+.footer-links a { color: var(--off-black); text-decoration: none; transition: color 200ms; }
+.footer-links a:hover { color: var(--moss); }
+
+@media (max-width: 820px) {
+  .wrap, nav.top, .hero, section.block, footer { padding-left: 28px; padding-right: 28px; }
+  .about-grid, .videos-grid, .photos-grid, .first-conv-wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .hero h1 { font-size: 36px; }
+  .hero { padding: 10vh 28px 8vh; }
+  section.block { padding: 4rem 28px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="brand"><span class="brand-dot"></span>terezie</div>
+  <div class="nav-right">
+    <span class="lang-toggle"><span class="dim">cs</span><span class="sep">·</span><span class="active">en</span></span>
+    <a href="#first-conversation" class="book-link">book →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>a slow space for the parts of you that don't speak first.</h1>
+  <p class="lede">coaching in czech or english. sessions online, occasionally in person.</p>
+  <a href="#first-conversation" class="btn-whisper">say hello</a>
+  <div class="scroll-hint"><span class="scroll-line"></span><span>scroll</span></div>
+</section>
+
+<section class="block">
+  <p class="label">a voice you can hear</p>
+  <hr class="hairline" />
+  <div class="videos-grid">
+    <div>
+      <div class="video-player"><div class="play-triangle"></div></div>
+      <ol class="chapters">
+        <li class="chapter-row"><span class="chapter-time">00:00</span><span>the question</span></li>
+        <li class="chapter-row"><span class="chapter-time">02:14</span><span>where we usually get stuck</span></li>
+        <li class="chapter-row"><span class="chapter-time">05:30</span><span>a different way in</span></li>
+      </ol>
+    </div>
+    <ul class="video-list">
+      <li class="video-item">
+        <p class="video-title">on the parts that don't speak first</p>
+        <div class="video-meta"><span class="lang-tag active">en</span><span>· 8 min</span></div>
+      </li>
+      <li class="video-item">
+        <p class="video-title">co je IFS a proč mě zajímá</p>
+        <div class="video-meta"><span class="lang-tag">cs</span><span>· 12 min</span></div>
+      </li>
+      <li class="video-item">
+        <p class="video-title">working with inner conflict</p>
+        <div class="video-meta"><span class="lang-tag">en</span><span>· 6 min</span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="first-conversation">
+  <p class="label">a first conversation</p>
+  <hr class="hairline" />
+  <div class="first-conv-wrap">
+    <div class="first-conv-copy">
+      <p class="intro">No agenda. Just to see if we're a fit.</p>
+      <p class="meta">FREE · 40 MIN · ONLINE</p>
+      <p class="fallback">or write: <a href="mailto:kosikova.terezie@gmail.com">kosikova.terezie@gmail.com</a></p>
+    </div>
+    <div class="cal-box">
+      <p class="cal-hdr">THURSDAY · APR 23</p>
+      <p class="cal-day">four times available</p>
+      <div class="cal-grid">
+        <div class="cal-slot">09:30</div>
+        <div class="cal-slot taken">11:00</div>
+        <div class="cal-slot selected">14:00</div>
+        <div class="cal-slot">16:30</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="label">words from clients</p>
+  <hr class="hairline" />
+  <div class="testimonial-stage">
+    <span class="qmark">&ldquo;</span>
+    <p class="testimonial-quote" id="tq">I worked with Terezie over a few sessions on emotional blockers I had around relationships and work. She had a wide array of frameworks that we experimented with until we found what works. A year later, I'd say 95% of my relationship issues and 50% of my work issues are gone, and I attribute around a third of that progress to Terezie.</p>
+    <div class="testimonial-attr" id="ta">Philipp Hummel</div>
+    <div class="carousel-nav">
+      <button class="t-arrow" id="prev" aria-label="previous testimonial">&larr;</button>
+      <div class="t-dots" id="dots">
+        <span class="active" data-i="0"></span>
+        <span data-i="1"></span>
+        <span data-i="2"></span>
+      </div>
+      <button class="t-arrow" id="next" aria-label="next testimonial">&rarr;</button>
+      <span class="t-idx" id="idx">1 / 3</span>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="label">about me</p>
+  <hr class="hairline" />
+  <div class="about-grid">
+    <div class="prose">
+      <p>I've been fascinated by the machinery of relationships since I was a child: between people, and between the parts of one person. What I mostly do now is help people untangle what's stuck.</p>
+      <p>Most of what I know came from my own inner work. I overcame conditioning from childhood that was quietly hurting me, moved from anxious to secure attachment, and found a way to be vulnerable without collapsing. I learned to communicate needs and boundaries without apologizing for them.</p>
+      <p class="caption-intro">A few other things about me:</p>
+      <ul class="bullet-list">
+        <li>I taught myself public speaking by doing stand-up comedy.</li>
+        <li>I go to silent meditation retreats, including jhana-focused ones at Jhourney.</li>
+        <li>I take cold baths (ask me why).</li>
+        <li>I dance contact improvisation.</li>
+        <li>I love Radical Honesty, including expressing anger out loud.</li>
+        <li>I love women's circles and rituals.</li>
+        <li>I practice tantra.</li>
+        <li>I have a lifelong passion for trying new therapeutic approaches and experiences.</li>
+        <li>I consider myself a rationalist, and I'm part of the effective altruism movement.</li>
+      </ul>
+      <p style="margin-top: 1.5rem;">My background isn't a straight line: law at Charles University, journalism at e15 and Heroine, communications for a Czech democracy NGO, and community and mental-health work for the effective altruism movement (on grants from CEA and the EA Infrastructure Fund). I also work as a programmer on my own projects.</p>
+      <p>I believe diversity is a feature. I've collected models about the world, psychology, and relationships that I can share with you.</p>
+    </div>
+    <figure style="margin: 0;">
+      <div class="portrait"></div>
+      <figcaption class="caption">nebušice, afternoon</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="block">
+  <p class="label">my approach</p>
+  <hr class="hairline" />
+
+  <blockquote class="epigraph">
+    "I can always choose, but I ought to know that if I do not choose, I am still choosing."
+    <span class="epigraph-attr">Jean-Paul Sartre</span>
+  </blockquote>
+
+  <p class="approach-body">I'd be honored to guide you through your exploration or change.</p>
+  <p class="approach-body">My work is a bundle. The first couple of conversations are more talking and questioning: motivational interviewing, Socratic questioning, getting clear on what you want. Going deeper, I reach for IFS, mindfulness, and body-based work. Radical Honesty for messy emotions. Attachment theory sits underneath all of it.</p>
+  <p class="approach-body">Most clients know rationally what the pattern is but can't seem to change it. Body and emotion work can shift what talk alone can't reach.</p>
+  <p class="approach-body">I won't tell you what to do. I think epistemically, in probabilities, and you know more about your life than I do. But I'll offer opinions, models, and frames without pressure. You'll feel which ones resonate.</p>
+
+  <p class="sublabel">things I often work with</p>
+
+  <p class="work-head">Patterns and habits that won't change.</p>
+  <p class="work-para">You understand the pattern. It keeps happening anyway. IFS and mindfulness can reach what talk alone can't.</p>
+
+  <p class="work-head">Messy emotions you haven't found a way to bring into your life.</p>
+  <p class="work-para">Anger, grief, resentment that feel dangerous to name. I use Radical Honesty to help you express them without losing the relationship.</p>
+
+  <p class="work-head">Couples, conflict, and sexuality.</p>
+  <p class="work-para">Tantra and polarity for couples stuck in one mode. Attachment work when conflict escalates. Sexuality: knowing it from the inside.</p>
+
+  <p class="work-head">AI dread, p(doom), and existential weight.</p>
+  <p class="work-para">If it sits heavy in your body, we work with it there. IFS for the fear, rationality for the beliefs, mindfulness for the somatic load.</p>
+
+  <p class="work-head">States worth visiting.</p>
+  <p class="work-para">I've trained jhana at Jhourney retreats. Deliberate pleasure and absorption, as a different reference point when your nervous system is stuck in effort.</p>
+
+  <p class="sublabel">the rest</p>
+  <ul class="rest-list">
+    <li>setting intentions and working with motivation</li>
+    <li>relationships and dating, attachment issues</li>
+    <li>emotions, needs, and boundaries</li>
+    <li>self-acceptance and self-worth</li>
+  </ul>
+
+  <p class="sublabel">what I draw from</p>
+  <p class="methods">The methods I work with most: <span class="methods-main">internal family systems, mindfulness (in the Shinzen Young tradition), Radical Honesty, and motivational interviewing / Socratic questioning.</span> Attachment theory sits underneath all of them.</p>
+  <p class="methods">Also in the bundle: tantra and polarity · jhana practice · nonviolent communication · cognitive behavioral therapy · ideal parental figure protocol / inner child work · behavioral change</p>
+
+  <p class="sublabel">practices I live in</p>
+  <p class="methods">meditation · jhana · embodiment (contact improvisation) · breath work · journaling · weight lifting · holistic rituals</p>
+
+  <p class="sublabel">training</p>
+  <p class="methods">coach level 2, unified mindfulness · motivational interviewing with tucker peck · one year of self-experienced group therapy · nonviolent communication course · CBT cognitive behavior therapy life coaching certification · radical honesty retreat · women's circles and rituals · meditation and jhana retreats</p>
+</section>
+
+<section class="block">
+  <p class="label">a note on AI</p>
+  <hr class="hairline" />
+
+  <p class="ai-open">I'm also a programmer. That's why I can build custom AI tools for the work we do together.</p>
+
+  <p class="ai-body">I've trained AI agents on hundreds of books I use in coaching: IFS, Radical Honesty, NVC, tantra, mindfulness, Motivational Interviewing, CBT, and others. They give me something most coaches don't have: fast access to relevant material, tailored to what's happening in your life.</p>
+
+  <p class="ai-body">Between sessions, I run your material (with your permission, your redactions, your framing) through these agents. They help me prepare for our next session: a pattern I might have missed, a frame worth trying, a specific exercise from a book I haven't re-read in a while.</p>
+
+  <p class="ai-body">During sessions, when something specific surfaces and I want to bring an external lens in, I can query the agents in a few seconds instead of telling you to go read a book you won't have time for.</p>
+
+  <p class="ai-body">After each session, you get a transcription and a summary that you own. A week later you can re-read what we worked on and see what still holds.</p>
+
+  <p class="ai-body final">I keep this visible in how I work. If you'd rather we don't use AI tools at any point, that's a clean choice, and I'll respect it.</p>
+</section>
+
+<section class="block">
+  <p class="label">continuing sessions</p>
+  <hr class="hairline" />
+  <div class="continuing-wrap">
+    <p class="continuing-intro">For people we're already working together.</p>
+
+    <div class="price-group">
+      <p class="price-group-title">INDIVIDUAL</p>
+      <div class="price-rows">
+        <div class="price-row"><span>60 min</span><span class="price">130 USD / 2 500 Kč</span></div>
+        <div class="price-row"><span>90 min</span><span class="price">160 USD / 3 000 Kč</span></div>
+      </div>
+    </div>
+
+    <div class="price-group">
+      <p class="price-group-title">COUPLE</p>
+      <div class="price-rows">
+        <div class="price-row"><span>100 min</span><span class="price">200 USD / 3 500 Kč</span></div>
+      </div>
+      <p class="price-note">Czech couple sessions meet in person.</p>
+    </div>
+
+    <a class="secondary-link">book your session &rarr;</a>
+  </div>
+</section>
+
+<section class="block">
+  <p class="label">who you'd be working with</p>
+  <hr class="hairline" />
+  <div class="photos-grid">
+    <figure style="margin: 0;">
+      <div class="photo photo-1"></div>
+      <figcaption class="caption">morning, mid-thought</figcaption>
+    </figure>
+    <figure style="margin: 0;">
+      <div class="photo photo-2"></div>
+      <figcaption class="caption">in session, listening</figcaption>
+    </figure>
+    <figure style="margin: 0;">
+      <div class="photo photo-3"></div>
+      <figcaption class="caption">hands, a notebook, a question</figcaption>
+    </figure>
+  </div>
+</section>
+
+<footer>
+  <p class="sig">the slow way is the real way.</p>
+  <div class="footer-row">
+    <div class="brand" style="font-size: 13px;"><span class="brand-dot"></span>terezie</div>
+    <div class="footer-links">
+      <a href="mailto:kosikova.terezie@gmail.com">email</a>
+      <a href="#">youtube</a>
+      <a href="#">blog</a>
+    </div>
+    <span class="lang-toggle"><span class="dim">cs</span><span class="sep">·</span><span class="active">en</span></span>
+  </div>
+</footer>
+
+<script>
+const testimonials = [
+  { q: "I worked with Terezie over a few sessions on emotional blockers I had around relationships and work. She had a wide array of frameworks that we experimented with until we found what works. A year later, I'd say 95% of my relationship issues and 50% of my work issues are gone, and I attribute around a third of that progress to Terezie.", a: "Philipp Hummel" },
+  { q: "Terezie is a great listener and knows which questions to ask to help you make progress on the issues in your life. Rather than imposing her way of solving problems she empowers you to tackle them your way, which makes all the difference for me in terms of long-term motivation to follow through. I value that she can recommend techniques from both the rationality and more holistic approaches. Terezie has helped me make a big, at the time scary, and in retrospect very positive change in my career.", a: "Maxime Riche" },
+  { q: "The thing I like most is that Terezie's sessions are very actionable, and she'll send a follow-up email with what we discussed and actions from the session. She has a good understanding of effective altruism and the CFAR techniques which makes our conversations a lot easier. Because our sessions feel safe and I never feel judged I can be more open and honest about problems and challenges.", a: "Johan E." }
+];
+let current = 0;
+const tq = document.getElementById('tq');
+const ta = document.getElementById('ta');
+const idx = document.getElementById('idx');
+const dots = document.querySelectorAll('#dots span');
+
+function show(i) {
+  tq.style.opacity = 0;
+  ta.style.opacity = 0;
+  setTimeout(() => {
+    tq.textContent = testimonials[i].q;
+    ta.textContent = testimonials[i].a;
+    idx.textContent = (i + 1) + ' / ' + testimonials.length;
+    dots.forEach((d, j) => d.classList.toggle('active', j === i));
+    tq.style.opacity = 1;
+    ta.style.opacity = 1;
+  }, 250);
+  current = i;
+}
+
+document.getElementById('prev').addEventListener('click', () => show((current - 1 + testimonials.length) % testimonials.length));
+document.getElementById('next').addEventListener('click', () => show((current + 1) % testimonials.length));
+dots.forEach(d => d.addEventListener('click', () => show(parseInt(d.dataset.i))));
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') show((current - 1 + testimonials.length) % testimonials.length);
+  if (e.key === 'ArrowRight') show((current + 1) % testimonials.length);
+});
+</script>
+</body>
+</html>

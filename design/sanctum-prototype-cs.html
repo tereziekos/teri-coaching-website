@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>terezie · česká verze</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --sage: #D8DDD3;
+  --paper: #EEEFEA;
+  --moss: #2B3A2A;
+  --clay: #A89A7B;
+  --clay-soft: rgba(168, 154, 123, 0.3);
+  --clay-ghost: rgba(168, 154, 123, 0.2);
+  --moss-soft: rgba(43, 58, 42, 0.4);
+  --off-black: #6E6A5C;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--sage); color: var(--moss); font-family: var(--font-sans); font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 56px; }
+
+nav.top { display: flex; justify-content: space-between; align-items: center; padding: 22px 56px; border-bottom: 0.5px solid var(--clay-ghost); position: sticky; top: 0; background: var(--sage); z-index: 10; }
+.brand { font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--moss); display: flex; align-items: center; gap: 10px; }
+.brand-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--clay); }
+.nav-right { display: flex; align-items: center; gap: 28px; }
+.lang-toggle { font-size: 13px; color: var(--moss); letter-spacing: 0.06em; user-select: none; }
+.lang-toggle .active { font-weight: 500; }
+.lang-toggle .dim { color: var(--moss-soft); }
+.lang-toggle .sep { color: var(--clay); margin: 0 7px; }
+.book-link { font-size: 13px; color: var(--moss); text-decoration: none; border-bottom: 0.5px dashed var(--clay); padding-bottom: 2px; transition: color 200ms, border-color 200ms; }
+.book-link:hover { color: var(--clay); border-color: var(--moss); }
+
+.hero { padding: 14vh 56px 10vh; min-height: 86vh; display: flex; flex-direction: column; justify-content: center; max-width: 1100px; margin: 0 auto; }
+.hero h1 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(34px, 5.2vw, 64px); line-height: 1.05; color: var(--moss); max-width: 20ch; margin: 0 0 2rem; letter-spacing: -0.3px; }
+.hero .lede { font-size: 17px; color: var(--off-black); max-width: 46ch; margin: 0 0 2.2rem; }
+.btn-whisper { align-self: flex-start; font-family: var(--font-sans); font-size: 14px; padding: 12px 26px; border: 0.5px dashed var(--clay); border-radius: 0; color: var(--moss); background: transparent; text-decoration: none; letter-spacing: 0.04em; cursor: pointer; transition: border-color 300ms, color 300ms; }
+.btn-whisper:hover { border-color: var(--moss); }
+.scroll-hint { margin-top: 3.5rem; display: flex; align-items: center; gap: 12px; color: var(--clay); font-size: 12px; letter-spacing: 0.15em; }
+.scroll-line { width: 24px; height: 0.5px; background: var(--clay); }
+
+section.block { padding: 6rem 56px; max-width: 1100px; margin: 0 auto; }
+.label { font-size: 12px; letter-spacing: 0.2em; color: var(--clay); margin-bottom: 1rem; }
+.hairline { height: 0.5px; background: var(--clay-soft); margin-bottom: 2.5rem; border: 0; }
+
+.videos-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; }
+.video-player { background: var(--moss); aspect-ratio: 16 / 9; border-radius: 3px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.play-triangle { width: 0; height: 0; border-left: 18px solid rgba(232, 226, 213, 0.75); border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 4px; }
+.chapters { margin-top: 1.2rem; font-size: 13px; list-style: none; padding: 0; }
+.chapter-row { padding: 7px 0; border-bottom: 0.5px dotted var(--clay-soft); display: flex; gap: 16px; color: var(--moss); cursor: pointer; border-radius: 0; }
+.chapter-row:last-child { border-bottom: 0; }
+.chapter-row:hover { color: var(--clay); }
+.chapter-time { color: var(--clay); font-family: 'SF Mono', Menlo, monospace; font-size: 12px; min-width: 48px; }
+.video-list { display: flex; flex-direction: column; gap: 1rem; list-style: none; padding: 0; margin: 0; }
+.video-item { padding-bottom: 14px; border-bottom: 0.5px solid var(--clay-ghost); cursor: pointer; border-radius: 0; }
+.video-item:last-child { border-bottom: 0; }
+.video-title { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--moss); line-height: 1.3; margin: 0 0 6px; }
+.video-meta { font-size: 12px; color: var(--clay); display: flex; gap: 10px; align-items: center; }
+.lang-tag { padding: 2px 7px; border: 0.5px solid var(--clay); font-size: 11px; letter-spacing: 0.06em; border-radius: 0; }
+.lang-tag.active { background: var(--moss); color: var(--paper); border-color: var(--moss); }
+
+.first-conv-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: start; }
+.first-conv-copy .intro { font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--moss); line-height: 1.45; margin: 0 0 1rem; font-weight: 500; max-width: 24ch; }
+.first-conv-copy .meta { font-size: 13px; color: var(--clay); letter-spacing: 0.12em; margin-bottom: 1.2rem; }
+.first-conv-copy .fallback { font-size: 13px; color: var(--off-black); margin-top: 1rem; }
+.first-conv-copy .fallback a { color: var(--moss); border-bottom: 0.5px dotted var(--clay); text-decoration: none; }
+
+.cal-box { background: var(--paper); border: 0.5px solid var(--clay-soft); padding: 24px; border-radius: 4px; }
+.cal-hdr { font-size: 12px; color: var(--clay); letter-spacing: 0.12em; margin-bottom: 6px; }
+.cal-day { font-family: var(--font-serif); font-size: 16px; color: var(--moss); font-style: italic; margin-bottom: 14px; }
+.cal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.cal-slot { padding: 11px; border: 0.5px solid var(--clay); font-size: 12px; color: var(--moss); text-align: center; background: var(--sage); border-radius: 0; cursor: pointer; transition: background 200ms, color 200ms; }
+.cal-slot:hover { background: var(--clay); color: var(--paper); border-color: var(--clay); }
+.cal-slot.taken { opacity: 0.3; text-decoration: line-through; cursor: not-allowed; }
+.cal-slot.selected { background: var(--moss); color: var(--paper); border-color: var(--moss); }
+
+.testimonial-stage { max-width: 62ch; min-height: 280px; }
+.qmark { font-family: var(--font-serif); font-size: 72px; color: var(--clay); line-height: 0.8; display: block; margin-bottom: -4px; }
+.testimonial-quote { font-family: var(--font-serif); font-style: italic; font-size: 21px; line-height: 1.55; color: var(--moss); font-weight: 400; margin: 0 0 1.4rem; transition: opacity 250ms ease; }
+.testimonial-attr { display: flex; align-items: center; gap: 12px; font-family: var(--font-serif); font-style: italic; font-size: 14px; color: var(--clay); letter-spacing: 0.02em; margin-bottom: 0.6rem; transition: opacity 250ms ease; }
+.testimonial-attr::before { content: ''; display: inline-block; width: 24px; height: 0.5px; background: var(--clay); }
+.testimonial-note { font-size: 11px; color: var(--clay); font-style: italic; margin-bottom: 2rem; padding-left: 36px; }
+.carousel-nav { display: flex; align-items: center; gap: 16px; margin-top: 1rem; }
+.t-arrow { background: transparent; border: 0; color: var(--clay); font-size: 20px; cursor: pointer; padding: 6px 12px; font-family: inherit; transition: color 200ms; }
+.t-arrow:hover { color: var(--moss); }
+.t-dots { display: flex; gap: 8px; }
+.t-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--clay-soft); cursor: pointer; display: inline-block; transition: background 200ms; }
+.t-dots span.active { background: var(--moss); }
+.t-idx { font-size: 12px; color: var(--clay); font-family: 'SF Mono', Menlo, monospace; margin-left: 8px; }
+
+.about-grid { display: grid; grid-template-columns: 1.4fr 0.9fr; gap: 3rem; align-items: start; }
+.prose p { font-size: 17px; line-height: 1.75; margin: 0 0 1rem; max-width: 58ch; color: var(--moss); }
+.prose .caption-intro { font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--clay); margin: 1.5rem 0 0.5rem; }
+.bullet-list { list-style: none; padding: 0; margin: 0 0 1rem; }
+.bullet-list li { font-size: 15px; line-height: 1.75; color: var(--moss); margin: 0 0 0.4rem; max-width: 58ch; }
+.bullet-list li::before { content: '·'; color: var(--clay); margin-right: 12px; font-weight: 500; display: inline-block; }
+.portrait { aspect-ratio: 4 / 5; background: linear-gradient(145deg, #C4B194 0%, #A89178 100%); border-radius: 2px; margin-top: 2rem; }
+.caption { font-size: 12px; color: var(--clay); font-style: italic; margin-top: 8px; }
+
+blockquote.epigraph { font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--off-black); line-height: 1.55; max-width: 50ch; border-left: 0.5px solid var(--clay); border-radius: 0; padding-left: 22px; margin: 0 0 2.5rem; }
+.epigraph-attr { font-size: 12px; color: var(--clay); letter-spacing: 0.04em; margin-top: 10px; display: block; font-style: normal; }
+.approach-body { font-size: 17px; line-height: 1.75; max-width: 62ch; margin: 0 0 1.2rem; }
+.sublabel { font-size: 12px; color: var(--clay); letter-spacing: 0.15em; margin: 2.5rem 0 0.8rem; }
+.work-head { font-family: var(--font-serif); font-style: italic; font-size: 19px; color: var(--moss); font-weight: 500; margin: 1.8rem 0 0.4rem; max-width: 60ch; line-height: 1.35; }
+.work-para { font-size: 16px; line-height: 1.75; color: var(--moss); max-width: 62ch; margin: 0 0 0.4rem; }
+.methods { font-family: var(--font-serif); font-style: italic; font-size: 17px; color: var(--moss); line-height: 1.75; max-width: 64ch; margin: 0 0 1rem; }
+.methods-main { font-weight: 500; }
+.rest-list { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+.rest-list li { font-size: 16px; color: var(--moss); line-height: 2; }
+.rest-list li::before { content: '·'; color: var(--clay); margin-right: 12px; font-weight: 500; display: inline-block; }
+
+.ai-open { font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--moss); line-height: 1.5; max-width: 52ch; margin: 0 0 1.8rem; font-weight: 500; }
+.ai-body { font-size: 17px; line-height: 1.75; color: var(--moss); max-width: 62ch; margin: 0 0 1.2rem; }
+.ai-body.final { padding-top: 1rem; border-top: 0.5px solid var(--clay-soft); margin-top: 2rem; }
+
+.continuing-wrap { max-width: 54ch; }
+.continuing-intro { font-family: var(--font-serif); font-style: italic; font-size: 19px; color: var(--moss); margin: 0 0 1.8rem; font-weight: 500; }
+.price-group { margin-bottom: 1.6rem; }
+.price-group-title { font-size: 12px; color: var(--clay); letter-spacing: 0.15em; margin: 0 0 0.5rem; }
+.price-rows { border-top: 0.5px solid var(--clay-soft); }
+.price-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 0.5px dotted var(--clay-soft); color: var(--moss); font-size: 15px; border-radius: 0; }
+.price { color: var(--clay); font-family: 'SF Mono', Menlo, monospace; font-size: 13px; }
+.price-note { font-family: var(--font-serif); font-style: italic; font-size: 13px; color: var(--clay); margin: 0.6rem 0 0; }
+.secondary-link { font-size: 14px; color: var(--moss); border-bottom: 0.5px dashed var(--clay); padding-bottom: 2px; text-decoration: none; cursor: pointer; display: inline-block; transition: color 200ms; margin-top: 1rem; }
+.secondary-link:hover { color: var(--clay); }
+
+.photos-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.photo { aspect-ratio: 4 / 5; border-radius: 2px; }
+.photo-1 { background: linear-gradient(145deg, #C4B194 0%, #A89178 100%); }
+.photo-2 { background: linear-gradient(160deg, #A8B0A4 0%, #868E82 100%); }
+.photo-3 { background: linear-gradient(135deg, #D4C3A0 0%, #B5A281 100%); }
+
+footer { padding: 3rem 56px 2.5rem; border-top: 0.5px solid var(--clay-soft); max-width: 1100px; margin: 0 auto; }
+.sig { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--clay); text-align: center; margin-bottom: 2rem; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--off-black); gap: 16px; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 22px; }
+.footer-links a { color: var(--off-black); text-decoration: none; transition: color 200ms; }
+.footer-links a:hover { color: var(--moss); }
+
+@media (max-width: 820px) {
+  .wrap, nav.top, .hero, section.block, footer { padding-left: 28px; padding-right: 28px; }
+  .about-grid, .videos-grid, .photos-grid, .first-conv-wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .hero h1 { font-size: 32px; }
+  .hero { padding: 10vh 28px 8vh; }
+  section.block { padding: 4rem 28px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="brand"><span class="brand-dot"></span>terezie</div>
+  <div class="nav-right">
+    <span class="lang-toggle"><span class="active">cs</span><span class="sep">·</span><span class="dim">en</span></span>
+    <a href="#first-conversation" class="book-link">rezervovat →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>pomalý prostor pro ty části tebe, které nemluví jako první.</h1>
+  <p class="lede">koučink, česky nebo anglicky. sezení online, občas osobně.</p>
+  <a href="#first-conversation" class="btn-whisper">napiš mi</a>
+  <div class="scroll-hint"><span class="scroll-line"></span><span>scroll</span></div>
+</section>
+
+<section class="block">
+  <p class="label">hlas, který můžeš slyšet</p>
+  <hr class="hairline" />
+  <div class="videos-grid">
+    <div>
+      <div class="video-player"><div class="play-triangle"></div></div>
+      <ol class="chapters">
+        <li class="chapter-row"><span class="chapter-time">00:00</span><span>otázka</span></li>
+        <li class="chapter-row"><span class="chapter-time">02:14</span><span>kde se obvykle zasekáváme</span></li>
+        <li class="chapter-row"><span class="chapter-time">05:30</span><span>jiná cesta dovnitř</span></li>
+      </ol>
+    </div>
+    <ul class="video-list">
+      <li class="video-item">
+        <p class="video-title">o částech, které nemluví jako první</p>
+        <div class="video-meta"><span class="lang-tag">en</span><span>· 8 min</span></div>
+      </li>
+      <li class="video-item">
+        <p class="video-title">co je IFS a proč mě zajímá</p>
+        <div class="video-meta"><span class="lang-tag active">cs</span><span>· 12 min</span></div>
+      </li>
+      <li class="video-item">
+        <p class="video-title">práce s vnitřním konfliktem</p>
+        <div class="video-meta"><span class="lang-tag">en</span><span>· 6 min</span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="first-conversation">
+  <p class="label">první rozhovor</p>
+  <hr class="hairline" />
+  <div class="first-conv-wrap">
+    <div class="first-conv-copy">
+      <p class="intro">Bez agendy. Jen abychom zjistili, jestli nám to sedí.</p>
+      <p class="meta">ZDARMA · 40 MIN · ONLINE</p>
+      <p class="fallback">nebo mi napiš: <a href="mailto:kosikova.terezie@gmail.com">kosikova.terezie@gmail.com</a></p>
+    </div>
+    <div class="cal-box">
+      <p class="cal-hdr">ČTVRTEK · 23. DUBNA</p>
+      <p class="cal-day">čtyři časy k dispozici</p>
+      <div class="cal-grid">
+        <div class="cal-slot">09:30</div>
+        <div class="cal-slot taken">11:00</div>
+        <div class="cal-slot selected">14:00</div>
+        <div class="cal-slot">16:30</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="label">slova klientů</p>
+  <hr class="hairline" />
+  <div class="testimonial-stage">
+    <span class="qmark">&ldquo;</span>
+    <p class="testimonial-quote" id="tq">S Terezií jsem pracoval na několika sezeních na emočních blocích kolem vztahů a práce. Měla širokou škálu rámců, které jsme zkoušeli, dokud jsme nenašli to, co funguje. O rok později bych řekl, že 95 % mých vztahových problémů a 50 % pracovních je pryč, a asi třetinu toho přisuzuji Terezii.</p>
+    <div class="testimonial-attr" id="ta">Philipp Hummel</div>
+    <p class="testimonial-note">(anglicky psaná reference, přeloženo pro zobrazení)</p>
+    <div class="carousel-nav">
+      <button class="t-arrow" id="prev" aria-label="předchozí reference">&larr;</button>
+      <div class="t-dots" id="dots">
+        <span class="active" data-i="0"></span>
+        <span data-i="1"></span>
+        <span data-i="2"></span>
+      </div>
+      <button class="t-arrow" id="next" aria-label="další reference">&rarr;</button>
+      <span class="t-idx" id="idx">1 / 3</span>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="label">o mně</p>
+  <hr class="hairline" />
+  <div class="about-grid">
+    <div class="prose">
+      <p>Od dětství mě fascinuje, jak fungují vztahy: mezi lidmi i mezi různými částmi jednoho člověka. Většinu času teď pomáhám lidem rozplétat to, co se zaseklo.</p>
+      <p>Většina toho, co umím, pochází z mé vlastní vnitřní práce. Překonala jsem podmínění z dětství, které mě tiše zraňovalo, přešla jsem z úzkostné vazby k bezpečné a našla jsem způsob, jak být zranitelná, aniž bych se hroutila. Naučila jsem se komunikovat své potřeby a hranice bez omluvy.</p>
+      <p class="caption-intro">Pár dalších věcí o mně:</p>
+      <ul class="bullet-list">
+        <li>Naučila jsem se mluvit na veřejnosti díky stand-up komedii.</li>
+        <li>Chodím na tiché meditační pobyty, včetně těch zaměřených na džhány od Jhourney.</li>
+        <li>Dávám si studené koupele (zeptej se mě proč).</li>
+        <li>Tančím kontaktní improvizaci.</li>
+        <li>Miluji Radical Honesty, včetně vyslovování vzteku nahlas.</li>
+        <li>Miluji ženské kruhy a rituály.</li>
+        <li>Praktikuji tantru.</li>
+        <li>Mám celoživotní vášeň pro zkoušení nových terapeutických přístupů a zkušeností.</li>
+        <li>Považuji se za racionalistku a jsem součástí hnutí efektivního altruismu.</li>
+      </ul>
+      <p style="margin-top: 1.5rem;">Moje cesta nebyla přímočará: práva na Karlově univerzitě, novinařina v e15 a Heroine, komunikace pro českou neziskovku zaměřenou na demokratickou participaci, a komunitní i mental-health práce pro hnutí efektivního altruismu (s granty od CEA a EA Infrastructure Fund). Vedle toho pracuji jako programátorka na vlastních projektech.</p>
+      <p>Věřím, že rozmanitost je výhoda. Nasbírala jsem si modely o světě, psychologii a vztazích, o které se s tebou můžu podělit.</p>
+    </div>
+    <figure style="margin: 0;">
+      <div class="portrait"></div>
+      <figcaption class="caption">nebušice, odpoledne</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="block">
+  <p class="label">můj přístup</p>
+  <hr class="hairline" />
+
+  <blockquote class="epigraph">
+    "Vždycky si můžu vybrat, ale měl bych vědět, že když si nevybírám, stejně si vybírám."
+    <span class="epigraph-attr">Jean-Paul Sartre</span>
+  </blockquote>
+
+  <p class="approach-body">Bude mi ctí tě provázet tvým zkoumáním nebo změnou.</p>
+  <p class="approach-body">Moje práce je soubor přístupů. Prvních pár sezení je víc o mluvení a otázkách: motivační rozhovor, sokratovské dotazování, ujasňování toho, co vlastně chceš. Když jdeme hlouběji, sahám po IFS, všímavosti a práci s tělem. Radical Honesty pro těžké emoce. Teorie attachmentu leží pod tím vším jako rámec, ve kterém přemýšlím.</p>
+  <p class="approach-body">Většina klientů ví racionálně, jaký je vzorec, ale nedaří se jim ho změnit. To je místo, kde práce s tělem a emocemi posouvá to, kam samotné mluvení nedosáhne.</p>
+  <p class="approach-body">Nebudu ti říkat, co máš dělat. Přemýšlím epistemicky, v pravděpodobnostech, a ty víš o svém životě víc než já. Ale nabídnu ti názory, modely a rámce bez tlaku. Ty sám nebo sama poznáš, které rezonují.</p>
+
+  <p class="sublabel">věci, se kterými často pracuji</p>
+
+  <p class="work-head">Vzorce a návyky, které se nemění.</p>
+  <p class="work-para">Vzorci rozumíš. Stejně se to pořád děje. IFS a všímavost dokážou dosáhnout tam, kam samotné mluvení ne.</p>
+
+  <p class="work-head">Těžké emoce, které nedokážeš vpustit do života.</p>
+  <p class="work-para">Vztek, který nevíš jak vyslovit. Žal ve špatných chvílích. Zášť, kterou jakoby pojmenováním rozbiješ něco důležitého. Používám Radical Honesty jako rámec, jak je vyjádřit bez ztráty vztahu.</p>
+
+  <p class="work-head">Páry, konflikt a sexualita.</p>
+  <p class="work-para">Tantra a polarita pro páry zaseklé v jednom módu. Attachment práce, když se konflikt stupňuje. Sexualita: poznat ji zevnitř.</p>
+
+  <p class="work-head">AI dread, p(doom) a existenciální tíha.</p>
+  <p class="work-para">Když ti to sedí v těle, pracujeme s tím tam. IFS pro tu část, co nese strach, racionalita pro přesvědčení, všímavost pro to, co se děje v těle.</p>
+
+  <p class="work-head">Stavy, které stojí za návštěvu.</p>
+  <p class="work-para">Trénovala jsem džhánu na pobytech Jhourney. Záměrná rozkoš a pohroužení jako jiný referenční bod, když tvůj nervový systém uvízl v úsilí.</p>
+
+  <p class="sublabel">zbytek</p>
+  <ul class="rest-list">
+    <li>nastavování záměrů a práce s motivací</li>
+    <li>vztahy a dating, potíže s attachmentem</li>
+    <li>emoce, potřeby a hranice</li>
+    <li>sebepřijetí a sebehodnota</li>
+  </ul>
+
+  <p class="sublabel">odkud čerpám</p>
+  <p class="methods">Metody, se kterými pracuji nejvíc: <span class="methods-main">internal family systems, všímavost (v tradici Shinzena Younga), Radical Honesty a motivační rozhovor / sokratovské dotazování.</span> Teorie attachmentu leží pod tím vším.</p>
+  <p class="methods">Také v mém souboru: tantra a polarita · džhánová praxe · nenásilná komunikace · kognitivně behaviorální terapie · ideal parental figure protocol / práce s vnitřním dítětem · behaviorální změna</p>
+
+  <p class="sublabel">praktiky, kterými žiju</p>
+  <p class="methods">meditace · džhána · ztělesnění (kontaktní improvizace) · práce s dechem · deníkování · posilování · holistické rituály</p>
+
+  <p class="sublabel">výcvik</p>
+  <p class="methods">coach level 2, unified mindfulness · motivační rozhovor s Tuckerem Peckem · rok sebezkušenostní skupinové terapie · kurz nenásilné komunikace · certifikace CBT life coaching · pobyt Radical Honesty · ženské kruhy a rituály · meditační a džhánové pobyty</p>
+</section>
+
+<section class="block">
+  <p class="label">poznámka o AI</p>
+  <hr class="hairline" />
+
+  <p class="ai-open">Jsem taky programátorka. Proto pro naši společnou práci umím stavět vlastní AI nástroje.</p>
+
+  <p class="ai-body">Natrénovala jsem AI agenty na stovkách knih, které v koučinku používám: IFS, Radical Honesty, NVC, tantra, všímavost, motivační rozhovor, CBT a další. Dávají mi něco, co většina koučů nemá: rychlý přístup k relevantnímu materiálu, šitému na to, co se ti právě děje v životě.</p>
+
+  <p class="ai-body">Mezi sezeními projíždím tvůj materiál (s tvým svolením, v tvých úpravách, v tvém rámování) přes tyto agenty. Pomáhají mi připravit se na další sezení: vzorec, kterého jsem si možná nevšimla, rámec, který stojí za vyzkoušení, konkrétní cvičení z knihy, kterou jsem dlouho nečetla.</p>
+
+  <p class="ai-body">Během sezení, když se vynoří něco konkrétního a chci přinést vnější pohled, se agentů můžu zeptat za pár vteřin, místo abych tě posílala číst knihu, na kterou stejně nebudeš mít čas.</p>
+
+  <p class="ai-body">Po každém sezení dostaneš přepis a shrnutí, které je tvé. Za týden si můžeš přečíst, na čem jsme pracovali, a uvidíš, co stále platí.</p>
+
+  <p class="ai-body final">Tohle nechávám viditelné v tom, jak pracuji. Pokud bys radši, abychom AI nástroje v žádném okamžiku nepoužívali, je to čistá volba, kterou budu respektovat.</p>
+</section>
+
+<section class="block">
+  <p class="label">pokračující sezení</p>
+  <hr class="hairline" />
+  <div class="continuing-wrap">
+    <p class="continuing-intro">Pro ty, s kým už spolupracujeme.</p>
+
+    <div class="price-group">
+      <p class="price-group-title">INDIVIDUÁLNÍ</p>
+      <div class="price-rows">
+        <div class="price-row"><span>60 min</span><span class="price">2 500 Kč / 130 USD</span></div>
+        <div class="price-row"><span>90 min</span><span class="price">3 000 Kč / 160 USD</span></div>
+      </div>
+    </div>
+
+    <div class="price-group">
+      <p class="price-group-title">PÁROVÉ</p>
+      <div class="price-rows">
+        <div class="price-row"><span>100 min</span><span class="price">3 500 Kč / 200 USD</span></div>
+      </div>
+      <p class="price-note">České párové sezení probíhají osobně.</p>
+    </div>
+
+    <a class="secondary-link">rezervovat sezení &rarr;</a>
+  </div>
+</section>
+
+<section class="block">
+  <p class="label">s kým budeš pracovat</p>
+  <hr class="hairline" />
+  <div class="photos-grid">
+    <figure style="margin: 0;">
+      <div class="photo photo-1"></div>
+      <figcaption class="caption">ráno, uprostřed myšlenky</figcaption>
+    </figure>
+    <figure style="margin: 0;">
+      <div class="photo photo-2"></div>
+      <figcaption class="caption">při sezení, poslech</figcaption>
+    </figure>
+    <figure style="margin: 0;">
+      <div class="photo photo-3"></div>
+      <figcaption class="caption">ruce, zápisník, otázka</figcaption>
+    </figure>
+  </div>
+</section>
+
+<footer>
+  <p class="sig">pomalá cesta je ta pravá.</p>
+  <div class="footer-row">
+    <div class="brand" style="font-size: 13px;"><span class="brand-dot"></span>terezie</div>
+    <div class="footer-links">
+      <a href="mailto:kosikova.terezie@gmail.com">email</a>
+      <a href="#">youtube</a>
+      <a href="#">blog</a>
+    </div>
+    <span class="lang-toggle"><span class="active">cs</span><span class="sep">·</span><span class="dim">en</span></span>
+  </div>
+</footer>
+
+<script>
+const testimonials = [
+  { q: "S Terezií jsem pracoval na několika sezeních na emočních blocích kolem vztahů a práce. Měla širokou škálu rámců, které jsme zkoušeli, dokud jsme nenašli to, co funguje. O rok později bych řekl, že 95 % mých vztahových problémů a 50 % pracovních je pryč, a asi třetinu toho přisuzuji Terezii.", a: "Philipp Hummel" },
+  { q: "Terezie je skvělá posluchačka a ví, jaké otázky položit, aby ti pomohla posunout se v tom, co tě trápí. Místo aby vnucovala svůj způsob řešení, dává ti sílu zvládnout věci po svém, což pro mě dělá obrovský rozdíl v dlouhodobé motivaci. Oceňuji, že dokáže doporučit techniky jak z racionality, tak z holističtějších přístupů. Terezie mi pomohla udělat velkou, tehdy děsivou a zpětně velmi pozitivní změnu v kariéře.", a: "Maxime Riche" },
+  { q: "Nejvíc se mi líbí, že Tereziiná sezení jsou hodně akční a po každém posílá follow-up email s tím, co jsme probrali a s akcemi ze sezení. Dobře rozumí efektivnímu altruismu i technikám z CFAR, což naše rozhovory zásadně usnadňuje. Protože naše sezení jsou bezpečná a nikdy se necítím souzený, můžu být otevřenější a upřímnější o problémech a výzvách.", a: "Johan E." }
+];
+let current = 0;
+const tq = document.getElementById('tq');
+const ta = document.getElementById('ta');
+const idx = document.getElementById('idx');
+const dots = document.querySelectorAll('#dots span');
+
+function show(i) {
+  tq.style.opacity = 0;
+  ta.style.opacity = 0;
+  setTimeout(() => {
+    tq.textContent = testimonials[i].q;
+    ta.textContent = testimonials[i].a;
+    idx.textContent = (i + 1) + ' / ' + testimonials.length;
+    dots.forEach((d, j) => d.classList.toggle('active', j === i));
+    tq.style.opacity = 1;
+    ta.style.opacity = 1;
+  }, 250);
+  current = i;
+}
+
+document.getElementById('prev').addEventListener('click', () => show((current - 1 + testimonials.length) % testimonials.length));
+document.getElementById('next').addEventListener('click', () => show((current + 1) % testimonials.length));
+dots.forEach(d => d.addEventListener('click', () => show(parseInt(d.dataset.i))));
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') show((current - 1 + testimonials.length) % testimonials.length);
+  if (e.key === 'ArrowRight') show((current + 1) % testimonials.length);
+});
+</script>
+</body>
+</html>
