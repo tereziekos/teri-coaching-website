@@ -75,7 +75,7 @@ const translations = {
     training: 'coach level 2, unified mindfulness \u00B7 motivational interviewing with Tucker Peck \u00B7 one year of self-experienced group therapy \u00B7 NVC course \u00B7 CBT life coaching certification \u00B7 Radical Honesty retreat \u00B7 women\u2019s circles and rituals \u00B7 meditation and jhana retreats',
 
     // AI note
-    aiLabel: 'a note on AI',
+    aiLabel: 'how I use AI',
     aiOpen: 'I\u2019m also a programmer. I\u2019ve built AI agents with access to around 100 books I use in coaching: IFS, attachment theory, Radical Honesty, mindfulness, and others.',
     aiP1: 'Between sessions, they help me prepare: spot a pattern I missed, find a specific exercise, or revisit a framework that fits what you\u2019re working on. During sessions, when something specific comes up, I can query them in a few seconds instead of sending you to read a book you won\u2019t have time for.',
     aiP2: 'After each session, you get a transcription and summary that you own.',
@@ -181,12 +181,12 @@ const translations = {
       'sebep\u0159ijet\u00ED a sebehodnota',
     ],
     drawFromLabel: 'odkud \u010Derp\u00E1m',
-    drawFromItems: 'internal family systems \u00B7 mindfulness (vipassana, Shinzen Young, d\u017Eh\u00E1ny) \u00B7 Radical Honesty \u00B7 motiva\u010Dn\u00ED rozhovor \u00B7 teorie attachmentu \u00B7 tantra a polarita \u00B7 nen\u00E1siln\u00E1 komunikace \u00B7 CBT \u00B7 pr\u00E1ce s vnit\u0159n\u00EDm d\u00EDt\u011Btem',
+    drawFromItems: 'internal family systems \u00B7 mindfulness (vipassana, Shinzen Young, jhanas) \u00B7 Radical Honesty \u00B7 motiva\u010Dn\u00ED rozhovor \u00B7 teorie attachmentu \u00B7 tantra a polarita \u00B7 nen\u00E1siln\u00E1 komunikace \u00B7 CBT \u00B7 pr\u00E1ce s vnit\u0159n\u00EDm d\u00EDt\u011Btem',
     trainingLabel: 'v\u00FDcvik',
-    training: 'coach level 2, unified mindfulness \u00B7 motiva\u010Dn\u00ED rozhovor s Tuckerem Peckem \u00B7 rok sebezku\u0161enostn\u00ED skupinov\u00E9 terapie \u00B7 kurz NVC \u00B7 certifikace CBT life coaching \u00B7 pobyt Radical Honesty \u00B7 \u017Eensk\u00E9 kruhy a ritu\u00E1ly \u00B7 medita\u010Dn\u00ED a d\u017Eh\u00E1nov\u00E9 pobyty',
+    training: 'coach level 2, unified mindfulness \u00B7 motiva\u010Dn\u00ED rozhovor s Tuckerem Peckem \u00B7 rok sebezku\u0161enostn\u00ED skupinov\u00E9 terapie \u00B7 kurz NVC \u00B7 certifikace CBT life coaching \u00B7 pobyt Radical Honesty \u00B7 \u017Eensk\u00E9 kruhy a ritu\u00E1ly \u00B7 medita\u010Dn\u00ED a jhana pobyty',
 
     // AI note
-    aiLabel: 'pozn\u00E1mka o AI',
+    aiLabel: 'AI v m\u00E9m kou\u010Dinku',
     aiOpen: 'Spolu s kou\u010Dkou jsem tak\u00E9 program\u00E1torka. Postavila jsem AI agenty s p\u0159\u00EDstupem k asi 100 knih\u00E1m, kter\u00E9 v kou\u010Dinku dlouhodob\u011B pou\u017E\u00EDv\u00E1m: IFS, teorie attachmentu, Radical Honesty, mindfulness, tantra a dal\u0161\u00ED.',
     aiP1: 'Mezi sezen\u00EDmi mi pom\u00E1haj\u00ED s p\u0159\u00EDpravou: odhalit vzorec, kter\u00E9ho jsem si nev\u0161imla, naj\u00EDt konkr\u00E9tn\u00ED cvi\u010Den\u00ED, nebo se vr\u00E1tit k r\u00E1mci, kter\u00FD sed\u00ED na to, na \u010Dem pracujeme. Pokud se b\u011Bhem sezen\u00ED vyno\u0159\u00ED n\u011Bco konkr\u00E9tn\u00EDho, mohu vyhledat danou problematiku za p\u00E1r vte\u0159in, m\u00EDsto abych v\u00E1m doporu\u010Dila p\u0159e\u010D\u00EDst si knihy, na kter\u00E9 nebudete m\u00EDt \u010Das.',
     aiP2: 'Po ka\u017Ed\u00E9m sezen\u00ED dostanete p\u0159\u00EDstup k p\u0159episu a shrnut\u00ED sezen\u00ED.',
