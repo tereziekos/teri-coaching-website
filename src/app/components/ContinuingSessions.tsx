@@ -7,11 +7,11 @@ export default function ContinuingSessions() {
   const tr = t(lang);
 
   return (
-    <section className="block">
+    <section className="block" id="pricing">
       <p className="label">{tr.contLabel}</p>
       <hr className="hairline" />
       <div className="continuing-wrap">
-        <p className="continuing-intro">{tr.contIntro}</p>
+        {tr.contIntro && <p className="continuing-intro">{tr.contIntro}</p>}
 
         <div className="price-group">
           <p className="price-group-title">{tr.contIndividual}</p>

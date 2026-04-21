@@ -7,7 +7,7 @@ export default function MyApproach() {
   const tr = t(lang);
 
   return (
-    <section className="block">
+    <section className="block" id="approach">
       <p className="label">{tr.approachLabel}</p>
       <hr className="hairline" />
 

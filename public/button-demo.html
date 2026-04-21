@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>button styles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --sage: #D8DDD3;
+  --paper: #EEEFEA;
+  --moss: #2B3A2A;
+  --clay: #A89A7B;
+  --clay-dark: #8a7d62;
+  --off-black: #6E6A5C;
+}
+body { background: var(--sage); font-family: 'Inter', sans-serif; padding: 60px; color: var(--moss); }
+h2 { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.15em; color: var(--clay-dark); margin: 3rem 0 1rem; }
+.row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+a { text-decoration: none; cursor: pointer; }
+
+/* 1. Current - dashed border */
+.btn-1 { font-size: 14px; padding: 12px 26px; border: 0.5px dashed var(--clay); color: var(--moss); background: transparent; letter-spacing: 0.04em; }
+
+/* 2. Solid moss */
+.btn-2 { font-size: 14px; padding: 12px 26px; border: 1px solid var(--moss); color: var(--paper); background: var(--moss); letter-spacing: 0.04em; }
+
+/* 3. Solid clay */
+.btn-3 { font-size: 14px; padding: 12px 26px; border: 1px solid var(--clay); color: var(--paper); background: var(--clay); letter-spacing: 0.04em; }
+
+/* 4. Pill - moss outline */
+.btn-4 { font-size: 14px; padding: 12px 28px; border: 1px solid var(--moss); color: var(--moss); background: transparent; border-radius: 100px; letter-spacing: 0.04em; }
+
+/* 5. Pill - solid moss */
+.btn-5 { font-size: 14px; padding: 12px 28px; border: 1px solid var(--moss); color: var(--paper); background: var(--moss); border-radius: 100px; letter-spacing: 0.04em; }
+
+/* 6. Pill - clay outline */
+.btn-6 { font-size: 14px; padding: 12px 28px; border: 1px solid var(--clay); color: var(--moss); background: transparent; border-radius: 100px; letter-spacing: 0.04em; }
+
+/* 7. Underline only */
+.btn-7 { font-size: 15px; font-weight: 500; padding: 8px 0; border: none; border-bottom: 1.5px solid var(--moss); color: var(--moss); background: transparent; letter-spacing: 0.02em; }
+
+/* 8. Underline clay */
+.btn-8 { font-size: 15px; font-weight: 500; padding: 8px 0; border: none; border-bottom: 1.5px solid var(--clay); color: var(--moss); background: transparent; letter-spacing: 0.02em; }
+
+/* 9. Arrow style */
+.btn-9 { font-size: 15px; font-weight: 500; padding: 8px 0; border: none; color: var(--moss); background: transparent; letter-spacing: 0.02em; }
+.btn-9 span { display: inline-block; transition: transform 200ms; }
+.btn-9:hover span { transform: translateX(4px); }
+
+/* 10. Paper fill, clay border */
+.btn-10 { font-size: 14px; padding: 14px 28px; border: 0.5px solid var(--clay); color: var(--moss); background: var(--paper); letter-spacing: 0.04em; }
+
+/* 11. Paper fill, rounded */
+.btn-11 { font-size: 14px; padding: 14px 28px; border: 0.5px solid var(--clay); color: var(--moss); background: var(--paper); border-radius: 6px; letter-spacing: 0.04em; }
+
+/* 12. Moss outline, square */
+.btn-12 { font-size: 14px; padding: 14px 28px; border: 1px solid var(--moss); color: var(--moss); background: transparent; letter-spacing: 0.04em; }
+
+/* 13. Serif italic */
+.btn-13 { font-family: 'Fraunces', serif; font-style: italic; font-size: 16px; padding: 12px 26px; border: 0.5px solid var(--clay); color: var(--moss); background: transparent; }
+
+/* 14. Serif italic pill */
+.btn-14 { font-family: 'Fraunces', serif; font-style: italic; font-size: 16px; padding: 12px 28px; border: 1px solid var(--moss); color: var(--moss); background: transparent; border-radius: 100px; }
+
+/* 15. Large, minimal */
+.btn-15 { font-size: 16px; padding: 16px 36px; border: 1px solid var(--clay); color: var(--moss); background: transparent; letter-spacing: 0.06em; }
+
+/* 16. Large solid */
+.btn-16 { font-size: 16px; padding: 16px 36px; border: 1px solid var(--moss); color: var(--paper); background: var(--moss); letter-spacing: 0.06em; }
+</style>
+</head>
+<body>
+
+<h2>1. current (dashed border)</h2>
+<a class="btn-1">book a free intro session</a>
+
+<h2>2. solid moss</h2>
+<a class="btn-2">book a free intro session</a>
+
+<h2>3. solid clay</h2>
+<a class="btn-3">book a free intro session</a>
+
+<h2>4. pill - moss outline</h2>
+<a class="btn-4">book a free intro session</a>
+
+<h2>5. pill - solid moss</h2>
+<a class="btn-5">book a free intro session</a>
+
+<h2>6. pill - clay outline</h2>
+<a class="btn-6">book a free intro session</a>
+
+<h2>7. underline bold</h2>
+<a class="btn-7">book a free intro session</a>
+
+<h2>8. underline clay</h2>
+<a class="btn-8">book a free intro session</a>
+
+<h2>9. arrow style</h2>
+<a class="btn-9">book a free intro session <span>&rarr;</span></a>
+
+<h2>10. paper fill, clay border</h2>
+<a class="btn-10">book a free intro session</a>
+
+<h2>11. paper fill, rounded</h2>
+<a class="btn-11">book a free intro session</a>
+
+<h2>12. moss outline, square</h2>
+<a class="btn-12">book a free intro session</a>
+
+<h2>13. serif italic</h2>
+<a class="btn-13">book a free intro session</a>
+
+<h2>14. serif italic pill</h2>
+<a class="btn-14">book a free intro session</a>
+
+<h2>15. large, minimal</h2>
+<a class="btn-15">book a free intro session</a>
+
+<h2>16. large solid</h2>
+<a class="btn-16">book a free intro session</a>
+
+</body>
+</html>

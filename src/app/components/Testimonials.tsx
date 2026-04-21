@@ -7,9 +7,10 @@ import { testimonials } from '../content/testimonials';
 export default function Testimonials() {
   const { lang } = useLanguage();
   const tr = t(lang);
+  const items = testimonials[lang];
   const [current, setCurrent] = useState(0);
   const [opacity, setOpacity] = useState(1);
-  const total = testimonials.length;
+  const total = items.length;
 
   const show = useCallback(
     (i: number) => {
@@ -34,6 +35,13 @@ export default function Testimonials() {
     return () => document.removeEventListener('keydown', handler);
   }, [current, total, show]);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      show((current + 1) % total);
+    }, 8000);
+    return () => clearInterval(timer);
+  }, [current, total, show]);
+
   return (
     <section className="block">
       <p className="label">{tr.testimonialsLabel}</p>
@@ -41,17 +49,20 @@ export default function Testimonials() {
       <div className="testimonial-stage">
         <span className="qmark">&ldquo;</span>
         <p className="testimonial-quote" style={{ opacity }}>
-          {testimonials[current].quote}
+          {items[current].quote}
         </p>
         <div className="testimonial-attr" style={{ opacity }}>
-          {testimonials[current].name}
+          {items[current].name}
         </div>
+        {lang === 'cs' && (
+          <p className="testimonial-note" style={{ opacity }}>(překlad z angličtiny)</p>
+        )}
         <div className="carousel-nav">
           <button className="t-arrow" onClick={prev} aria-label="previous testimonial">
             &larr;
           </button>
           <div className="t-dots">
-            {testimonials.map((_, i) => (
+            {items.map((_, i) => (
               <span
                 key={i}
                 className={i === current ? 'active' : ''}

@@ -8,7 +8,7 @@ export default function AboutMe() {
   const tr = t(lang);
 
   return (
-    <section className="block">
+    <section className="block" id="about">
       <p className="label">{tr.aboutLabel}</p>
       <hr className="hairline" />
       <div className="about-grid">
