@@ -8,6 +8,7 @@ import MyApproach from './components/MyApproach';
 import AiNote from './components/AiNote';
 import ContinuingSessions from './components/ContinuingSessions';
 import Photos from './components/Photos';
+import VibeVideo from './components/VibeVideo';
 import Footer from './components/Footer';
 
 export default function MainPage() {
@@ -18,9 +19,11 @@ export default function MainPage() {
       <Videos />
       <FirstConversation />
       <Testimonials />
+      <VibeVideo src="/images/photos/vibe-landscape.mp4" />
       <AboutMe />
       <MyApproach />
       <AiNote />
+      <VibeVideo src="/images/photos/vibe-walking.mp4" />
       <ContinuingSessions />
       <Photos />
       <Footer />

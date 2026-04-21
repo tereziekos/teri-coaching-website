@@ -22,39 +22,14 @@ export default function MyApproach() {
       <p className="approach-body">{tr.approachP4}</p>
 
       <p className="sublabel">{tr.workWithLabel}</p>
-
-      <p className="work-head">{tr.work1Head}</p>
-      <p className="work-para">{tr.work1Para}</p>
-
-      <p className="work-head">{tr.work2Head}</p>
-      <p className="work-para">{tr.work2Para}</p>
-
-      <p className="work-head">{tr.work3Head}</p>
-      <p className="work-para">{tr.work3Para}</p>
-
-      <p className="work-head">{tr.work4Head}</p>
-      <p className="work-para">{tr.work4Para}</p>
-
-      <p className="work-head">{tr.work5Head}</p>
-      <p className="work-para">{tr.work5Para}</p>
-
-      <p className="sublabel">{tr.restLabel}</p>
-      <ul className="rest-list">
-        {tr.restItems.map((item, i) => (
+      <ul className="bullet-list">
+        {(tr.workWithItems as unknown as string[]).map((item: string, i: number) => (
           <li key={i}>{item}</li>
         ))}
       </ul>
 
       <p className="sublabel">{tr.drawFromLabel}</p>
-      <p className="methods">
-        {tr.methodsMain}
-        <span className="methods-main">{tr.methodsMainBold}</span>
-        {tr.methodsMainEnd}
-      </p>
-      <p className="methods">{tr.methodsAlso}</p>
-
-      <p className="sublabel">{tr.practicesLabel}</p>
-      <p className="methods">{tr.practices}</p>
+      <p className="methods">{tr.drawFromItems}</p>
 
       <p className="sublabel">{tr.trainingLabel}</p>
       <p className="methods">{tr.training}</p>

@@ -16,7 +16,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: 'terezie \u00B7 coaching',
+  title: 'terezie alder \u00B7 coaching',
   description:
     'A slow space for the parts of you that don\u2019t speak first. Coaching in Czech or English.',
 };

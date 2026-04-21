@@ -27,13 +27,13 @@ export default function AboutMe() {
         <figure style={{ margin: 0 }}>
           <div className="portrait">
             <Image
-              src="/images/PhotoWholePerson.jpeg"
-              alt="Terezie"
+              src="/images/photos/portrait.jpg"
+              alt="terezie alder"
               width={500}
-              height={625}
+              height={667}
             />
           </div>
-          <figcaption className="caption">{tr.aboutCaption}</figcaption>
+          {/* <figcaption className="caption">{tr.aboutCaption}</figcaption> */}
         </figure>
       </div>
     </section>

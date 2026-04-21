@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="footer-row">
         <div className="brand" style={{ fontSize: '13px' }}>
           <span className="brand-dot" />
-          terezie
+          terezie alder
         </div>
         <div className="footer-links">
           <a href="mailto:kosikova.terezie@gmail.com">{tr.footerEmail}</a>

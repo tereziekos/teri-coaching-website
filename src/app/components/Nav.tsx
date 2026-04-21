@@ -10,7 +10,7 @@ export default function Nav() {
     <nav className="top">
       <div className="brand">
         <span className="brand-dot" />
-        terezie
+        terezie alder
       </div>
       <div className="nav-right">
         <span className="lang-toggle" onClick={toggle}>
