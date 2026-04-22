@@ -5,6 +5,7 @@ image:
 host: tereziekos.cz
 extraHosts:
   - www.tereziekos.cz
+  - tereziekos.danielhnyk.cz
 
 resources:
   requests:
