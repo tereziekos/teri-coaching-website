@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: teri-coaching
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+    cert-manager.io/cluster-issuer: {{ .Values.clusterIssuer }}
 spec:
   tls:
     - secretName: teri-coaching-tls

@@ -2,6 +2,8 @@ image:
   repository: localhost:32000/teri-coaching
   tag: latest
 
+clusterIssuer: letsencrypt-http01
+
 host: tereziekos.cz
 extraHosts:
   - www.tereziekos.cz
