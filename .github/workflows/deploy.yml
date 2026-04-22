@@ -1,0 +1,21 @@
+name: Trigger deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Woodpecker pipeline
+        run: |
+          curl -sf -X POST "https://ci.danielhnyk.cz/api/repos/4/pipelines" \
+            -H "Authorization: Bearer ${{ secrets.WOODPECKER_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "branch": "main",
+              "variables": {
+                "BUILD_TARGET": "teri-coaching"
+              }
+            }'

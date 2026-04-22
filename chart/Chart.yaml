@@ -1,0 +1,4 @@
+apiVersion: v2
+name: teri-coaching
+description: Terezie Alder coaching website
+version: 1.0.0
