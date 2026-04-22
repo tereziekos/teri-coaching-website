@@ -12,6 +12,10 @@ spec:
     metadata:
       labels:
         app: teri-coaching
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
     spec:
       containers:
         - name: teri-coaching
