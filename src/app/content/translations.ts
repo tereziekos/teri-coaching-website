@@ -223,7 +223,7 @@ const translations = {
 } as const;
 
 export type Lang = 'en' | 'cs';
-export type Translations = typeof translations['en'];
+export type Translations = (typeof translations)[Lang];
 
 export function t(lang: Lang): Translations {
   return translations[lang];

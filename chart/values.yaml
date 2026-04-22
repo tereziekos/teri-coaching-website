@@ -1,0 +1,15 @@
+image:
+  repository: localhost:32000/teri-coaching
+  tag: latest
+
+host: tereziekos.cz
+extraHosts:
+  - www.tereziekos.cz
+
+resources:
+  requests:
+    memory: "32Mi"
+    cpu: "10m"
+  limits:
+    memory: "64Mi"
+    cpu: "100m"
