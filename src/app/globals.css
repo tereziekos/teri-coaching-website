@@ -150,6 +150,9 @@ section.block { padding: 4rem 56px; max-width: 1100px; margin: 0 auto; }
 /* ── Videos ── */
 .videos-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; }
 .video-player { background: var(--moss); aspect-ratio: 16 / 9; border-radius: 3px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.video-player-real { width: 100%; aspect-ratio: 16 / 9; border-radius: 3px; background: var(--moss); display: block; }
+.video-item { cursor: pointer; }
+.video-item-active { border-left: 2px solid var(--moss); padding-left: 12px; }
 .play-triangle { width: 0; height: 0; border-left: 18px solid rgba(232, 226, 213, 0.75); border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 4px; }
 .chapters { margin-top: 1.2rem; font-size: 13px; list-style: none; padding: 0; }
 .chapter-row { padding: 7px 0; border-bottom: 0.5px dotted var(--clay-soft); display: flex; gap: 16px; color: var(--moss); cursor: pointer; border-radius: 0; }
