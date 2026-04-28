@@ -168,7 +168,8 @@ section.block { padding: 4rem 56px; max-width: 1100px; margin: 0 auto; }
 .lang-tag.active { background: var(--moss); color: var(--paper); border-color: var(--moss); }
 
 /* ── First conversation / Calendly ── */
-.first-conv-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: start; }
+.first-conv-wrap { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 2.5rem; align-items: start; }
+.first-conv-copy { position: sticky; top: 100px; }
 .first-conv-copy .intro { font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--moss); line-height: 1.45; margin: 0 0 1rem; font-weight: 500; max-width: 22ch; }
 .first-conv-copy .meta { font-size: 13px; color: var(--clay); letter-spacing: 0.12em; margin-bottom: 1.2rem; }
 .first-conv-copy .fallback { font-size: 13px; color: var(--off-black); margin-top: 1rem; }
@@ -230,6 +231,16 @@ blockquote.epigraph { font-family: var(--font-serif); font-style: italic; font-s
 .secondary-link { font-family: var(--font-sans); font-size: 14px; color: var(--paper); background: var(--clay); border: 1px solid var(--clay); padding: 12px 26px; text-decoration: none; cursor: pointer; display: inline-block; letter-spacing: 0.04em; transition: background 300ms, color 300ms, border-color 300ms; margin-top: 1.5rem; }
 .secondary-link:hover { background: transparent; color: var(--moss); border-color: var(--moss); }
 .secondary-link:hover { color: var(--clay); }
+.price-row-btn { display: flex; width: 100%; justify-content: space-between; align-items: center; padding: 16px 0; border: none; border-bottom: 0.5px dotted var(--clay-soft); color: var(--moss); font-size: 15px; background: transparent; cursor: pointer; font-family: inherit; transition: color 200ms; }
+.price-row-btn:hover { color: var(--clay); }
+.price-row-btn.active { color: var(--moss); font-weight: 500; }
+.price-book-cal { font-size: 14px; font-weight: 500; color: var(--moss); border: 1px solid var(--moss); padding: 8px 18px; transition: background 200ms, color 200ms; }
+.price-row-btn:hover .price-book-cal, .price-row-btn.active .price-book-cal { background: var(--moss); color: var(--paper); }
+.pricing-layout { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start; transition: grid-template-columns 400ms ease; }
+.pricing-layout.has-calendar { grid-template-columns: 0.7fr 1.3fr; }
+.continuing-wrap { position: sticky; top: 100px; }
+.cal-inline-side { background: var(--paper); border-radius: 4px; overflow: hidden; }
+.cal-inline-side iframe { width: 100%; min-height: 800px; border: none; display: block; }
 
 /* ── Photos ── */
 .photos-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
@@ -263,9 +274,8 @@ footer.site-footer { padding: 3rem 56px 2.5rem; border-top: 0.5px solid var(--cl
 .footer-links a { color: var(--off-black); text-decoration: none; transition: color 200ms; }
 .footer-links a:hover { color: var(--moss); }
 
-/* ── Calendly embed ── */
-.calendly-container { min-height: 500px; }
-.calendly-container .calendly-inline-widget { min-width: 300px; min-height: 500px; }
+/* ── Cal.com embed ── */
+.cal-embed-container { min-height: 700px; border-radius: 4px; overflow: visible; }
 
 /* ── Responsive ── */
 @media (max-width: 820px) {
