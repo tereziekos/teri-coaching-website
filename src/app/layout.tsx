@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Fraunces } from 'next/font/google';
+import PlausibleProvider from 'next-plausible';
 import { LanguageProvider } from './context/LanguageContext';
 
 const inter = Inter({
@@ -29,7 +30,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        <PlausibleProvider
+          domain="tereziekos.cz"
+          customDomain="https://plan.danielhnyk.cz"
+          selfHosted
+          trackOutboundLinks
+        >
+          <LanguageProvider>{children}</LanguageProvider>
+        </PlausibleProvider>
       </body>
     </html>
   );
