@@ -1,16 +1,43 @@
 'use client';
-import { useState } from 'react';
+import { useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { t } from '../content/translations';
 
-const videos = [
-  { src: '/images/photos/video-cs-intro.mp4', lang: 'cs' },
-];
+// Chapter timestamps in seconds — update these with real times
+const chapters = {
+  en: [
+    { time: 0, label: '' },
+    { time: 73, label: '' },
+    { time: 128, label: '' },
+  ],
+  cs: [
+    { time: 0, label: '' },
+    { time: 66, label: '' },
+    { time: 96, label: '' },
+  ],
+};
+
+function formatTime(seconds: number) {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+}
 
 export default function Videos() {
   const { lang } = useLanguage();
   const tr = t(lang);
-  const [activeVideo, setActiveVideo] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoSrc = lang === 'cs'
+    ? '/images/photos/video-cs-intro.mp4'
+    : '/images/photos/video-en-intro.mp4';
+  const ch = chapters[lang];
+
+  const seekTo = (seconds: number) => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = seconds;
+      videoRef.current.play();
+    }
+  };
 
   return (
     <section className="block">
@@ -18,44 +45,33 @@ export default function Videos() {
       <hr className="hairline" />
       <div className="videos-grid">
         <div>
-          {videos[activeVideo]?.src ? (
-            <video
-              className="video-player-real"
-              controls
-              preload="metadata"
-              key={activeVideo}
-            >
-              <source src={videos[activeVideo].src} type="video/mp4" />
-            </video>
-          ) : (
-            <div className="video-player">
-              <div className="play-triangle" />
-            </div>
-          )}
+          <video
+            key={lang}
+            ref={videoRef}
+            className="video-player-real"
+            controls
+            preload="metadata"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
         </div>
         <ul className="video-list">
-          <li
-            className={`video-item ${activeVideo === 0 ? 'video-item-active' : ''}`}
-            onClick={() => setActiveVideo(0)}
-          >
+          <li className="video-item" onClick={() => seekTo(ch[0].time)}>
             <p className="video-title">{tr.video1Title}</p>
             <div className="video-meta">
-              <span className={`lang-tag${tr.video1Lang === lang ? ' active' : ''}`}>{tr.video1Lang}</span>
-              <span>&middot; {tr.video1Duration}</span>
+              <span className="chapter-time">{formatTime(ch[0].time)}</span>
             </div>
           </li>
-          <li className="video-item">
+          <li className="video-item" onClick={() => seekTo(ch[1].time)}>
             <p className="video-title">{tr.video2Title}</p>
             <div className="video-meta">
-              <span className={`lang-tag${tr.video2Lang === lang ? ' active' : ''}`}>{tr.video2Lang}</span>
-              <span>&middot; {tr.video2Duration}</span>
+              <span className="chapter-time">{formatTime(ch[1].time)}</span>
             </div>
           </li>
-          <li className="video-item">
+          <li className="video-item" onClick={() => seekTo(ch[2].time)}>
             <p className="video-title">{tr.video3Title}</p>
             <div className="video-meta">
-              <span className={`lang-tag${tr.video3Lang === lang ? ' active' : ''}`}>{tr.video3Lang}</span>
-              <span>&middot; {tr.video3Duration}</span>
+              <span className="chapter-time">{formatTime(ch[2].time)}</span>
             </div>
           </li>
         </ul>

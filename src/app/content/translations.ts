@@ -10,24 +10,19 @@ const translations = {
     scrollHint: 'scroll',
 
     // Videos
-    videosLabel: 'three short videos to get to know me a bit. watch whichever sparks curiosity.',
+    videosLabel: 'get to know me in one short video. three topics, pick any.',
     chapter1: 'the question',
     chapter2: 'where we usually get stuck',
     chapter3: 'a different way in',
     video1Title: 'who I am and where I\u2019m coming from',
-    video1Lang: 'en',
-    video1Duration: '8 min',
     video2Title: 'what I work on with clients and how I help',
-    video2Lang: 'cs',
-    video2Duration: '12 min',
     video3Title: 'theories and tools I use and believe in',
-    video3Lang: 'en',
-    video3Duration: '6 min',
+    videoDuration: '5 min',
 
     // First conversation
     firstConvLabel: 'a first session',
-    firstConvIntro: 'book a free 40-minute intro. let\u2019s see if we\u2019re a good fit.',
-    firstConvMeta: 'FREE \u00B7 40 MIN \u00B7 ONLINE',
+    firstConvIntro: 'book a free 60-minute intro. let\u2019s see if we\u2019re a good fit.',
+    firstConvMeta: 'FREE \u00B7 60 MIN \u00B7 ONLINE',
     firstConvFallback: 'or write:',
 
     // Testimonials
@@ -121,24 +116,19 @@ const translations = {
     scrollHint: 'scroll',
 
     // Videos
-    videosLabel: 't\u0159i kr\u00E1tk\u00E1 videa, kter\u00FDmi m\u011B m\u016F\u017Eete trochu poznat. nechte se v\u00E9st zv\u011Bdavost\u00ED.',
+    videosLabel: 'jedno video, t\u0159i t\u00E9mata, skrz kter\u00E1 m\u011B m\u016F\u017Eete trochu poznat.',
     chapter1: 'ot\u00E1zka',
     chapter2: 'kde se obvykle zasek\u00E1v\u00E1me',
     chapter3: 'jin\u00E1 cesta dovnit\u0159',
     video1Title: 'kdo jsem a s \u010D\u00EDm do kou\u010Dinku p\u0159ich\u00E1z\u00EDm',
-    video1Lang: 'en',
-    video1Duration: '8 min',
     video2Title: 'na \u010Dem s klienty pracuju a jak jim pom\u00E1h\u00E1m',
-    video2Lang: 'cs',
-    video2Duration: '12 min',
     video3Title: 'teorie a n\u00E1stroje, kter\u00E9 pou\u017E\u00EDv\u00E1m a kter\u00FDm v\u011B\u0159\u00EDm',
-    video3Lang: 'en',
-    video3Duration: '6 min',
+    videoDuration: '4 min',
 
     // First conversation
     firstConvLabel: 'prvn\u00ED sezen\u00ED',
-    firstConvIntro: 'rezervujte si zdarma 40minutov\u00E9 \u00FAvodn\u00ED sezen\u00ED. poj\u010Fme zjistit, jestli si sedneme.',
-    firstConvMeta: 'ZDARMA \u00B7 40 MIN \u00B7 ONLINE',
+    firstConvIntro: 'rezervujte si zdarma 60minutov\u00E9 \u00FAvodn\u00ED sezen\u00ED. poj\u010Fme zjistit, jestli si sedneme.',
+    firstConvMeta: 'ZDARMA \u00B7 60 MIN \u00B7 ONLINE',
     firstConvFallback: 'nebo mi napi\u0161te:',
 
     // Testimonials
