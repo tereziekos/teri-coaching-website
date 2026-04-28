@@ -10,7 +10,7 @@ const sessions = {
       { duration: '90 min', price: '160 USD', url: 'https://cal.com/terezie-alder/90min', calSlug: 'terezie-alder/90min' },
     ]},
     { label: 'COUPLE', items: [
-      { duration: '100 min', price: '200 USD', url: 'https://cal.com/terezie-alder/100-min-parove-sezeni-100-min-couples-session', calSlug: 'terezie-alder/100-min-parove-sezeni-100-min-couples-session' },
+      { duration: '100 min', price: '200 USD', url: 'https://cal.com/terezie-alder/couples100', calSlug: 'terezie-alder/couples100' },
     ]},
   ],
   cs: [
@@ -19,7 +19,7 @@ const sessions = {
       { duration: '90 min', price: '3\u00A0000 K\u010D', url: 'https://cal.com/terezie-alder/90min', calSlug: 'terezie-alder/90min' },
     ]},
     { label: 'P\u00C1ROV\u00C9', items: [
-      { duration: '100 min', price: '3\u00A0500 K\u010D', url: 'https://cal.com/terezie-alder/100-min-parove-sezeni-100-min-couples-session', calSlug: 'terezie-alder/100-min-parove-sezeni-100-min-couples-session' },
+      { duration: '100 min', price: '3\u00A0500 K\u010D', url: 'https://cal.com/terezie-alder/couples100', calSlug: 'terezie-alder/couples100' },
     ]},
   ],
 };
@@ -63,7 +63,7 @@ export default function ContinuingSessions() {
         {activeSlug && (
           <div className="cal-inline-side" key={activeSlug}>
             <iframe
-              src={`https://cal.com/${activeSlug}?embed=true&theme=light&layout=month_view&hideEventTypeDetails=true`}
+              src={`https://cal.com/${activeSlug}?embed=true&theme=light&layout=column_view&hideEventTypeDetails=true`}
               frameBorder="0"
               title="Book session"
             />

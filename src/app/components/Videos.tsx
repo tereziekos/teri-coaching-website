@@ -30,6 +30,9 @@ export default function Videos() {
   const videoSrc = lang === 'cs'
     ? '/images/photos/video-cs-intro.mp4'
     : '/images/photos/video-en-intro.mp4';
+  const posterSrc = lang === 'cs'
+    ? '/images/photos/thumb-cs.jpg'
+    : '/images/photos/thumb-en.jpg';
   const ch = chapters[lang];
 
   const seekTo = (seconds: number) => {
@@ -51,6 +54,7 @@ export default function Videos() {
             className="video-player-real"
             controls
             preload="metadata"
+            poster={posterSrc}
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
