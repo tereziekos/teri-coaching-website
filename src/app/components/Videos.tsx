@@ -53,7 +53,7 @@ export default function Videos() {
             ref={videoRef}
             className="video-player-real"
             controls
-            preload="metadata"
+            preload="none"
             poster={posterSrc}
           >
             <source src={videoSrc} type="video/mp4" />

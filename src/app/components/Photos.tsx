@@ -9,7 +9,7 @@ export default function Photos() {
           <div className="photo">
             <Image
               src="/images/photos/hero.jpg"
-              alt=""
+              alt="Terezie Alder v p\u0159\u00EDrod\u011B"
               width={700}
               height={525}
             />
@@ -19,7 +19,7 @@ export default function Photos() {
           <div className="photo">
             <Image
               src="/images/photos/photo-cat.jpg"
-              alt=""
+              alt="Terezie Alder s ko\u010Dkou"
               width={700}
               height={525}
             />

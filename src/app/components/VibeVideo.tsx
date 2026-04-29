@@ -12,7 +12,8 @@ export default function VibeVideo({ src }: VibeVideoProps) {
         loop
         muted
         playsInline
-        preload="metadata"
+        preload="none"
+        loading="lazy"
       >
         <source src={src} type="video/mp4" />
       </video>
