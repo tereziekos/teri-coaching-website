@@ -10,6 +10,7 @@ export default function Testimonials() {
   const items = testimonials[lang];
   const [current, setCurrent] = useState(0);
   const [opacity, setOpacity] = useState(1);
+  const [paused, setPaused] = useState(false);
   const total = items.length;
 
   const show = useCallback(
@@ -23,11 +24,12 @@ export default function Testimonials() {
     []
   );
 
-  const prev = () => show((current - 1 + total) % total);
-  const next = () => show((current + 1) % total);
+  const prev = () => { setPaused(true); show((current - 1 + total) % total); };
+  const next = () => { setPaused(true); show((current + 1) % total); };
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
+      setPaused(true);
       if (e.key === 'ArrowLeft') show((current - 1 + total) % total);
       if (e.key === 'ArrowRight') show((current + 1) % total);
     };
@@ -36,17 +38,18 @@ export default function Testimonials() {
   }, [current, total, show]);
 
   useEffect(() => {
+    if (paused) return;
     const timer = setInterval(() => {
       show((current + 1) % total);
-    }, 8000);
+    }, 15000);
     return () => clearInterval(timer);
-  }, [current, total, show]);
+  }, [current, total, show, paused]);
 
   return (
     <section className="block">
       <p className="label">{tr.testimonialsLabel}</p>
       <hr className="hairline" />
-      <div className="testimonial-stage">
+      <div className="testimonial-stage" onClick={() => setPaused(true)}>
         <span className="qmark">&ldquo;</span>
         <p className="testimonial-quote" style={{ opacity }}>
           {items[current].quote}
@@ -66,7 +69,7 @@ export default function Testimonials() {
               <span
                 key={i}
                 className={i === current ? 'active' : ''}
-                onClick={() => show(i)}
+                onClick={() => { setPaused(true); show(i); }}
               />
             ))}
           </div>

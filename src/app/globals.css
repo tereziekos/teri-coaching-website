@@ -314,6 +314,16 @@ footer.site-footer { padding: 3rem 56px 2.5rem; border-top: 0.5px solid var(--cl
   .vibe-video { padding: 0 20px; }
   .vibe-video video { height: 25vh; }
 
+  /* Pricing */
+  .pricing-layout { grid-template-columns: 1fr; }
+  .pricing-layout.has-calendar { grid-template-columns: 1fr; }
+  .continuing-wrap { position: static; }
+  .price-row-btn { flex-wrap: wrap; gap: 8px; padding: 12px 0; }
+  .price-book-cal { font-size: 13px; padding: 6px 14px; }
+  .cal-inline-side { min-height: 500px; }
+  .cal-inline-side iframe { min-height: 500px; }
+  .first-conv-copy { position: static; }
+
   /* Footer */
   footer.site-footer { padding: 2rem 20px; }
   .footer-row { flex-direction: column; align-items: flex-start; gap: 12px; }
