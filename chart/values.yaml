@@ -4,10 +4,15 @@ image:
 
 clusterIssuer: letsencrypt-http01
 
-host: tereziekos.cz
+host: tereziealder.cz
 extraHosts:
-  - www.tereziekos.cz
+  - www.tereziealder.cz
   - tereziekos.danielhnyk.cz
+
+redirectHosts:
+  - tereziekos.cz
+  - www.tereziekos.cz
+redirectTarget: https://tereziealder.cz
 
 resources:
   requests:
