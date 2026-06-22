@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.tereziekos.cz/sitemap.xml
+Sitemap: https://tereziealder.cz/sitemap.xml

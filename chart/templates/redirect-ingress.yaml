@@ -1,0 +1,29 @@
+{{- if .Values.redirectHosts }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: teri-coaching-redirect
+  annotations:
+    cert-manager.io/cluster-issuer: {{ .Values.clusterIssuer }}
+    nginx.ingress.kubernetes.io/permanent-redirect: {{ .Values.redirectTarget }}$request_uri
+spec:
+  tls:
+    - secretName: teri-coaching-redirect-tls
+      hosts:
+        {{- range .Values.redirectHosts }}
+        - {{ . }}
+        {{- end }}
+  rules:
+    {{- range .Values.redirectHosts }}
+    - host: {{ . }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: teri-coaching
+                port:
+                  number: 80
+    {{- end }}
+{{- end }}

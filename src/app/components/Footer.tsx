@@ -15,7 +15,7 @@ export default function Footer() {
           terezie alder
         </div>
         <div className="footer-links">
-          <a href="mailto:kosikova.terezie@gmail.com">{tr.footerEmail}</a>
+          <a href="mailto:tereziealder@gmail.com">{tr.footerEmail}</a>
           <a href="#">{tr.footerYoutube}</a>
           <a href="#">{tr.footerBlog}</a>
         </div>

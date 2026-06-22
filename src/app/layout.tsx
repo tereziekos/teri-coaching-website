@@ -17,7 +17,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.tereziekos.cz'),
+  metadataBase: new URL('https://tereziealder.cz'),
   title: 'terezie alder \u00B7 coaching',
   description: 'Kou\u010Dink pro vztahy, emoce a sebep\u0159ijet\u00ED. Pracuji s IFS, mindfulness a pr\u00E1c\u00ED s t\u011Blem. \u010Cesky i anglicky, online. Coaching for relationships, emotions and self-acceptance.',
   keywords: ['kou\u010Dink', 'coaching', 'IFS', 'terapie', 'mindfulness', 'Praha', 'online', 'vztahy', 'emoce', 'Radical Honesty', 'tantra', 'p\u00E1rov\u00FD kou\u010Dink', 'couples coaching', 'attachment', 'sebep\u0159ijet\u00ED'],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'terezie alder \u00B7 coaching',
     description: 'Kou\u010Dink pro vztahy, emoce a sebep\u0159ijet\u00ED. Pracuji s IFS, mindfulness a pr\u00E1c\u00ED s t\u011Blem. \u010Cesky i anglicky.',
-    url: 'https://www.tereziekos.cz',
+    url: 'https://tereziealder.cz',
     siteName: 'terezie alder coaching',
     images: [{ url: '/images/photos/photo-smile.jpg', width: 1400, height: 1050 }],
     locale: 'cs_CZ',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ['/images/photos/photo-smile.jpg'],
   },
   alternates: {
-    canonical: 'https://www.tereziekos.cz',
+    canonical: 'https://tereziealder.cz',
   },
   robots: {
     index: true,
@@ -52,8 +52,8 @@ const jsonLd = {
   '@type': 'ProfessionalService',
   name: 'Terezie Alder Coaching',
   description: 'Kou\u010Dink pro vztahy, emoce a sebep\u0159ijet\u00ED. IFS, mindfulness, Radical Honesty, pr\u00E1ce s t\u011Blem.',
-  url: 'https://www.tereziekos.cz',
-  image: 'https://www.tereziekos.cz/images/photos/photo-smile.jpg',
+  url: 'https://tereziealder.cz',
+  image: 'https://tereziealder.cz/images/photos/photo-smile.jpg',
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
@@ -126,7 +126,7 @@ export default function RootLayout({
       </head>
       <body>
         <PlausibleProvider
-          domain="tereziekos.cz"
+          domain="tereziealder.cz"
           customDomain="https://plan.danielhnyk.cz"
           selfHosted
           trackOutboundLinks

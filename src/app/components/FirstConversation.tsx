@@ -44,7 +44,7 @@ export default function FirstConversation() {
           <p className="meta">{tr.firstConvMeta}</p>
           <p className="fallback">
             {tr.firstConvFallback}{' '}
-            <a href="mailto:kosikova.terezie@gmail.com">kosikova.terezie@gmail.com</a>
+            <a href="mailto:tereziealder@gmail.com">tereziealder@gmail.com</a>
           </p>
         </div>
         <div className="cal-embed-container" id="cal-inline-embed" />
