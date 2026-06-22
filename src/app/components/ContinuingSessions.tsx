@@ -70,6 +70,8 @@ export default function ContinuingSessions() {
           </div>
         )}
       </div>
+
+      <p className="location-note">{tr.contLocationNote}</p>
     </section>
   );
 }

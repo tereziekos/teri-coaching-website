@@ -67,7 +67,17 @@ const translations = {
     drawFromLabel: 'what I draw from',
     drawFromItems: 'internal family systems \u00B7 mindfulness (vipassana, Shinzen Young, jhanas) \u00B7 Radical Honesty \u00B7 motivational interviewing \u00B7 attachment theory \u00B7 tantra and polarity \u00B7 nonviolent communication \u00B7 CBT \u00B7 inner child work',
     trainingLabel: 'training',
-    training: 'coach level 2, unified mindfulness \u00B7 motivational interviewing with Tucker Peck \u00B7 one year of self-experienced group therapy \u00B7 NVC course \u00B7 CBT life coaching certification \u00B7 Radical Honesty retreat \u00B7 women\u2019s circles and rituals \u00B7 meditation and jhana retreats',
+    trainingItems: [
+      { text: 'master\u2019s degree in law, Faculty of Law, Charles University in Prague' },
+      { text: 'mindfulness coach — coach level 2, Unified Mindfulness', url: 'https://unifiedmindfulness.com/unified-mindfulness-coaches/' },
+      { text: 'motivational interviewing course by Tucker Peck' },
+      { text: 'one year of self-experienced group therapy' },
+      { text: 'NVC course' },
+      { text: 'CBT life coaching certification' },
+      { text: 'Radical Honesty retreat' },
+      { text: 'women\u2019s circles and rituals' },
+      { text: 'meditation and jhana retreats' },
+    ],
 
     // AI note
     aiLabel: 'how I use AI',
@@ -90,6 +100,7 @@ const translations = {
     cont100: '100 min',
     cont100Price: '200 USD',
     contCoupleNote: 'if you\u2019re in Prague, I prefer couple sessions in person.',
+    contLocationNote: 'in-person sessions in Prague take place in Prague 6, Nebu\u0161ice (about 10 min by bus from the Bo\u0159islavka metro station).',
     contBook: 'book your session \u2192',
 
     // Photos
@@ -100,8 +111,8 @@ const translations = {
 
     // Footer
     footerSig: 'there\u2019s a pattern you can\u2019t change. that\u2019s where we start.',
-    footerEmail: 'email',
-    footerYoutube: 'youtube',
+    footerEmail: 'tereziealder@gmail.com',
+    footerYoutube: 'YouTube',
     footerBlog: 'blog',
   },
 
@@ -173,7 +184,17 @@ const translations = {
     drawFromLabel: 'odkud \u010Derp\u00E1m',
     drawFromItems: 'internal family systems \u00B7 mindfulness (vipassana, Shinzen Young, jhanas) \u00B7 Radical Honesty \u00B7 motiva\u010Dn\u00ED rozhovor \u00B7 teorie attachmentu \u00B7 tantra a polarita \u00B7 nen\u00E1siln\u00E1 komunikace \u00B7 CBT \u00B7 pr\u00E1ce s vnit\u0159n\u00EDm d\u00EDt\u011Btem',
     trainingLabel: 'v\u00FDcvik',
-    training: 'coach level 2, unified mindfulness \u00B7 motiva\u010Dn\u00ED rozhovor s Tuckerem Peckem \u00B7 rok sebezku\u0161enostn\u00ED skupinov\u00E9 terapie \u00B7 kurz NVC \u00B7 certifikace CBT life coaching \u00B7 pobyt Radical Honesty \u00B7 \u017Eensk\u00E9 kruhy a ritu\u00E1ly \u00B7 medita\u010Dn\u00ED a jhana pobyty',
+    trainingItems: [
+      { text: 'magistersk\u00E9 vzd\u011Bl\u00E1n\u00ED v oboru pr\u00E1vo, Pr\u00E1vnick\u00E1 fakulta UK v Praze' },
+      { text: 'mindfulness kou\u010D \u2014 coach level 2, Unified Mindfulness', url: 'https://unifiedmindfulness.com/unified-mindfulness-coaches/' },
+      { text: 'kurz motiva\u010Dn\u00EDch rozhovor\u016F od Tuckera Pecka' },
+      { text: 'rok sebezku\u0161enostn\u00ED skupinov\u00E9 terapie' },
+      { text: 'kurz NVC' },
+      { text: 'certifikace CBT life coaching' },
+      { text: 'pobyt Radical Honesty' },
+      { text: '\u017Eensk\u00E9 kruhy a ritu\u00E1ly' },
+      { text: 'medita\u010Dn\u00ED a jhana pobyty' },
+    ],
 
     // AI note
     aiLabel: 'AI v m\u00E9m kou\u010Dinku',
@@ -196,6 +217,7 @@ const translations = {
     cont100: '100 min',
     cont100Price: '3\u00A0500 K\u010D',
     contCoupleNote: 'pokud jste v Praze, p\u00E1rov\u00E1 sezen\u00ED preferuji osobn\u011B.',
+    contLocationNote: 'osobn\u00ED sezen\u00ED v Praze prob\u00EDhaj\u00ED na Praze 6 v Nebu\u0161ic\u00EDch (cca 10 min autobusem z metra Bo\u0159islavka).',
     contBook: 'rezervujte si sezen\u00ED \u2192',
 
     // Photos
@@ -206,8 +228,8 @@ const translations = {
 
     // Footer
     footerSig: 'vzorec, kter\u00FD nejde zm\u011Bnit. p\u0159esn\u011B tam spolu za\u010Dneme.',
-    footerEmail: 'email',
-    footerYoutube: 'youtube',
+    footerEmail: 'tereziealder@gmail.com',
+    footerYoutube: 'YouTube',
     footerBlog: 'blog',
   },
 } as const;
