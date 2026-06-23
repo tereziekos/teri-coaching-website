@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import Blog from '../components/Blog';
+import Blog from '../../components/Blog';
 
 export const metadata: Metadata = {
   title: 'blog · terezie alder',
-  description: 'Blog Terezie Alder: poznámky o koučinku, vztazích a vnitřní práci. Notes on coaching, relationships, and inner work.',
+  description: 'Notes on coaching, relationships, and the inner work, by Terezie Alder.',
   alternates: {
-    canonical: 'https://tereziealder.cz/blog',
+    canonical: 'https://tereziealder.cz/en/blog',
     languages: {
       cs: 'https://tereziealder.cz/blog',
       en: 'https://tereziealder.cz/en/blog',
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'blog · terezie alder',
-    description: 'Blog Terezie Alder: poznámky o koučinku, vztazích a vnitřní práci.',
-    url: 'https://tereziealder.cz/blog',
+    description: 'Notes on coaching, relationships, and the inner work.',
+    url: 'https://tereziealder.cz/en/blog',
     siteName: 'terezie alder coaching',
     images: [{ url: '/images/photos/photo-smile.jpg', width: 1400, height: 1050 }],
-    locale: 'cs_CZ',
+    locale: 'en_US',
   },
 };
 
-export default function BlogPage() {
+export default function EnBlogPage() {
   return <Blog />;
 }

@@ -5,7 +5,8 @@ export type Block =
   | { type: 'video'; id: string };
 
 export interface Post {
-  slug: string;
+  id: string; // sdílené ID napříč jazyky (páruje CZ a EN verzi)
+  slug: string; // URL slug — podle jazyka (CZ vs EN)
   title: string;
   date: string; // YYYY-MM-DD
   excerpt: string;
@@ -16,11 +17,12 @@ export interface Post {
   seoDescription?: string;
 }
 
-// Slug je sdílený mezi EN a CS, ať detail funguje v obou jazycích.
+// Každý článek má stejné `id` v obou jazycích, ale vlastní `slug`.
 export const posts: Record<'en' | 'cs', Post[]> = {
   en: [
     {
-      slug: 'mytus-osviceni',
+      id: 'mytus-osviceni',
+      slug: 'myth-of-enlightenment',
       title: 'the myth of enlightenment: why meditation can’t give you what you want',
       date: '2026-06-20',
       image: '/images/photos/photo-golden.jpg',
@@ -48,6 +50,7 @@ export const posts: Record<'en' | 'cs', Post[]> = {
   ],
   cs: [
     {
+      id: 'mytus-osviceni',
       slug: 'mytus-osviceni',
       title: 'mýtus osvícení: proč vám meditace nedá to, co od ní čekáte',
       date: '2026-06-20',

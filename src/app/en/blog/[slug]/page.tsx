@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import BlogPost from '../../components/blog/BlogPost';
-import { postStaticParams, postMetadata, postJsonLd } from '../postShared';
+import BlogPost from '../../../components/blog/BlogPost';
+import { postStaticParams, postMetadata, postJsonLd } from '../../../blog/postShared';
 
 export function generateStaticParams() {
-  return postStaticParams('cs');
+  return postStaticParams('en');
 }
 
 export async function generateMetadata({
@@ -12,16 +12,16 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  return postMetadata('cs', slug);
+  return postMetadata('en', slug);
 }
 
-export default async function PostPage({
+export default async function EnPostPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const jsonLd = postJsonLd('cs', slug);
+  const jsonLd = postJsonLd('en', slug);
   return (
     <>
       {jsonLd.map((obj, i) => (

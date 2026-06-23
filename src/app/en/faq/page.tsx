@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
-import Faq from '../components/Faq';
-import { faq } from '../content/faq';
+import Faq from '../../components/Faq';
+import { faq } from '../../content/faq';
 
 export const metadata: Metadata = {
-  title: 'časté dotazy · terezie alder',
-  description: 'Časté dotazy ke koučinku s Terezií Alder: jak probíhá první sezení, online i osobně, jazyky, platba přes benefity. Frequently asked questions about coaching.',
+  title: 'frequently asked · terezie alder',
+  description:
+    'Frequently asked questions about coaching with Terezie Alder: how a first session works, online or in person, languages, paying through employee benefits.',
   alternates: {
-    canonical: 'https://tereziealder.cz/faq',
+    canonical: 'https://tereziealder.cz/en/faq',
     languages: {
       cs: 'https://tereziealder.cz/faq',
       en: 'https://tereziealder.cz/en/faq',
@@ -15,26 +16,27 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'časté dotazy · terezie alder',
-    description: 'Časté dotazy ke koučinku s Terezií Alder: jak probíhá první sezení, online i osobně, jazyky, platba přes benefity.',
-    url: 'https://tereziealder.cz/faq',
+    title: 'frequently asked · terezie alder',
+    description:
+      'Frequently asked questions about coaching with Terezie Alder: first session, online or in person, languages, employee benefits.',
+    url: 'https://tereziealder.cz/en/faq',
     siteName: 'terezie alder coaching',
     images: [{ url: '/images/photos/photo-smile.jpg', width: 1400, height: 1050 }],
-    locale: 'cs_CZ',
+    locale: 'en_US',
   },
 };
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faq.cs.map((item) => ({
+  mainEntity: faq.en.map((item) => ({
     '@type': 'Question',
     name: item.q,
     acceptedAnswer: { '@type': 'Answer', text: item.a.join(' ') },
   })),
 };
 
-export default function FaqPage() {
+export default function EnFaqPage() {
   return (
     <>
       <script
