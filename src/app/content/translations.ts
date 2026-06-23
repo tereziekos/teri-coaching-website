@@ -101,6 +101,7 @@ const translations = {
     cont100Price: '200 USD',
     contCoupleNote: 'if you\u2019re in Prague, I prefer couple sessions in person.',
     contLocationNote: 'in-person sessions in Prague take place in Prague 6, Nebu\u0161ice (about 10 min by bus from the Bo\u0159islavka metro station).',
+    contBenefitNote: 'you can also pay through employee benefits: Benefit Plus card and vouchers, M\u00faza vouchers, or',
     contBook: 'book your session \u2192',
 
     // Photos
@@ -218,6 +219,7 @@ const translations = {
     cont100Price: '3\u00A0500 K\u010D',
     contCoupleNote: 'pokud jste v Praze, p\u00E1rov\u00E1 sezen\u00ED preferuji osobn\u011B.',
     contLocationNote: 'osobn\u00ED sezen\u00ED v Praze prob\u00EDhaj\u00ED na Praze 6 v Nebu\u0161ic\u00EDch (cca 10 min autobusem z metra Bo\u0159islavka).',
+    contBenefitNote: 'sezen\u00ED m\u016F\u017Eete hradit i p\u0159es zam\u011Bstnaneck\u00E9 benefity: karta a poukazy Benefit Plus, poukazy M\u00FAza nebo',
     contBook: 'rezervujte si sezen\u00ED \u2192',
 
     // Photos

@@ -71,7 +71,36 @@ export default function ContinuingSessions() {
         )}
       </div>
 
-      <p className="location-note">{tr.contLocationNote}</p>
+      <p className="location-note location-note--icon">
+        <svg className="note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M3 10.5 12 3l9 7.5" />
+          <path d="M5 9.5V20h14V9.5" />
+        </svg>
+        <span>{tr.contLocationNote}</span>
+      </p>
+      <p className="location-note">
+        {tr.contBenefitNote}{' '}
+        <a
+          href="https://vyhledavac.pluxee.cz/cs/detail-provozovny/koucink-terezie-alder?resultPosition=0"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bullet-link"
+        >
+          Pluxee
+        </a>
+        .
+      </p>
+      <div className="benefit-logos">
+        <img className="logo-benefit" src="/images/logos/benefit-plus.png" alt="Benefit Plus" />
+        <a
+          href="https://vyhledavac.pluxee.cz/cs/detail-provozovny/koucink-terezie-alder?resultPosition=0"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Pluxee – profil Terezie Alder"
+        >
+          <img className="logo-pluxee" src="/images/logos/pluxee.png" alt="Pluxee" />
+        </a>
+      </div>
     </section>
   );
 }
