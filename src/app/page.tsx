@@ -1,4 +1,3 @@
-import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Videos from './components/Videos';
 import FirstConversation from './components/FirstConversation';
@@ -9,12 +8,10 @@ import AiNote from './components/AiNote';
 import ContinuingSessions from './components/ContinuingSessions';
 import Photos from './components/Photos';
 import VibeVideo from './components/VibeVideo';
-import Footer from './components/Footer';
 
 export default function MainPage() {
   return (
     <>
-      <Nav />
       <Hero />
       <Videos />
       <FirstConversation />
@@ -26,7 +23,6 @@ export default function MainPage() {
       <VibeVideo src="/images/photos/vibe-walking.mp4" />
       <ContinuingSessions />
       <Photos />
-      <Footer />
     </>
   );
 }

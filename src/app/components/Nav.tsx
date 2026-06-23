@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useLanguage } from '../context/LanguageContext';
 import { t } from '../content/translations';
 
@@ -8,23 +9,24 @@ export default function Nav() {
 
   return (
     <nav className="top">
-      <div className="brand">
+      <Link href="/" className="brand">
         <span className="brand-dot" />
         terezie alder
-      </div>
+      </Link>
       <div className="nav-right">
-        <a href="#about" className="nav-link">{tr.aboutLabel}</a>
-        <a href="#approach" className="nav-link">{tr.approachLabel}</a>
-        <a href="#ai" className="nav-link">{tr.aiLabel}</a>
-        <a href="#pricing" className="nav-link">{tr.contLabel}</a>
+        <Link href="/#about" className="nav-link nav-link-section">{tr.aboutLabel}</Link>
+        <Link href="/#approach" className="nav-link nav-link-section">{tr.approachLabel}</Link>
+        <Link href="/#pricing" className="nav-link nav-link-section">{tr.contLabel}</Link>
+        <Link href="/faq" className="nav-link nav-link-page">{tr.faqNav}</Link>
+        <Link href="/blog" className="nav-link nav-link-page">{tr.blogNav}</Link>
         <span className="lang-toggle" onClick={toggle}>
           <span className={lang === 'cs' ? 'active' : 'dim'}>cs</span>
           <span className="sep">&middot;</span>
           <span className={lang === 'en' ? 'active' : 'dim'}>en</span>
         </span>
-        <a href="#first-conversation" className="book-link">
+        <Link href="/#first-conversation" className="book-link">
           {tr.bookLink}
-        </a>
+        </Link>
       </div>
     </nav>
   );

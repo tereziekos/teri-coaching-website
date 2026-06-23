@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { Inter, Fraunces } from 'next/font/google';
 import PlausibleProvider from 'next-plausible';
 import { LanguageProvider } from './context/LanguageContext';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 const inter = Inter({
   subsets: ['latin', 'latin-ext'],
@@ -131,7 +133,11 @@ export default function RootLayout({
           selfHosted
           trackOutboundLinks
         >
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            <Nav />
+            {children}
+            <Footer />
+          </LanguageProvider>
         </PlausibleProvider>
       </body>
     </html>

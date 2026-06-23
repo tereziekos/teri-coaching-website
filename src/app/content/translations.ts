@@ -2,6 +2,8 @@ const translations = {
   en: {
     // Nav
     bookLink: 'book \u2192',
+    faqNav: 'faq',
+    blogNav: 'blog',
 
     // Hero
     heroTitle: 'there\u2019s a pattern you can\u2019t change. that\u2019s where we start.',
@@ -110,6 +112,23 @@ const translations = {
     photoCaption2: 'in session, listening',
     photoCaption3: 'hands, a notebook, a question',
 
+    // FAQ page
+    faqTitle: 'frequently asked',
+    faqIntro: 'a few things that often come up before we start.',
+    faqClosingLead: 'have a question that isn’t here? write to me at',
+    faqClosingTail: 'I’m happy to answer.',
+    faqGroup1: 'before we start',
+    faqGroup2: 'how it works',
+    faqGroup3: 'practical',
+    faqCtaTitle: 'ready to start?',
+    faqCtaText: 'the first session is free, and there’s no obligation to continue.',
+    faqCtaSecondary: 'or book a paid session directly',
+
+    // Blog page
+    blogTitle: 'blog',
+    blogIntro: 'notes on coaching, relationships, and the inner work.',
+    blogEmpty: 'first posts are on the way, check back soon.',
+
     // Footer
     footerSig: 'there\u2019s a pattern you can\u2019t change. that\u2019s where we start.',
     footerEmail: 'tereziealder@gmail.com',
@@ -120,6 +139,8 @@ const translations = {
   cs: {
     // Nav
     bookLink: 'rezervujte \u2192',
+    faqNav: 'faq',
+    blogNav: 'blog',
 
     // Hero
     heroTitle: 'vzorec, kter\u00FD se d\u011Bje po\u0159\u00E1d dokola. nejde zm\u011Bnit. p\u0159esn\u011B tam spolu za\u010Dneme.',
@@ -227,6 +248,23 @@ const translations = {
     photoCaption1: 'r\u00E1no, uprost\u0159ed my\u0161lenky',
     photoCaption2: 'p\u0159i sezen\u00ED, poslech',
     photoCaption3: 'ruce, z\u00E1pisn\u00EDk, ot\u00E1zka',
+
+    // FAQ page
+    faqTitle: '\u010Dasto se pt\u00E1te',
+    faqIntro: 'p\u00E1r v\u011Bc\u00ED, kter\u00E9 v\u00E1s mohou zaj\u00EDmat, ne\u017E za\u010Dneme spolupracovat.',
+    faqClosingLead: 'm\u00E1te ot\u00E1zku, kter\u00E1 tu nen\u00ED? napi\u0161te mi na',
+    faqClosingTail: 'r\u00E1da odpov\u00EDm.',
+    faqGroup1: 'ne\u017E za\u010Dneme',
+    faqGroup2: 'jak to prob\u00EDh\u00E1',
+    faqGroup3: 'praktick\u00E9',
+    faqCtaTitle: 'p\u0159ipraveni za\u010D\u00EDt?',
+    faqCtaText: '\u00FAvodn\u00ED sezen\u00ED je zdarma a nezavazuje v\u00E1s k ni\u010Demu.',
+    faqCtaSecondary: 'nebo rovnou rezervovat placen\u00E9 sezen\u00ED',
+
+    // Blog page
+    blogTitle: 'blog',
+    blogIntro: 'pozn\u00E1mky o kou\u010Dinku, vztaz\u00EDch a vnit\u0159n\u00ED pr\u00E1ci.',
+    blogEmpty: 'prvn\u00ED \u010Dl\u00E1nky se chystaj\u00ED, zastavte se brzy.',
 
     // Footer
     footerSig: 'vzorec, kter\u00FD nejde zm\u011Bnit. p\u0159esn\u011B tam spolu za\u010Dneme.',
