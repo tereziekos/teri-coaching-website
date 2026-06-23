@@ -1,13 +1,13 @@
 'use client';
-import Link from 'next/link';
 import { useLanguage } from '../context/LanguageContext';
 import { t } from '../content/translations';
 import { posts } from '../content/posts';
+import BlogCards from './blog/BlogCards';
 
 export default function Blog() {
   const { lang } = useLanguage();
   const tr = t(lang);
-  const items = posts[lang];
+  const hasPosts = posts[lang].length > 0;
 
   return (
     <section className="block subpage" id="blog">
@@ -15,21 +15,7 @@ export default function Blog() {
       <p className="faq-intro">{tr.blogIntro}</p>
       <hr className="hairline" />
 
-      {items.length === 0 ? (
-        <p className="blog-empty">{tr.blogEmpty}</p>
-      ) : (
-        <ul className="post-list">
-          {items.map((post) => (
-            <li key={post.slug} className="post-item">
-              <Link href={`/blog/${post.slug}`} className="post-link">
-                <time className="post-date">{post.date}</time>
-                <h2 className="post-title">{post.title}</h2>
-                <p className="post-excerpt">{post.excerpt}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      {hasPosts ? <BlogCards /> : <p className="blog-empty">{tr.blogEmpty}</p>}
     </section>
   );
 }

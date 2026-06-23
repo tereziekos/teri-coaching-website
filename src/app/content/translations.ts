@@ -120,14 +120,18 @@ const translations = {
     faqGroup1: 'before we start',
     faqGroup2: 'how it works',
     faqGroup3: 'practical',
-    faqCtaTitle: 'ready to start?',
-    faqCtaText: 'the first session is free, and there’s no obligation to continue.',
+    faqCtaTitle: 'let’s see if we’re a good fit.',
+    faqCtaText: 'the first session is free.',
+    faqCtaPrimary: 'book an intro session',
     faqCtaSecondary: 'or book a paid session directly',
+    faqStickyCta: 'book a free session →',
 
     // Blog page
     blogTitle: 'blog',
     blogIntro: 'notes on coaching, relationships, and the inner work.',
     blogEmpty: 'first posts are on the way, check back soon.',
+    blogReadMore: 'read more',
+    blogBack: '← back to blog',
 
     // Footer
     footerSig: 'there\u2019s a pattern you can\u2019t change. that\u2019s where we start.',
@@ -257,14 +261,18 @@ const translations = {
     faqGroup1: 'ne\u017E za\u010Dneme',
     faqGroup2: 'jak to prob\u00EDh\u00E1',
     faqGroup3: 'praktick\u00E9',
-    faqCtaTitle: 'p\u0159ipraveni za\u010D\u00EDt?',
-    faqCtaText: '\u00FAvodn\u00ED sezen\u00ED je zdarma a nezavazuje v\u00E1s k ni\u010Demu.',
+    faqCtaTitle: 'poj\u010Fme zjistit, jestli si sedneme.',
+    faqCtaText: '\u00FAvodn\u00ED sezen\u00ED je zdarma.',
+    faqCtaPrimary: 'rezervovat \u00FAvodn\u00ED sezen\u00ED',
     faqCtaSecondary: 'nebo rovnou rezervovat placen\u00E9 sezen\u00ED',
+    faqStickyCta: 'rezervovat sezen\u00ED zdarma \u2192',
 
     // Blog page
     blogTitle: 'blog',
     blogIntro: 'pozn\u00E1mky o kou\u010Dinku, vztaz\u00EDch a vnit\u0159n\u00ED pr\u00E1ci.',
     blogEmpty: 'prvn\u00ED \u010Dl\u00E1nky se chystaj\u00ED, zastavte se brzy.',
+    blogReadMore: '\u010D\u00EDst d\u00E1l',
+    blogBack: '\u2190 zp\u011Bt na blog',
 
     // Footer
     footerSig: 'vzorec, kter\u00FD nejde zm\u011Bnit. p\u0159esn\u011B tam spolu za\u010Dneme.',
