@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter, Fraunces } from 'next/font/google';
 import PlausibleProvider from 'next-plausible';
 import { LanguageProvider } from './context/LanguageContext';
@@ -127,6 +128,18 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18342353332"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18342353332');
+          `}
+        </Script>
         <PlausibleProvider
           domain="tereziealder.cz"
           customDomain="https://plan.danielhnyk.cz"

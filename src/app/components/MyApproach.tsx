@@ -31,20 +31,22 @@ export default function MyApproach() {
       <p className="sublabel">{tr.drawFromLabel}</p>
       <p className="methods">{tr.drawFromItems}</p>
 
-      <p className="sublabel">{tr.trainingLabel}</p>
-      <ul className="bullet-list">
-        {(tr.trainingItems as unknown as { text: string; url?: string }[]).map((item, i) => (
-          <li key={i}>
-            {item.url ? (
-              <a href={item.url} target="_blank" rel="noopener noreferrer" className="bullet-link">
-                {item.text}
-              </a>
-            ) : (
-              item.text
-            )}
-          </li>
-        ))}
-      </ul>
+      <div className="training-block">
+        <p className="sublabel training-label">{tr.trainingLabel}</p>
+        <ul className="bullet-list training-list">
+          {(tr.trainingItems as unknown as { text: string; url?: string }[]).map((item, i) => (
+            <li key={i}>
+              {item.url ? (
+                <a href={item.url} target="_blank" rel="noopener noreferrer" className="bullet-link">
+                  {item.text}
+                </a>
+              ) : (
+                item.text
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
