@@ -4,8 +4,8 @@ import { useLanguage } from '../context/LanguageContext';
 import { t } from '../content/translations';
 
 // Google Ads konverze při úspěšné rezervaci úvodního sezení.
-// Konverzní akce "Submit lead form" (Google Ads účet AW-18342353332).
-const ADS_CONVERSION_SEND_TO = 'AW-18342353332/zbFTCKOe5NQcELSzqKpE';
+// Konverzní akce "Rezervace Cal.com" (Google Ads účet AW-18342353332).
+const ADS_CONVERSION_SEND_TO = 'AW-18342353332/9lhICPypxNYcELSzqKpE';
 
 export default function FirstConversation() {
   const { lang } = useLanguage();
