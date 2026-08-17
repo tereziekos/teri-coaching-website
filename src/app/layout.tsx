@@ -7,6 +7,15 @@ import { LanguageProvider } from './context/LanguageContext';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 
+// Served from our own origin by nginx (see nginx.conf) instead of straight from
+// plan.danielhnyk.cz — blocklists match the 'plausible' filename and drop the
+// request inside the browser, so those visitors go uncounted. The cast is
+// needed because React's script prop types have no index signature for data-*.
+const plausibleScriptProps = {
+  src: '/_v/s.js',
+  'data-api': '/_v/e',
+} as React.ScriptHTMLAttributes<HTMLScriptElement>;
+
 const inter = Inter({
   subsets: ['latin', 'latin-ext'],
   variable: '--font-inter',
@@ -145,6 +154,7 @@ export default function RootLayout({
           customDomain="https://plan.danielhnyk.cz"
           selfHosted
           trackOutboundLinks
+          scriptProps={plausibleScriptProps}
         >
           <LanguageProvider>
             <Nav />

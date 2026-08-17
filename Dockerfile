@@ -14,15 +14,10 @@ FROM nginx:alpine
 
 COPY --from=builder /app/out /usr/share/nginx/html
 
-RUN echo 'server { \
-    listen 80; \
-    server_name _; \
-    root /usr/share/nginx/html; \
-    index index.html; \
-    location / { \
-        try_files $uri $uri/index.html /index.html; \
-    } \
-}' > /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Fail the build, not the rollout, if the config is malformed.
+RUN nginx -t
 
 EXPOSE 80
 
