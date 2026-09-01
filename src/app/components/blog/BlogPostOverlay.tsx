@@ -20,7 +20,7 @@ export default function BlogPostOverlay({ post, lang }: { post: Post; lang: 'en'
           <h1 className="blog-post-title">{post.title}</h1>
         </div>
       </div>
-      <BlogPostBody body={post.body} lang={lang} />
+      <BlogPostBody body={post.body} />
     </article>
   );
 }
