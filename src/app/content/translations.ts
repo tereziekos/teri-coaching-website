@@ -136,11 +136,15 @@ const translations = {
     blogEmpty: 'first posts are on the way, check back soon.',
     blogReadMore: 'read more',
     blogBack: '← back to blog',
+    followLabel: 'follow me',
+    blogYoutube: 'more videos on YouTube →',
 
     // Footer
     footerSig: 'there\u2019s a pattern you can\u2019t change. that\u2019s where we start.',
     footerEmail: 'tereziealder@gmail.com',
     footerYoutube: 'YouTube',
+    footerInstagram: 'Instagram',
+    footerCopied: 'copied ✓',
     footerBlog: 'blog',
   },
 
@@ -281,11 +285,15 @@ const translations = {
     blogEmpty: 'prvn\u00ED \u010Dl\u00E1nky se chystaj\u00ED, zastavte se brzy.',
     blogReadMore: '\u010D\u00EDst d\u00E1l',
     blogBack: '\u2190 zp\u011Bt na blog',
+    followLabel: 'sledujte m\u011B',
+    blogYoutube: 'v\u00EDce vide\u00ED na YouTube \u2192',
 
     // Footer
     footerSig: 'vzorec, kter\u00FD nejde zm\u011Bnit. p\u0159esn\u011B tam spolu za\u010Dneme.',
     footerEmail: 'tereziealder@gmail.com',
     footerYoutube: 'YouTube',
+    footerInstagram: 'Instagram',
+    footerCopied: 'zkopírováno ✓',
     footerBlog: 'blog',
   },
 } as const;

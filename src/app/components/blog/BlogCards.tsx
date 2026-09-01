@@ -5,14 +5,14 @@ import { t } from '../../content/translations';
 import { posts, formatDate } from '../../content/posts';
 
 export default function BlogCards() {
-  const { lang } = useLanguage();
+  const { lang, prefix } = useLanguage();
   const tr = t(lang);
   const items = posts[lang];
 
   return (
     <div className="blog-v-cards">
       {items.map((p) => (
-        <Link href={`/blog/${p.slug}`} className="blog-card" key={p.slug}>
+        <Link href={`${prefix}/blog/${p.slug}`} className="blog-card" key={p.slug}>
           <div className={`blog-card-media ${p.image ? '' : 'is-empty'}`}>
             {p.image ? (
               <img src={p.image} alt={p.imageAlt || ''} loading="lazy" />

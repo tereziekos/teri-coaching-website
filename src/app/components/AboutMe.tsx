@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 import { t } from '../content/translations';
+import SocialRow from './SocialRow';
 
 export default function AboutMe() {
   const { lang } = useLanguage();
@@ -34,6 +35,7 @@ export default function AboutMe() {
             />
           </div>
           {/* <figcaption className="caption">{tr.aboutCaption}</figcaption> */}
+          <SocialRow />
         </figure>
       </div>
     </section>
