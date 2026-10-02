@@ -283,6 +283,25 @@ blockquote.epigraph { font-family: var(--font-serif); font-style: italic; font-s
 .cal-inline-side { background: var(--paper); border-radius: 4px; overflow: hidden; }
 .cal-inline-side iframe { width: 100%; min-height: 800px; border: none; display: block; }
 
+/* ── Weekly sessions ── */
+.weekly-block { max-width: 54ch; margin: 2.6rem 0 0; padding-top: 2rem; border-top: 0.5px solid var(--clay-soft); }
+.weekly-intro { font-size: 15px; color: var(--moss); line-height: 1.6; margin: 0.4rem 0 1.5rem; max-width: 50ch; }
+.weekly-tier { margin-bottom: 1.3rem; }
+.weekly-tier-title { font-size: 12px; color: var(--clay); letter-spacing: 0.15em; margin: 0 0 0.3rem; }
+.weekly-rows { border-top: 0.5px solid var(--clay-soft); }
+.weekly-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 12px 0; border-bottom: 0.5px dotted var(--clay-soft); color: var(--moss); font-size: 15px; }
+.weekly-row-dur { flex-shrink: 0; }
+.weekly-row-prices { display: flex; flex-direction: column; gap: 3px; text-align: right; }
+.weekly-row-prices .wk-per, .weekly-row-prices .wk-month { font-family: 'SF Mono', Menlo, monospace; }
+.weekly-row-prices .wk-per { color: var(--clay); font-size: 13px; }
+.weekly-row-prices .wk-month { color: var(--clay); opacity: 0.62; font-size: 12px; }
+.weekly-row-prices em { font-style: normal; font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.03em; color: var(--moss-soft); margin-left: 5px; }
+.weekly-how { margin-top: 1.6rem; }
+.weekly-how-title { font-size: 12px; color: var(--clay); letter-spacing: 0.15em; margin: 0 0 0.7rem; }
+.weekly-how ul { list-style: none; margin: 0; padding: 0; }
+.weekly-how li { position: relative; padding-left: 18px; font-size: 13.5px; color: var(--off-black); line-height: 1.6; margin-bottom: 0.5rem; }
+.weekly-how li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 5px; height: 5px; border-radius: 50%; background: var(--clay); }
+
 /* ── Photos ── */
 .photos-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
 .photos-grid.photos-grid-two { grid-template-columns: 1fr 1fr; }
