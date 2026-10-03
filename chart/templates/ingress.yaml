@@ -43,7 +43,12 @@ metadata:
   name: teri-coaching-redirect
   annotations:
     cert-manager.io/cluster-issuer: {{ .Values.clusterIssuer }}
-    nginx.ingress.kubernetes.io/permanent-redirect: {{ .Values.redirectTarget }}$request_uri
+    # Traefik's ingress-nginx provider doesn't expand $request_uri in
+    # permanent-redirect (drops the path), but does in snippets. ssl-redirect
+    # off so http:// also goes straight to the target in one hop.
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      return 301 {{ .Values.redirectTarget }}$request_uri;
 spec:
   tls:
     - secretName: teri-coaching-redirect-tls
