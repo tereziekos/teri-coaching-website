@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { posts } from './content/posts';
+import { circles } from './content/circles';
 
 export const dynamic = 'force-static';
 
@@ -29,5 +30,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticUrls, ...csPosts, ...enPosts];
+  const circleUrls: MetadataRoute.Sitemap = [
+    { url: `${BASE}/kruhy`, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE}/en/kruhy`, changeFrequency: 'weekly', priority: 0.5 },
+    ...circles.map((c) => ({
+      url: `${BASE}/kruhy/${c.slug}`,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    })),
+  ];
+
+  return [...staticUrls, ...csPosts, ...enPosts, ...circleUrls];
 }

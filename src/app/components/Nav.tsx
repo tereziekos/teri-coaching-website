@@ -18,6 +18,7 @@ export default function Nav() {
         <Link href={`${home}#about`} className="nav-link nav-link-section">{tr.aboutLabel}</Link>
         <Link href={`${home}#approach`} className="nav-link nav-link-section">{tr.approachLabel}</Link>
         <Link href={`${home}#pricing`} className="nav-link nav-link-section">{tr.contLabel}</Link>
+        <Link href={`${prefix}/kruhy`} className="nav-link nav-link-page">{tr.circlesNav}</Link>
         <Link href={`${prefix}/faq`} className="nav-link nav-link-page">{tr.faqNav}</Link>
         <Link href={`${prefix}/blog`} className="nav-link nav-link-page">{tr.blogNav}</Link>
         <span className="lang-toggle" onClick={toggle}>

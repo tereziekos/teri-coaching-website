@@ -153,6 +153,26 @@ const translations = {
     followLabel: 'follow me',
     blogYoutube: 'more videos on YouTube →',
 
+    // Women's circles
+    circlesNav: 'women’s circles',
+    circlesTitle: 'women’s circles',
+    circlesIntro: 'evenings of presence, self-care and sharing among women. held in czech, in prague.',
+    circlesEmpty: 'no circle is scheduled right now. the next one is on its way.',
+    circlesPast: 'past circles',
+    circlesMore: 'details & sign-up',
+    circlesBack: '← all circles',
+    circlesKicker: 'women’s circle',
+    circlesWhen: 'when',
+    circlesWhere: 'where',
+    circlesMap: 'map',
+    circlesPrice: 'price',
+    circlesCapacity: 'capacity',
+    circlesProgram: 'programme',
+    circlesCancellation: 'cancellation',
+    circlesSignup: 'sign up',
+    circlesPhoto: 'photo:',
+    circlesLangNote: 'the circle is held in czech, so the description below is in czech too.',
+
     // Footer
     footerSig: 'there\u2019s a pattern you can\u2019t change. that\u2019s where we start.',
     footerEmail: 'tereziealder@gmail.com',
@@ -315,6 +335,26 @@ const translations = {
     blogBack: '\u2190 zp\u011Bt na blog',
     followLabel: 'sledujte m\u011B',
     blogYoutube: 'v\u00EDce vide\u00ED na YouTube \u2192',
+
+    // \u017Densk\u00E9 kruhy
+    circlesNav: '\u017Eensk\u00E9 kruhy',
+    circlesTitle: '\u017Eensk\u00E9 kruhy',
+    circlesIntro: 've\u010Dery zp\u0159\u00EDtomn\u011Bn\u00ED, sebep\u00E9\u010De a sd\u00EDlen\u00ED mezi \u017Eenami. v praze.',
+    circlesEmpty: 'te\u010F nen\u00ED vypsan\u00FD \u017E\u00E1dn\u00FD kruh. dal\u0161\u00ED se chyst\u00E1.',
+    circlesPast: 'prob\u011Bhl\u00E9 kruhy',
+    circlesMore: 'detail a p\u0159ihl\u00E1\u0161ka',
+    circlesBack: '\u2190 v\u0161echny kruhy',
+    circlesKicker: '\u017Eensk\u00FD kruh',
+    circlesWhen: 'kdy',
+    circlesWhere: 'kde',
+    circlesMap: 'mapa',
+    circlesPrice: 'cena',
+    circlesCapacity: 'kapacita',
+    circlesProgram: 'Program',
+    circlesCancellation: 'Storno podm\u00EDnky',
+    circlesSignup: 'p\u0159ihl\u00E1sit se',
+    circlesPhoto: 'foto:',
+    circlesLangNote: '',
 
     // Footer
     footerSig: 'vzorec, kter\u00FD nejde zm\u011Bnit. p\u0159esn\u011B tam spolu za\u010Dneme.',
