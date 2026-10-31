@@ -31,9 +31,9 @@ export const circles: Circle[] = [
     subtitle: 'Večer zpřítomnění, sebepéče a sdílení',
     date: '2026-11-05',
     time: '17:00–21:00',
-    venue: 'Stará vodárna v Nebušicích, podkroví',
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Star%C3%A1+vod%C3%A1rna+Nebu%C5%A1ice',
-    transport: 'Nebušice jsou zhruba 10 minut autobusem od metra Bořislavka (linka A).',
+    venue: 'Nebušice, Praha 6',
+    transport:
+      'Zhruba 10 minut autobusem od metra Bořislavka (linka A). Přesnou adresu pošlu v informačním e-mailu po přihlášení.',
     image: '/images/photos/kruh-duvera.jpg',
     imageAlt: 'Podzimní listí na hladině kaluže v dešti',
     imageCredit: 'Polina Kuzovkova',
@@ -52,7 +52,7 @@ export const circles: Circle[] = [
     ],
     program: 'vedená meditace, sdílení v kruhu, hudba a relaxace',
     note: 'Zkušenost s kruhy není potřeba.',
-    price: '700 Kč',
+    price: '400 Kč',
     capacity: '14 míst',
     cancellation:
       'Platba je nevratná, ale můžete za sebe poslat jinou ženu. Pokud vaše místo obsadí náhradnice, částku vám vrátím. Pokud kruh zruším já, vracím celou částku.',
