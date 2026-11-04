@@ -28,15 +28,15 @@ const pricing: Record<'en' | 'cs', {
   },
   cs: {
     individual: [
-      { duration: '60 min', price: '2 500 Kč', url: 'https://cal.com/terezie-alder/60min', calSlug: 'terezie-alder/60min' },
-      { duration: '90 min', price: '3 000 Kč', url: 'https://cal.com/terezie-alder/90min', calSlug: 'terezie-alder/90min' },
+      { duration: '60 min', price: '2 000 Kč', url: 'https://cal.com/terezie-alder/60min', calSlug: 'terezie-alder/60min' },
+      { duration: '90 min', price: '2 500 Kč', url: 'https://cal.com/terezie-alder/90min', calSlug: 'terezie-alder/90min' },
     ],
     couple: [
       { duration: '100 min', price: '3 500 Kč', url: 'https://cal.com/terezie-alder/couples100', calSlug: 'terezie-alder/couples100' },
     ],
     weeklyIndividual: [
-      { duration: '60 min', perSession: '2 000 Kč', monthly: '8 000 Kč' },
-      { duration: '90 min', perSession: '2 400 Kč', monthly: '9 600 Kč' },
+      { duration: '60 min', perSession: '1 800 Kč', monthly: '7 200 Kč' },
+      { duration: '90 min', perSession: '2 200 Kč', monthly: '8 800 Kč' },
     ],
     weeklyCouple: { duration: '100 min', perSession: '3 000 Kč', monthly: '12 000 Kč' },
   },

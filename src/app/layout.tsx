@@ -101,13 +101,13 @@ const jsonLd = {
       {
         '@type': 'Offer',
         itemOffered: { '@type': 'Service', name: 'Individual coaching 60 min' },
-        price: '2500',
+        price: '2000',
         priceCurrency: 'CZK',
       },
       {
         '@type': 'Offer',
         itemOffered: { '@type': 'Service', name: 'Individual coaching 90 min' },
-        price: '3000',
+        price: '2500',
         priceCurrency: 'CZK',
       },
       {
