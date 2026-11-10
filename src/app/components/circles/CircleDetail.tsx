@@ -44,7 +44,9 @@ export default function CircleDetail({ slug }: { slug: string }) {
   const closedNote = past === null ? null : past ? tr.circlesClosedPast : tr.circlesClosedSoon;
 
   return (
-    <section className={`block subpage circle-page ${c.image ? 'has-hero' : ''}`}>
+    <section
+      className={`block subpage circle-page ${c.image ? 'has-hero' : ''} ${c.theme === 'dark' ? 'circle-page--dark' : ''}`}
+    >
       <article className="circle-detail">
         {c.image ? (
           <div

@@ -22,6 +22,7 @@ export interface Circle {
   imageAlt?: string;
   imageCredit?: string; // jméno autora fotky
   imageCreditUrl?: string;
+  theme?: 'dark'; // tmavá stránka s bílým písmem
 }
 
 // Kruhy probíhají česky, proto je obsah jen v jedné verzi.
@@ -59,12 +60,15 @@ export const circles: Circle[] = [
       { amount: '500 Kč', label: 'když můžete podpořit i další ženy' },
     ],
     capacity: '10 žen',
+    signupUrl:
+      'https://docs.google.com/forms/d/e/1FAIpQLSd4gUVavwxZVsfcIBye1XAYB5dMrV-KwgCitoVNdcJi0kQ32A/viewform',
     cancellation:
       'Pokud se nemůžete zúčastnit z vážného důvodu, například kvůli nemoci, vrátím vám celou částku. V ostatních případech můžete za sebe poslat jinou ženu, nebo vám částku vrátím, pokud vaše místo obsadí náhradnice. Pokud kruh zruším já, vracím celou částku.',
     image: '/images/photos/kruh-slunovrat.jpg',
     imageAlt: 'Zasněžené kopce a zimní slunce v mlze',
     imageCredit: 'Cecilia Tran',
     imageCreditUrl: 'https://unsplash.com/photos/lfNe3PUE3cQ',
+    theme: 'dark',
   },
   {
     slug: 'duvera-v-case-kdy-nic-nekvete',

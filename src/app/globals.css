@@ -608,6 +608,27 @@ body:has(.circle-hero) { overflow-x: clip; } /* 100vw hero vs. scrollbar width *
 .circle-about p { font-family: var(--font-serif); font-style: italic; font-size: 18px; line-height: 1.7; color: var(--moss); margin: 0 0 1.1rem; }
 .circle-about .circle-about-sig { font-style: normal; font-size: 15px; color: var(--clay); margin: 1.6rem 0 0; }
 .circle-about .circle-about-sig::before { content: '— '; }
+/* Dark circle page: swap the palette inside the section; nav and footer stay light.
+   box-shadow + clip-path paint the background edge to edge without widening the page. */
+.circle-page--dark {
+  --night: #172226;
+  --moss: #EEEFEA;
+  --paper: #1F2D31;
+  --off-black: rgba(238, 239, 234, 0.78);
+  --moss-soft: rgba(238, 239, 234, 0.55);
+  --clay-soft: rgba(168, 154, 123, 0.35);
+  background: var(--night);
+  box-shadow: 0 0 0 100vmax var(--night);
+  clip-path: inset(0 -100vmax);
+  padding-bottom: 5rem;
+}
+.circle-page--dark .circle-hero::after { background: linear-gradient(to top, var(--night), rgba(23, 34, 38, 0.35) 55%, rgba(23, 34, 38, 0.5)); }
+.circle-page--dark .circle-hero .blog-back,
+.circle-page--dark .circle-hero .circle-kicker,
+.circle-page--dark .circle-hero .circle-title,
+.circle-page--dark .circle-hero .circle-subtitle,
+.circle-page--dark .circle-credit { color: #EEEFEA; }
+.circle-page--dark .circle-hero .blog-back:hover { color: #EEEFEA; }
 .circle-card-date.has-image { position: relative; background: var(--moss) center / cover no-repeat; }
 .circle-card-date.has-image::before { content: ''; position: absolute; inset: 0; background: rgba(20, 27, 19, 0.55); }
 .circle-card-date.has-image > * { position: relative; }
