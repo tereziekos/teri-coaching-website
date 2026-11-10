@@ -13,7 +13,7 @@ export default function CircleDetail({ slug }: { slug: string }) {
   const ctaRef = useRef<HTMLDivElement>(null);
   const [stickyHidden, setStickyHidden] = useState(false);
   // Today is only known in the browser (static export), so a past circle closes sign-up after mount.
-  const [past, setPast] = useState(false);
+  const [past, setPast] = useState<boolean | null>(null);
   useEffect(() => {
     if (c) setPast(isPast(c.date, new Date().toISOString().slice(0, 10)));
   }, [c]);
@@ -40,7 +40,8 @@ export default function CircleDetail({ slug }: { slug: string }) {
   }
 
   const signupOpen = !!c.signupUrl && !past;
-  const closedNote = past ? tr.circlesClosedPast : tr.circlesClosedSoon;
+  // Until the date is known (first render), show no note rather than a possibly wrong one.
+  const closedNote = past === null ? null : past ? tr.circlesClosedPast : tr.circlesClosedSoon;
 
   return (
     <section className={`block subpage circle-page ${c.image ? 'has-hero' : ''}`}>
