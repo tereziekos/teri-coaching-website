@@ -65,9 +65,10 @@ export const circles: Circle[] = [
     cancellation:
       'Pokud se nemůžete zúčastnit z vážného důvodu, například kvůli nemoci, vrátím vám celou částku. V ostatních případech můžete za sebe poslat jinou ženu, nebo vám částku vrátím, pokud vaše místo obsadí náhradnice. Pokud kruh zruším já, vracím celou částku.',
     image: '/images/photos/kruh-slunovrat.jpg',
-    imageAlt: 'Zasněžené kopce a zimní slunce v mlze',
-    imageCredit: 'Cecilia Tran',
-    imageCreditUrl: 'https://unsplash.com/photos/lfNe3PUE3cQ',
+    imageAlt: 'Padající sníh na tmavém pozadí',
+    imageCredit: 'Cindy Bartillon',
+    imageCreditUrl:
+      'https://unsplash.com/photos/falling-snow-against-a-dark-background-k0EAfDGvlf4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
     theme: 'dark',
   },
   {
