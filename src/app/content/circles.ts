@@ -30,7 +30,7 @@ export const circles: Circle[] = [
   {
     slug: 'co-nechavam-v-tomto-roce',
     title: 'Co odevzdávám tmě',
-    subtitle: 'Ženský kruh, rituál ohně a rozloučení s rokem',
+    subtitle: 'Rituál ohně a rozloučení s rokem',
     date: '2026-12-18',
     time: '17:00–21:00',
     venue: 'Nebušice, Praha 6',
