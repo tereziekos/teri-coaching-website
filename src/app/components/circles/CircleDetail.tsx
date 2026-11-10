@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '../../context/LanguageContext';
 import { t } from '../../content/translations';
-import { circles, circleAbout, weekday } from '../../content/circles';
+import { circles, circleAbout, weekday, isPast } from '../../content/circles';
 import { formatDate } from '../../content/posts';
 
 export default function CircleDetail({ slug }: { slug: string }) {
@@ -12,6 +12,11 @@ export default function CircleDetail({ slug }: { slug: string }) {
   const c = circles.find((x) => x.slug === slug);
   const ctaRef = useRef<HTMLDivElement>(null);
   const [stickyHidden, setStickyHidden] = useState(false);
+  // Today is only known in the browser (static export), so a past circle closes sign-up after mount.
+  const [past, setPast] = useState(false);
+  useEffect(() => {
+    if (c) setPast(isPast(c.date, new Date().toISOString().slice(0, 10)));
+  }, [c]);
 
   // Hide the floating CTA once the end CTA card scrolls into view.
   useEffect(() => {
@@ -33,6 +38,9 @@ export default function CircleDetail({ slug }: { slug: string }) {
       </section>
     );
   }
+
+  const signupOpen = !!c.signupUrl && !past;
+  const closedNote = past ? tr.circlesClosedPast : tr.circlesClosedSoon;
 
   return (
     <section className={`block subpage circle-page ${c.image ? 'has-hero' : ''}`}>
@@ -101,9 +109,13 @@ export default function CircleDetail({ slug }: { slug: string }) {
           </div>
         </dl>
 
-        <a href={c.signupUrl} target="_blank" rel="noopener noreferrer" className="btn-whisper circle-signup">
-          {tr.circlesSignup}
-        </a>
+        {signupOpen ? (
+          <a href={c.signupUrl} target="_blank" rel="noopener noreferrer" className="btn-whisper circle-signup">
+            {tr.circlesSignup}
+          </a>
+        ) : (
+          <p className="circle-closed">{closedNote}</p>
+        )}
 
         {lang === 'en' && <p className="circle-lang-note">{tr.circlesLangNote}</p>}
 
@@ -117,6 +129,20 @@ export default function CircleDetail({ slug }: { slug: string }) {
           <h2>{tr.circlesProgram}</h2>
           <p>{c.program.charAt(0).toUpperCase() + c.program.slice(1)}.</p>
           {c.note && <p>{c.note}</p>}
+
+          {c.priceTiers && (
+            <>
+              <h2>{tr.circlesPriceHeading}</h2>
+              {c.priceIntro && <p>{c.priceIntro}</p>}
+              <ul className="circle-tiers">
+                {c.priceTiers.map((tier) => (
+                  <li key={tier.amount}>
+                    <strong>{tier.amount}</strong> – {tier.label}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
 
           <h2>{tr.circlesCancellation}</h2>
           <p>{c.cancellation}</p>
@@ -134,23 +160,29 @@ export default function CircleDetail({ slug }: { slug: string }) {
             {formatDate(c.date, lang)} · {c.time} · {c.price}
           </p>
           <div className="faq-cta-actions">
-            <a href={c.signupUrl} target="_blank" rel="noopener noreferrer" className="btn-whisper">
-              {tr.circlesSignup}
-            </a>
+            {signupOpen ? (
+              <a href={c.signupUrl} target="_blank" rel="noopener noreferrer" className="btn-whisper">
+                {tr.circlesSignup}
+              </a>
+            ) : (
+              <p className="circle-closed">{closedNote}</p>
+            )}
           </div>
         </div>
       </article>
 
-      <a
-        href={c.signupUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`faq-sticky ${stickyHidden ? 'is-hidden' : ''}`}
-        aria-hidden={stickyHidden}
-        tabIndex={stickyHidden ? -1 : undefined}
-      >
-        {tr.circlesSignup} →
-      </a>
+      {signupOpen && (
+        <a
+          href={c.signupUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`faq-sticky ${stickyHidden ? 'is-hidden' : ''}`}
+          aria-hidden={stickyHidden}
+          tabIndex={stickyHidden ? -1 : undefined}
+        >
+          {tr.circlesSignup} →
+        </a>
+      )}
     </section>
   );
 }

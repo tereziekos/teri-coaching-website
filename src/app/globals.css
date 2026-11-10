@@ -583,6 +583,8 @@ footer.site-footer { padding: 6rem 56px 3rem; border-top: 0.5px solid var(--clay
 .circle-facts a { color: var(--moss); text-decoration: underline; text-decoration-color: var(--clay); text-underline-offset: 3px; }
 .circle-facts a:hover { color: var(--clay); }
 .circle-signup { display: inline-block; text-decoration: none; }
+.circle-body .circle-tiers { list-style: none; padding: 0; }
+.circle-closed { font-family: var(--font-serif); font-style: italic; font-size: 17px; color: var(--clay); margin: 0; }
 .circle-lang-note { font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--clay); margin: 1.4rem 0 0; }
 .circle-questions { list-style: none; padding: 0; margin: 3rem 0 2.6rem; border-left: 2px solid var(--clay); padding-left: 1.4rem; }
 .circle-questions li { font-family: var(--font-serif); font-style: italic; font-size: clamp(20px, 2.6vw, 25px); line-height: 1.45; color: var(--moss); margin: 0 0 0.5rem; }

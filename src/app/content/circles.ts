@@ -12,10 +12,12 @@ export interface Circle {
   body: string[]; // odstavce úvodního textu
   program: string;
   note?: string; // např. 'Zkušenost s kruhy není potřeba.'
-  price: string;
+  price: string; // krátce, např. '400 Kč' nebo '300–500 Kč'
+  priceIntro?: string; // u odstupňované ceny: úvodní věta nad seznamem
+  priceTiers?: { amount: string; label: string }[];
   capacity: string;
   cancellation: string;
-  signupUrl: string;
+  signupUrl?: string; // bez odkazu se místo tlačítka ukáže „přihlašování brzy otevřu"
   image?: string; // cover fotka (cesta v /public), volitelná
   imageAlt?: string;
   imageCredit?: string; // jméno autora fotky
@@ -25,6 +27,46 @@ export interface Circle {
 // Kruhy probíhají česky, proto je obsah jen v jedné verzi.
 // Nový kruh = přidat objekt na začátek pole.
 export const circles: Circle[] = [
+  {
+    slug: 'co-nechavam-v-tomto-roce',
+    title: 'Co nechávám v tomto roce',
+    subtitle: 'Slunovratový večer sdílení a rituálu',
+    date: '2026-12-18',
+    time: '17:00–21:00',
+    venue: 'Nebušice, Praha 6',
+    transport:
+      'Zhruba 10 minut autobusem od metra Bořislavka (linka A). Přesnou adresu pošlu v informačním e-mailu po přihlášení.',
+    excerpt:
+      'Zimní slunovrat je čas ohlédnout se za rokem, který končí, a vědomě něco odložit. Večer zakončíme rituálem slunovratu venku na zahradě.',
+    questions: [
+      'Co nechávám v tomto roce?',
+      'Co už nechci nést dál?',
+      'Pro co chci udělat místo?',
+    ],
+    body: [
+      'Zimní slunovrat je nejdelší noc v roce. Pak se dny zase začnou prodlužovat. Je to čas zastavit se, ohlédnout se za rokem, který končí, a vědomě něco odložit.',
+      'Tento večer se můžeme ohlédnout společně. Bez hodnocení, co se povedlo a co ne. Jen pojmenovat, co v tomto roce necháváme, a udělat místo tomu, co přichází.',
+      'Večer zakončíme venku na zahradě rituálem slunovratu. Na papírky napíšeme, co chceme nechat jít, a společně je spálíme.',
+      'Sdílení je dobrovolné. Sdílíte jen to, co sdílet chcete, a je v pořádku sdílet i mlčením.',
+    ],
+    program: 'vedená meditace, sdílení v kruhu, rituál slunovratu, hudba',
+    note: 'Zkušenost s kruhy není potřeba. Část večera bude venku, vezměte si teplé oblečení.',
+    price: '300–500 Kč',
+    priceIntro: 'Cena je odstupňovaná, vyberte si podle svých možností:',
+    priceTiers: [
+      { amount: '300 Kč', label: 'když je pro vás teď plná cena náročná' },
+      { amount: '400 Kč', label: 'běžná cena' },
+      { amount: '500 Kč', label: 'když můžete podpořit i další ženy' },
+    ],
+    capacity: '10 žen',
+    cancellation:
+      'Pokud se nemůžete zúčastnit z vážného důvodu, například kvůli nemoci, vrátím vám celou částku. V ostatních případech můžete za sebe poslat jinou ženu, nebo vám částku vrátím, pokud vaše místo obsadí náhradnice. Pokud kruh zruším já, vracím celou částku.',
+    image: '/images/photos/kruh-slunovrat.jpg',
+    imageAlt: 'Osamělý strom pod hvězdnou zimní oblohou',
+    imageCredit: 'Filip Kvasnak',
+    imageCreditUrl:
+      'https://unsplash.com/photos/lone-tree-under-a-starry-night-sky-N6ezQsnj_Ak?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+  },
   {
     slug: 'duvera-v-case-kdy-nic-nekvete',
     title: 'Důvěra v čase, kdy nic nekvete',
@@ -56,8 +98,6 @@ export const circles: Circle[] = [
     capacity: '14 míst',
     cancellation:
       'Platba je nevratná, ale můžete za sebe poslat jinou ženu. Pokud vaše místo obsadí náhradnice, částku vám vrátím. Pokud kruh zruším já, vracím celou částku.',
-    signupUrl:
-      'https://docs.google.com/forms/d/e/1FAIpQLSd4gUVavwxZVsfcIBye1XAYB5dMrV-KwgCitoVNdcJi0kQ32A/viewform',
   },
 ];
 

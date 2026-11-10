@@ -67,6 +67,8 @@ export function circleMetadata(lang: Lang, slug: string): Metadata {
   };
 }
 
+const amount = (price: string) => Number(price.replace(/\D/g, ''));
+
 export function circleJsonLd(lang: Lang, slug: string) {
   const c = circles.find((x) => x.slug === slug);
   if (!c) return [];
@@ -86,13 +88,22 @@ export function circleJsonLd(lang: Lang, slug: string) {
         name: c.venue,
         address: { '@type': 'PostalAddress', addressLocality: 'Praha', addressCountry: 'CZ' },
       },
-      offers: {
-        '@type': 'Offer',
-        price: c.price.replace(/\D/g, ''),
-        priceCurrency: 'CZK',
-        url: c.signupUrl,
-        availability: 'https://schema.org/InStock',
-      },
+      offers: c.priceTiers
+        ? {
+            '@type': 'AggregateOffer',
+            lowPrice: Math.min(...c.priceTiers.map((tier) => amount(tier.amount))),
+            highPrice: Math.max(...c.priceTiers.map((tier) => amount(tier.amount))),
+            priceCurrency: 'CZK',
+            url: c.signupUrl,
+            availability: 'https://schema.org/InStock',
+          }
+        : {
+            '@type': 'Offer',
+            price: amount(c.price),
+            priceCurrency: 'CZK',
+            url: c.signupUrl,
+            availability: 'https://schema.org/InStock',
+          },
       organizer: { '@type': 'Person', name: 'Terezie Alder', url: BASE },
       inLanguage: 'cs',
       url: circleUrl(lang, slug),

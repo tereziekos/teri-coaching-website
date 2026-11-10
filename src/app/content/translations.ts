@@ -170,6 +170,9 @@ const translations = {
     circlesProgram: 'programme',
     circlesCancellation: 'cancellation',
     circlesSignup: 'sign up',
+    circlesPriceHeading: 'price',
+    circlesClosedSoon: 'sign-up opens soon.',
+    circlesClosedPast: 'this circle has already taken place.',
     circlesPhoto: 'photo:',
     circlesLangNote: 'the circle is held in czech, so the description below is in czech too.',
 
@@ -353,6 +356,9 @@ const translations = {
     circlesProgram: 'Program',
     circlesCancellation: 'Storno podm\u00EDnky',
     circlesSignup: 'p\u0159ihl\u00E1sit se',
+    circlesPriceHeading: 'Cena',
+    circlesClosedSoon: 'p\u0159ihla\u0161ov\u00E1n\u00ED brzy otev\u0159u.',
+    circlesClosedPast: 'tento kruh u\u017E prob\u011Bhl.',
     circlesPhoto: 'foto:',
     circlesLangNote: '',
 
