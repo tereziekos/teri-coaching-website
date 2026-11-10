@@ -62,10 +62,9 @@ export const circles: Circle[] = [
     cancellation:
       'Pokud se nemůžete zúčastnit z vážného důvodu, například kvůli nemoci, vrátím vám celou částku. V ostatních případech můžete za sebe poslat jinou ženu, nebo vám částku vrátím, pokud vaše místo obsadí náhradnice. Pokud kruh zruším já, vracím celou částku.',
     image: '/images/photos/kruh-slunovrat.jpg',
-    imageAlt: 'Osamělý strom pod hvězdnou zimní oblohou',
-    imageCredit: 'Filip Kvasnak',
-    imageCreditUrl:
-      'https://unsplash.com/photos/lone-tree-under-a-starry-night-sky-N6ezQsnj_Ak?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+    imageAlt: 'Zasněžené kopce a zimní slunce v mlze',
+    imageCredit: 'Cecilia Tran',
+    imageCreditUrl: 'https://unsplash.com/photos/lfNe3PUE3cQ',
   },
   {
     slug: 'duvera-v-case-kdy-nic-nekvete',
