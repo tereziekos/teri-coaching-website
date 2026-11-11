@@ -63,6 +63,12 @@ export default function Newsletter({ variant = 'card', place }: { variant?: Vari
       id={variant === 'section' ? 'newsletter' : undefined}
     >
       <div className="newsletter-inner">
+        <span className="newsletter-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2.5" />
+            <path d="m3.5 7 8.5 6 8.5-6" />
+          </svg>
+        </span>
         <div className="newsletter-copy">
           <p className="newsletter-kicker">{tr.newsletterLabel}</p>
           <p className="newsletter-title">{tr.newsletterTitle}</p>
@@ -86,7 +92,7 @@ export default function Newsletter({ variant = 'card', place }: { variant?: Vari
                 onChange={(e) => setEmail(e.target.value)}
                 className="newsletter-input"
               />
-              <button type="submit" className="btn-whisper newsletter-btn" disabled={status === 'sending'}>
+              <button type="submit" className="newsletter-btn" disabled={status === 'sending'}>
                 {status === 'sending' ? tr.newsletterSending : tr.newsletterButton}
               </button>
             </div>
@@ -96,10 +102,8 @@ export default function Newsletter({ variant = 'card', place }: { variant?: Vari
                 <input type="text" tabIndex={-1} autoComplete="off" value={trap} onChange={(e) => setTrap(e.target.value)} />
               </label>
             </div>
-            {status === 'error' ? (
+            {status === 'error' && (
               <p className="newsletter-note newsletter-error" role="alert">{tr.newsletterError}</p>
-            ) : (
-              <p className="newsletter-note">{tr.newsletterConsent}</p>
             )}
           </form>
         )}
