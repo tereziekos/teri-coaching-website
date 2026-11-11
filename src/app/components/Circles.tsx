@@ -5,6 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { t } from '../content/translations';
 import { circles, weekday, isPast } from '../content/circles';
 import { formatDate } from '../content/posts';
+import Newsletter from './Newsletter';
 
 export default function Circles() {
   const { lang } = useLanguage();
@@ -30,6 +31,10 @@ export default function Circles() {
       ) : (
         <p className="blog-empty">{tr.circlesEmpty}</p>
       )}
+
+      <div className="circle-list-newsletter">
+        <Newsletter variant="card" place="circles" />
+      </div>
 
       {past.length > 0 && (
         <>

@@ -19,10 +19,10 @@ export function useNewsletterVisible() {
 }
 
 /**
- * Newsletter sign-up. One component, one look, three placements:
- *  - section: its own block on the home page
- *  - card:    the end of a blog post / circle page
- *  - footer:  slim row in the footer of every page
+ * Newsletter sign-up. One component, one look (dark moss band), three layouts:
+ *  - section: its own block on the home page, text beside the form
+ *  - card:    blog posts, circle list and circle pages, stacked
+ *  - footer:  centred band in the footer of the remaining pages
  * `place` is sent to Plausible so we can see which placement works.
  */
 export default function Newsletter({ variant = 'card', place }: { variant?: Variant; place: string }) {
@@ -55,7 +55,6 @@ export default function Newsletter({ variant = 'card', place }: { variant?: Vari
 
   if (!visible) return null;
 
-  const showIntro = variant !== 'footer';
   const Wrapper = variant === 'section' ? 'section' : 'div';
 
   return (
@@ -63,17 +62,11 @@ export default function Newsletter({ variant = 'card', place }: { variant?: Vari
       className={`newsletter newsletter--${variant}${variant === 'section' ? ' block' : ''}`}
       id={variant === 'section' ? 'newsletter' : undefined}
     >
-      {variant === 'section' && (
-        <>
-          <p className="label">{tr.newsletterLabel}</p>
-          <hr className="hairline" />
-        </>
-      )}
-
       <div className="newsletter-inner">
         <div className="newsletter-copy">
+          <p className="newsletter-kicker">{tr.newsletterLabel}</p>
           <p className="newsletter-title">{tr.newsletterTitle}</p>
-          {showIntro && <p className="newsletter-text">{tr.newsletterText}</p>}
+          <p className="newsletter-text">{tr.newsletterText}</p>
         </div>
 
         {status === 'done' ? (

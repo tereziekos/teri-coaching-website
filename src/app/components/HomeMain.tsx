@@ -17,13 +17,13 @@ export default function HomeMain() {
       <Videos />
       <FirstConversation />
       <Testimonials />
+      <Newsletter variant="section" place="home" />
       <VibeVideo src="/images/photos/vibe-landscape.mp4" />
       <AboutMe />
       <MyApproach />
       <AiNote />
       <VibeVideo src="/images/photos/vibe-walking.mp4" />
       <ContinuingSessions />
-      <Newsletter variant="section" place="home" />
       <Photos />
     </>
   );

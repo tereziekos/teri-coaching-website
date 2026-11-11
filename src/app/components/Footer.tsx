@@ -9,11 +9,11 @@ export default function Footer() {
   const { lang, toggle } = useLanguage();
   const tr = t(lang);
   const [copied, setCopied] = useState(false);
-  // Home, blog posts and circle pages already show a newsletter form in the
-  // page itself — don't repeat it in the footer right below.
+  // Blog posts and circle pages end with a newsletter card right above the
+  // footer — don't repeat it. (The home page has one mid-page, so the footer
+  // one stays there as a second chance at the end.)
   const pathname = (usePathname() || '/').replace(/\/$/, '') || '/';
-  const hasInlineNewsletter =
-    pathname === '/' || pathname === '/en' || /^(\/en)?\/(blog|kruhy)\/[^/]+$/.test(pathname);
+  const hasInlineNewsletter = /^(\/en)?\/(blog\/[^/]+|kruhy(\/[^/]+)?)$/.test(pathname);
 
   const copyEmail = (e: React.MouseEvent) => {
     if (typeof navigator !== 'undefined' && navigator.clipboard) {

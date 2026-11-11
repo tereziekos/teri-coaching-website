@@ -177,15 +177,15 @@ const translations = {
     circlesLangNote: 'the circle is held in czech, so the description below is in czech too.',
 
     // Newsletter
-    newsletterLabel: 'letters',
-    newsletterTitle: 'every now and then, I’ll write to you.',
-    newsletterText: 'a short e-mail when there’s something worth sharing — a new article, an upcoming circle, a thought I keep coming back to. no spam, and you can leave with one click.',
+    newsletterLabel: 'newsletter',
+    newsletterTitle: 'so the next circle doesn’t pass you by.',
+    newsletterText: 'circles, rituals, new writing. I’ll write when something is coming up. only now and then, never more.',
     newsletterEmailLabel: 'your e-mail',
     newsletterPlaceholder: 'your e-mail',
-    newsletterButton: 'subscribe',
+    newsletterButton: 'keep me posted →',
     newsletterSending: 'sending…',
-    newsletterConsent: 'by subscribing you agree to receive my newsletter. unsubscribe any time.',
-    newsletterDone: 'almost there — please confirm your subscription in the e-mail I’ve just sent you.',
+    newsletterConsent: 'by subscribing you agree to receive my newsletter. unsubscribe any time, with one click.',
+    newsletterDone: 'thank you. one more step: confirm in the e-mail I’ve just sent you.',
     newsletterError: 'something went wrong. please try again, or write to me at tereziealder@gmail.com.',
     newsletterOptIn: 'send me the newsletter too — occasional e-mails, unsubscribe any time.',
 
@@ -376,15 +376,15 @@ const translations = {
     circlesLangNote: '',
 
     // Newsletter
-    newsletterLabel: 'dopisy',
-    newsletterTitle: 'jednou za čas vám napíšu.',
-    newsletterText: 'krátký e-mail, když mám co sdílet — nový článek, chystaný kruh, myšlenku, ke které se pořád vracím. žádný spam a odhlásit se můžete jedním kliknutím.',
+    newsletterLabel: 'newsletter',
+    newsletterTitle: 'ať vám neuteče další kruh.',
+    newsletterText: 'kruhy, rituály, nové texty. napíšu vám, když se něco chystá. jen občas, nikdy nic navíc.',
     newsletterEmailLabel: 'váš e-mail',
     newsletterPlaceholder: 'váš e-mail',
-    newsletterButton: 'odebírat',
+    newsletterButton: 'dejte mi vědět →',
     newsletterSending: 'odesílám…',
-    newsletterConsent: 'přihlášením souhlasíte se zasíláním newsletteru. odhlásit se můžete kdykoli.',
-    newsletterDone: 'skoro hotovo — potvrďte prosím odběr v e-mailu, který vám právě přišel.',
+    newsletterConsent: 'přihlášením souhlasíte se zasíláním newsletteru. odhlásit se můžete kdykoli, jedním kliknutím.',
+    newsletterDone: 'děkuju. ještě jeden krok: potvrďte odběr v e-mailu, který vám právě přišel.',
     newsletterError: 'něco se nepovedlo. zkuste to prosím znovu, nebo mi napište na tereziealder@gmail.com.',
     newsletterOptIn: 'pošlete mi i newsletter — občasné e-maily, odhlásit se můžu kdykoli.',
 
