@@ -8,6 +8,7 @@ import AiNote from './AiNote';
 import ContinuingSessions from './ContinuingSessions';
 import Photos from './Photos';
 import VibeVideo from './VibeVideo';
+import Newsletter from './Newsletter';
 
 export default function HomeMain() {
   return (
@@ -22,6 +23,7 @@ export default function HomeMain() {
       <AiNote />
       <VibeVideo src="/images/photos/vibe-walking.mp4" />
       <ContinuingSessions />
+      <Newsletter variant="section" place="home" />
       <Photos />
     </>
   );

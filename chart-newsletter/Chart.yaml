@@ -1,0 +1,4 @@
+apiVersion: v2
+name: newsletter
+description: Self-hosted Listmonk newsletter for tereziealder.cz (Listmonk + PostgreSQL + daily backup)
+version: 1.0.0

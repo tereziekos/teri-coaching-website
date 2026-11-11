@@ -1,0 +1,35 @@
+# Install into the `apps` namespace: the website's nginx reaches Listmonk at
+# listmonk.apps.svc.cluster.local (see ../nginx.conf). Change both together.
+
+# Admin UI + public pages (confirm / unsubscribe links in e-mails point here).
+host: newsletter.tereziealder.cz
+clusterIssuer: letsencrypt-http01
+
+# Created by hand, never committed (see NEWSLETTER.md):
+#   kubectl -n apps create secret generic listmonk \
+#     --from-literal=postgres-password=... --from-literal=admin-password=...
+existingSecret: listmonk
+
+listmonk:
+  # Check https://github.com/knadh/listmonk/releases for the latest before installing.
+  image: listmonk/listmonk:v5.1.0
+  adminUser: terezie
+  uploadsStorage: 1Gi
+  resources:
+    requests: { memory: "64Mi", cpu: "10m" }
+    limits: { memory: "256Mi", cpu: "500m" }
+
+postgres:
+  image: postgres:17-alpine
+  storage: 2Gi
+  resources:
+    requests: { memory: "64Mi", cpu: "10m" }
+    limits: { memory: "256Mi", cpu: "500m" }
+
+backup:
+  # Daily pg_dump to its own volume, keeping the last `keepDays` dumps.
+  # This protects against mistakes in Listmonk, NOT against losing the node —
+  # copy /backups off the server too (see NEWSLETTER.md).
+  schedule: "30 3 * * *"
+  keepDays: 14
+  storage: 2Gi

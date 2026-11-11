@@ -5,6 +5,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { t } from '../../content/translations';
 import { circles, circleAbout, weekday, isPast } from '../../content/circles';
 import { formatDate } from '../../content/posts';
+import Newsletter from '../Newsletter';
 
 export default function CircleDetail({ slug }: { slug: string }) {
   const { lang, prefix } = useLanguage();
@@ -172,6 +173,8 @@ export default function CircleDetail({ slug }: { slug: string }) {
             )}
           </div>
         </div>
+
+        <Newsletter variant="card" place="circle" />
       </article>
 
       {signupOpen && (

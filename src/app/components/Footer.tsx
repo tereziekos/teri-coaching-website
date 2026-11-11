@@ -1,12 +1,19 @@
 'use client';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { useLanguage } from '../context/LanguageContext';
 import { t } from '../content/translations';
+import Newsletter from './Newsletter';
 
 export default function Footer() {
   const { lang, toggle } = useLanguage();
   const tr = t(lang);
   const [copied, setCopied] = useState(false);
+  // Home, blog posts and circle pages already show a newsletter form in the
+  // page itself — don't repeat it in the footer right below.
+  const pathname = (usePathname() || '/').replace(/\/$/, '') || '/';
+  const hasInlineNewsletter =
+    pathname === '/' || pathname === '/en' || /^(\/en)?\/(blog|kruhy)\/[^/]+$/.test(pathname);
 
   const copyEmail = (e: React.MouseEvent) => {
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
@@ -23,6 +30,7 @@ export default function Footer() {
 
   return (
     <footer className="site-footer">
+      {!hasInlineNewsletter && <Newsletter variant="footer" place="footer" />}
       <p className="sig">{tr.footerSig}</p>
 
       <div className="footer-links">

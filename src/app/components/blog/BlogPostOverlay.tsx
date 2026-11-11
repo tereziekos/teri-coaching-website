@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { t } from '../../content/translations';
 import { Post, formatDate } from '../../content/posts';
 import BlogPostBody from './BlogPostBody';
+import Newsletter from '../Newsletter';
 
 export default function BlogPostOverlay({ post, lang }: { post: Post; lang: 'en' | 'cs' }) {
   const tr = t(lang);
@@ -22,6 +23,9 @@ export default function BlogPostOverlay({ post, lang }: { post: Post; lang: 'en'
         </div>
       </div>
       <BlogPostBody body={post.body} />
+      <div className="blog-newsletter">
+        <Newsletter variant="card" place="blog" />
+      </div>
       <a
         href="https://www.youtube.com/@TerezieAlder"
         target="_blank"

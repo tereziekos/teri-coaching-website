@@ -176,6 +176,19 @@ const translations = {
     circlesPhoto: 'photo:',
     circlesLangNote: 'the circle is held in czech, so the description below is in czech too.',
 
+    // Newsletter
+    newsletterLabel: 'letters',
+    newsletterTitle: 'every now and then, I’ll write to you.',
+    newsletterText: 'a short e-mail when there’s something worth sharing — a new article, an upcoming circle, a thought I keep coming back to. no spam, and you can leave with one click.',
+    newsletterEmailLabel: 'your e-mail',
+    newsletterPlaceholder: 'your e-mail',
+    newsletterButton: 'subscribe',
+    newsletterSending: 'sending…',
+    newsletterConsent: 'by subscribing you agree to receive my newsletter. unsubscribe any time.',
+    newsletterDone: 'almost there — please confirm your subscription in the e-mail I’ve just sent you.',
+    newsletterError: 'something went wrong. please try again, or write to me at tereziealder@gmail.com.',
+    newsletterOptIn: 'send me the newsletter too — occasional e-mails, unsubscribe any time.',
+
     // Footer
     footerSig: 'there\u2019s a pattern you can\u2019t change. that\u2019s where we start.',
     footerEmail: 'tereziealder@gmail.com',
@@ -361,6 +374,19 @@ const translations = {
     circlesClosedPast: 'tento kruh u\u017E prob\u011Bhl.',
     circlesPhoto: 'foto:',
     circlesLangNote: '',
+
+    // Newsletter
+    newsletterLabel: 'dopisy',
+    newsletterTitle: 'jednou za čas vám napíšu.',
+    newsletterText: 'krátký e-mail, když mám co sdílet — nový článek, chystaný kruh, myšlenku, ke které se pořád vracím. žádný spam a odhlásit se můžete jedním kliknutím.',
+    newsletterEmailLabel: 'váš e-mail',
+    newsletterPlaceholder: 'váš e-mail',
+    newsletterButton: 'odebírat',
+    newsletterSending: 'odesílám…',
+    newsletterConsent: 'přihlášením souhlasíte se zasíláním newsletteru. odhlásit se můžete kdykoli.',
+    newsletterDone: 'skoro hotovo — potvrďte prosím odběr v e-mailu, který vám právě přišel.',
+    newsletterError: 'něco se nepovedlo. zkuste to prosím znovu, nebo mi napište na tereziealder@gmail.com.',
+    newsletterOptIn: 'pošlete mi i newsletter — občasné e-maily, odhlásit se můžu kdykoli.',
 
     // Footer
     footerSig: 'vzorec, kter\u00FD nejde zm\u011Bnit. p\u0159esn\u011B tam spolu za\u010Dneme.',

@@ -1,0 +1,91 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: listmonk-uploads
+spec:
+  accessModes: ["ReadWriteOnce"]
+  resources:
+    requests:
+      storage: {{ .Values.listmonk.uploadsStorage }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: listmonk
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  # RWO volume: the old pod must stop before the new one mounts it.
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: listmonk
+  template:
+    metadata:
+      labels:
+        app: listmonk
+    spec:
+      containers:
+        - name: listmonk
+          image: {{ .Values.listmonk.image }}
+          # Same as the official docker-compose: create the schema on first
+          # start (no-op afterwards), apply migrations, then run.
+          command:
+            - sh
+            - -c
+            - ./listmonk --install --idempotent --yes --config '' && ./listmonk --upgrade --yes --config '' && ./listmonk --config ''
+          ports:
+            - containerPort: 9000
+          env:
+            - name: TZ
+              value: Europe/Prague
+            - name: LISTMONK_app__address
+              value: "0.0.0.0:9000"
+            - name: LISTMONK_db__host
+              value: listmonk-db
+            - name: LISTMONK_db__port
+              value: "5432"
+            - name: LISTMONK_db__user
+              value: listmonk
+            - name: LISTMONK_db__database
+              value: listmonk
+            - name: LISTMONK_db__ssl_mode
+              value: disable
+            - name: LISTMONK_db__password
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.existingSecret }}
+                  key: postgres-password
+            # Only used on first install to create the admin account.
+            - name: LISTMONK_ADMIN_USER
+              value: {{ .Values.listmonk.adminUser }}
+            - name: LISTMONK_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.existingSecret }}
+                  key: admin-password
+          readinessProbe:
+            tcpSocket:
+              port: 9000
+            periodSeconds: 10
+          resources:
+            {{- toYaml .Values.listmonk.resources | nindent 12 }}
+          volumeMounts:
+            - name: uploads
+              mountPath: /listmonk/uploads
+      volumes:
+        - name: uploads
+          persistentVolumeClaim:
+            claimName: listmonk-uploads
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: listmonk
+spec:
+  selector:
+    app: listmonk
+  ports:
+    - port: 9000
+      targetPort: 9000
