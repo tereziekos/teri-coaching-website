@@ -11,8 +11,8 @@ clusterIssuer: letsencrypt-http01
 existingSecret: listmonk
 
 listmonk:
-  # Check https://github.com/knadh/listmonk/releases for the latest before installing.
-  image: listmonk/listmonk:v5.1.0
+  # Pinned to the exact beta tag (not the moving `beta` tag); bump to v7.0.0 once final.
+  image: listmonk/listmonk:v7.0.0-beta.2
   adminUser: terezie
   uploadsStorage: 1Gi
   resources:
