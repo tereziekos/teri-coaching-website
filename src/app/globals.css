@@ -362,58 +362,55 @@ footer.site-footer { padding: 6rem 56px 3rem; border-top: 0.5px solid var(--clay
 .footer-meta { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--off-black); }
 
 /* ── Newsletter ── */
-/* One look everywhere: a dark moss band. Variants only change the layout. */
+/* One look everywhere: a small dark moss card, never wider than ~600px. */
+.newsletter { max-width: 600px; }
 .newsletter-inner {
   --nl-fg: var(--paper);
   --nl-soft: rgba(238, 239, 234, 0.72);
   --nl-line: rgba(238, 239, 234, 0.45);
   background: var(--moss);
   color: var(--nl-fg);
-  border-radius: 16px;
-  padding: clamp(2rem, 5vw, 3.6rem);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 }
-.newsletter-kicker { font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--clay); margin: 0 0 0.9rem; }
-.newsletter-title { font-family: var(--font-serif); font-style: italic; font-weight: 500; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.2; letter-spacing: -0.2px; color: var(--nl-fg); margin: 0 0 1rem; max-width: 20ch; }
-.newsletter-text { font-size: 16.5px; line-height: 1.7; color: var(--nl-soft); margin: 0; max-width: 44ch; }
+.newsletter-kicker { font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--clay); margin: 0 0 0.35rem; }
+.newsletter-title { font-family: var(--font-serif); font-style: italic; font-weight: 500; font-size: 19px; line-height: 1.3; color: var(--nl-fg); margin: 0 0 0.3rem; }
+.newsletter-text { font-size: 14px; line-height: 1.6; color: var(--nl-soft); margin: 0; }
 .newsletter-form { width: 100%; }
-.newsletter-row { display: flex; gap: 10px; }
+.newsletter-row { display: flex; gap: 8px; }
 .newsletter-input {
   flex: 1;
   min-width: 0;
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 14px;
   color: var(--nl-fg);
   background: transparent;
   border: 0.5px solid var(--nl-line);
   border-radius: 0;
-  padding: 15px 18px;
+  padding: 9px 13px;
   transition: border-color 200ms, box-shadow 200ms;
 }
 .newsletter-input::placeholder { color: var(--nl-soft); }
 .newsletter-input:focus { outline: none; border-color: var(--nl-fg); box-shadow: 0 0 0 1px var(--nl-fg); }
-.newsletter-btn { align-self: stretch; white-space: nowrap; font-size: 15px; padding: 15px 28px; background: var(--paper); color: var(--moss); border-color: var(--paper); }
+.newsletter-btn { align-self: stretch; white-space: nowrap; font-size: 13.5px; padding: 9px 18px; background: var(--paper); color: var(--moss); border-color: var(--paper); }
 .newsletter-btn:hover { background: transparent; color: var(--paper); }
 .newsletter-btn:disabled { opacity: 0.6; cursor: default; }
-.newsletter-note { font-size: 12.5px; line-height: 1.55; color: var(--nl-soft); margin: 0.8rem 0 0; }
+.newsletter-note { font-size: 11.5px; line-height: 1.5; color: var(--nl-soft); margin: 0.55rem 0 0; }
 .newsletter-error { color: #F2C7B8; }
-.newsletter-done { font-family: var(--font-serif); font-style: italic; font-size: 20px; line-height: 1.55; color: var(--nl-fg); margin: 0; padding-left: 18px; border-left: 2px solid var(--clay); }
+.newsletter-done { font-family: var(--font-serif); font-style: italic; font-size: 16px; line-height: 1.5; color: var(--nl-fg); margin: 0; padding-left: 14px; border-left: 2px solid var(--clay); }
 .newsletter-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 
-/* section — its own block on the home page: text left, form right */
-.newsletter--section .newsletter-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center; }
-
-/* card — blog post / circle pages: stacked */
-.newsletter--card { margin-top: 3.5rem; }
-.newsletter--card .newsletter-inner { display: flex; flex-direction: column; gap: 1.8rem; }
+/* placements */
+section.newsletter--section { padding-top: 1rem; padding-bottom: 1rem; }
+section.newsletter--section .newsletter-inner { max-width: 600px; }
+.newsletter--card { margin-top: 2.5rem; }
 .blog-newsletter { max-width: 820px; margin: 0 auto; padding: 0 20px; }
-.circle-list-newsletter { margin: 0 0 1rem; }
-
-/* footer — centred band above the signature */
-.newsletter--footer { margin: 0 auto 4.5rem; }
-.newsletter--footer .newsletter-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.6rem; }
-.newsletter--footer .newsletter-title { margin: 0 auto; }
-.newsletter--footer .newsletter-text { margin: 0.9rem auto 0; }
-.newsletter--footer .newsletter-form { max-width: 560px; }
+.circle-list-newsletter { margin: 2.5rem 0 0; }
+.newsletter--footer { margin: 0 auto 3.5rem; }
+.newsletter--footer .newsletter-inner { text-align: center; }
 .newsletter--footer .newsletter-done { text-align: left; }
 
 /* dark circle pages swap --moss/--paper; keep the band legible there */
@@ -746,10 +743,8 @@ body:has(.circle-hero) { overflow-x: clip; } /* 100vw hero vs. scrollbar width *
   .first-conv-copy { position: static; }
 
   /* Newsletter */
-  .newsletter--section .newsletter-inner { grid-template-columns: 1fr; gap: 1.6rem; }
   .newsletter-row { flex-direction: column; }
-  .newsletter-btn { align-self: stretch; text-align: center; }
-  .newsletter-title { font-size: 25px; }
+  .newsletter-btn { text-align: center; }
 
   /* Footer */
   footer.site-footer { padding: 4rem 20px 2.5rem; }

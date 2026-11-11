@@ -178,11 +178,11 @@ const translations = {
 
     // Newsletter
     newsletterLabel: 'newsletter',
-    newsletterTitle: 'so the next circle doesn’t pass you by.',
-    newsletterText: 'circles, rituals, new writing. I’ll write when something is coming up. only now and then, never more.',
+    newsletterTitle: 'when something’s coming up, I’ll let you know.',
+    newsletterText: 'circles, rituals, new writing. only now and then, never more.',
     newsletterEmailLabel: 'your e-mail',
     newsletterPlaceholder: 'your e-mail',
-    newsletterButton: 'keep me posted →',
+    newsletterButton: 'count me in →',
     newsletterSending: 'sending…',
     newsletterConsent: 'by subscribing you agree to receive my newsletter. unsubscribe any time, with one click.',
     newsletterDone: 'thank you. one more step: confirm in the e-mail I’ve just sent you.',
@@ -377,11 +377,11 @@ const translations = {
 
     // Newsletter
     newsletterLabel: 'newsletter',
-    newsletterTitle: 'ať vám neuteče další kruh.',
-    newsletterText: 'kruhy, rituály, nové texty. napíšu vám, když se něco chystá. jen občas, nikdy nic navíc.',
+    newsletterTitle: 'když se něco chystá, dám vám vědět.',
+    newsletterText: 'kruhy, rituály, nové texty. jen občas, nikdy nic navíc.',
     newsletterEmailLabel: 'váš e-mail',
     newsletterPlaceholder: 'váš e-mail',
-    newsletterButton: 'dejte mi vědět →',
+    newsletterButton: 'chci vědět →',
     newsletterSending: 'odesílám…',
     newsletterConsent: 'přihlášením souhlasíte se zasíláním newsletteru. odhlásit se můžete kdykoli, jedním kliknutím.',
     newsletterDone: 'děkuju. ještě jeden krok: potvrďte odběr v e-mailu, který vám právě přišel.',
